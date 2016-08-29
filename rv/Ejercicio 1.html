@@ -5,7 +5,6 @@
 <title>Ejemplo con guion externo</title>
 </head>
 <body>
-<h1>Ejemplo con guion externo</h1>
 <canvas id="miCanvas" width="80" heigth="80">
 &iexcl;No funciona!
 </canvas>
@@ -22,7 +21,7 @@ var contexto = miCanvas.getContext("2d");
 contexto.fillStyle = "red";
 contexto.fillRect( 30, 30, 50,50);
 
-var miCanvas1 = document.getElementById("miCanvas1");
+var miCanvas = document.getElementById("miCanvas1");
 var contexto1 = miCanvas1.getContext("2d");
 contexto1.fillStyle = "green";
 contexto1.fillRect( 90, 30, 20,20);
