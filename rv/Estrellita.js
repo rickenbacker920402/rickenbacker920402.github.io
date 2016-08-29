@@ -1,16 +1,16 @@
 var figura = new THREE.Shape();
 
-figura.moveTo(0,400);
-figura.lineTo(150,100);
-figura.lineTo(500, 0);
-figura.lineTo(250,-150);
-figura.lineTo(300,-500);
-figura.lineTo(0,-250);
-figura.lineTo(-300,-500);
-figura.lineTo(-250,-150);
-figura.lineTo(-500,0);
-figura.lineTo(-150,100);
-figura.lineTo(0,400);
+figura.moveTo(0,240);
+figura.lineTo(90,60);
+figura.lineTo(300, 0);
+figura.lineTo(150,-90);
+figura.lineTo(180,-300);
+figura.lineTo(0,-150);
+figura.lineTo(-180,-300);
+figura.lineTo(-150,-90);
+figura.lineTo(-300,0);
+figura.lineTo(-90,60);
+figura.lineTo(0,240);
 
 var forma = new THREE.ExtrudeGeometry( figura, {amount: 50});
 var material = new THREE.MeshNormalMaterial();
