@@ -1,5 +1,5 @@
-var base CircleGeometry(7,32);
-var base2 CircleGeometry(5,32);
+var base CylinderGeometry(7,7,7);
+var base2 CylinderGeometry(5,5,3);
 
 
 
