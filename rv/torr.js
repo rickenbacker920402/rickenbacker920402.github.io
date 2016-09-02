@@ -1,5 +1,5 @@
-var base = new THREE.CylinderGeometry(0.5,0.5,.7);
-var base2 = new  THREE.CylinderGeometry(.35,.35,.2);
+var base = new THREE.CylinderGeometry(0.5,0.5,.2);
+var base2 = new  THREE.CylinderGeometry(.35,.35,.05);
 base2.translate(0,1,0);
 
 var baseMalla = new THREE.Mesh(base);
