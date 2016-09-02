@@ -5,7 +5,7 @@ var base3 = new  THREE.CylinderGeometry(0.4, 0.6, 1.8);
 base2.rotateX(Math.PI/2);
 
 base2.translate(0, 0.1, 0);
-base3.translate(0, 0.4, 0);
+base3.translate(0, 0.5, 0);
 
 var baseMalla = new THREE.Mesh(base);
 var base2Malla = new THREE.Mesh(base2);
