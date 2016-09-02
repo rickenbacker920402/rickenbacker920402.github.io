@@ -3,7 +3,7 @@ var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
 var base3 = new  THREE.CylinderGeometry(0.35, 0.55, 1.5, 50, 25);
 var cima = new THREE.TorusGeometry( 0.35, 0.1, 16, 100 );
 var cima2 = new THREE.CylinderGeometry(0.55, 0.45, 0.2, 50, 25);
-var corona = THREE.TorusGeometry( 0.35, 0.2, 16, 100, 0.63 );
+var corona =  new THREE.TorusGeometry( 0.35, 0.2, 16, 100, 0.63 );
 
 base2.rotateX(Math.PI/2);
 cima.rotateX(Math.PI/2);
