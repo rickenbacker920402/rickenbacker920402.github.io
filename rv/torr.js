@@ -1,7 +1,7 @@
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
 var base3 = new  THREE.CylinderGeometry(0.35, 0.55, 1.5, 50, 25);
-var cima = new THREE.TorusGeometry( 0.35, 0.2, 16, 100 );
+var cima = new THREE.TorusGeometry( 0.35, 0.1, 16, 100 );
 
 base2.rotateX(Math.PI/2);
 cima.rotateX(Math.PI/2);
@@ -29,7 +29,6 @@ torreForma.merge(cimaMalla.geometry,cimaMalla.matrix);
 
 var material = new THREE.MeshNormalMaterial();
 var torreMalla = new THREE.Mesh(torreForma,material);
-torreMalla.rotateX( Math.PI/4);
 
 var escena = new THREE.Scene();
 escena.add(torreMalla);
