@@ -1,5 +1,7 @@
 
-var figura = new THREE.RingGeometry( 0.7, 1, 30, 30 );
+var anillo = new THREE.RingGeometry( 0.7, 1, 30, 30 );
+figura = forma.clone();
+
 
 var forma = new THREE.ExtrudeGeometry( figura, {amount: 10});
 var material = new THREE.MeshNormalMaterial();
