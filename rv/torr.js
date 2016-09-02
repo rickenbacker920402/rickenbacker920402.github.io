@@ -28,6 +28,7 @@ torreForma.merge(cima2Malla.geometry,cima2Malla.matrix);
 
 var material = new THREE.MeshNormalMaterial();
 var torreMalla = new THREE.Mesh(torreForma,material);
+torreMalla.translate(0, -7, 0);
 
 var escena = new THREE.Scene();
 escena.add(torreMalla);
