@@ -25,7 +25,7 @@ punta.translate(0, 1.2, 0.5);
 punta1.translate(0, 1.2, -0.2);
 punta2.translate(0.35, 1.2, 0.15);
 punta3.translate(-0.35, 1.2, 0.15);
-anillo.translate(0, 0, 0);
+anillo.translate(0,-0.2, 0);
 
 
 var baseMalla = new THREE.Mesh(base);
