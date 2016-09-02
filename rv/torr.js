@@ -21,7 +21,7 @@ base2.translate(0, -0.9, 0);
 base3.translate(0, 0.05, 0);
 cima.translate(0, 0.8, 0);
 cima2.translate(0, 0.9, 0);
-punta.translate(0, 1.2, 0.5);
+punta.translate(0, 1.2, 0);
 punta1.translate(0, 1.2, -0.2);
 punta2.translate(0.35, 1.2, 0.15);
 punta3.translate(-0.35, 1.2, 0.15);
