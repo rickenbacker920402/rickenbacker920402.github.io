@@ -1,8 +1,8 @@
 var base = new THREE.CylinderGeometry(0.5, 0.5, 0.2);
 var base2 = new  THREE.CylinderGeometry(0.35, 0.35, 0.05);
-var base3 = new THREE.TorusBufferGeometry( 1, 0.1, 16, 100 );
+var base3 = new THREE.TorusBufferGeometry( 1, 0.2, 16, 50 );
 base2.translate(0, 1, 0);
-base3.translate(0, 0.3, 0);
+base3.translate(0, 1, 0);
 
 var baseMalla = new THREE.Mesh(base);
 var base2Malla = new THREE.Mesh(base2);
