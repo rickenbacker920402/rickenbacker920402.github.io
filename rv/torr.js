@@ -9,9 +9,9 @@ cima.rotateX(Math.PI/2);
 
 base.translate(0, -1, 0);
 base2.translate(0, -0.9, 0);
-base3.translate(0, 0.35, 0);
-cima.translate(0, 1.5, 0);
-cima2.translate(0, 1.6, 0);
+base3.translate(0, 0.15, 0);
+cima.translate(0, 0.9, 0);
+cima2.translate(0, 1, 0);
 
 var baseMalla = new THREE.Mesh(base);
 var base2Malla = new THREE.Mesh(base2);
