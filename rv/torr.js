@@ -1,5 +1,5 @@
-var base = new THREE.CylinderGeometry(0.5,0.5,2);
-var base2 = new  THREE.CylinderGeometry(.35,.35,.5);
+var base = new THREE.CylinderGeometry(0.7,0.7,1);
+var base2 = new  THREE.CylinderGeometry(.5,.5,.2);
 base2.translate(0,7,0);
 
 var baseMalla = new THREE.Mesh(base);
@@ -22,7 +22,7 @@ var torreMalla = new THREE.Mesh(torreForma,material);
 var escena = new THREE.Scene();
 escena.add(torreMalla);
 var camara = new THREE.PerspectiveCamera();
-camara.position.z=16;
+camara.position.z=5;
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
