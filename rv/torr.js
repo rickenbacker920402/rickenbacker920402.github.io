@@ -7,7 +7,7 @@ var punta = new THREE.ConeGeometry( 0.15, 0.2, 32 );
 var punta1 = new THREE.ConeGeometry( 0.15, 0.2, 32 );
 var punta2 = new THREE.ConeGeometry( 0.15, 0.2, 32 );
 var punta3 = new THREE.ConeGeometry( 0.15, 0.2, 32 );
-var anillo = new THREE.TorusGeometry( 0.45, 0.2, 16, 100 );
+var anillo = new THREE.TorusGeometry( 0.35, 0.1, 16, 100 );
 
 
 
@@ -25,7 +25,7 @@ punta.translate(0, 1.2, 0.5);
 punta1.translate(0, 1.2, -0.2);
 punta2.translate(0.35, 1.2, 0.15);
 punta3.translate(-0.35, 1.2, 0.15);
-anillo.translate(0, 0.5, 0);
+anillo.translate(0, 0.2, 0);
 
 
 var baseMalla = new THREE.Mesh(base);
