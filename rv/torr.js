@@ -3,25 +3,25 @@ var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
 var base3 = new  THREE.CylinderGeometry(0.35, 0.55, 1.5, 50, 25);
 var cima = new THREE.TorusGeometry( 0.35, 0.1, 16, 100 );
 var cima2 = new THREE.CylinderGeometry(0.55, 0.45, 0.2, 50, 25);
-var corona =  new THREE.TorusGeometry( 0.35, 0.2, 16, 100, 0.63 );
+
 
 base2.rotateX(Math.PI/2);
 cima.rotateX(Math.PI/2);
-corona.rotateX(Math.PI/2);
+
 
 base.translate(0, -1, 0);
 base2.translate(0, -0.9, 0);
 base3.translate(0, 0.05, 0);
 cima.translate(0, 0.8, 0);
 cima2.translate(0, 0.9, 0);
-corona.translate(0, 1, 0);
+
 
 var baseMalla = new THREE.Mesh(base);
 var base2Malla = new THREE.Mesh(base2);
 var base3Malla = new THREE.Mesh(base3);
 var cimaMalla = new THREE.Mesh(cima);
 var cima2Malla = new THREE.Mesh(cima2);
-var coronaMalla = new THREE.Mesh(corona);
+
 
 var torreForma = new THREE.Geometry();
 
@@ -30,7 +30,7 @@ torreForma.merge(base2Malla.geometry,base2Malla.matrix);
 torreForma.merge(base3Malla.geometry,base3Malla.matrix);
 torreForma.merge(cimaMalla.geometry,cimaMalla.matrix);
 torreForma.merge(cima2Malla.geometry,cima2Malla.matrix);
-torreForma.merge(coronaMalla.geometry,coronaMalla.matrix);
+
 
 var material = new THREE.MeshNormalMaterial();
 var torreMalla = new THREE.Mesh(torreForma,material);
