@@ -8,7 +8,7 @@ base2.rotateX(Math.PI/2);
 cima.rotateX(Math.PI/2);
 
 base.translate(0, -1, 0);
-base2.translate(0, -0.2, 0);
+base2.translate(0, -0.9, 0);
 base3.translate(0, -0.8, 0);
 cima.translate(0, 1.5, 0);
 cima2.translate(0, 1.6, 0);
