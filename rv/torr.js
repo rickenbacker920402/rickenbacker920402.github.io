@@ -15,7 +15,7 @@ base2.translate(0, -0.9, 0);
 base3.translate(0, 0.05, 0);
 cima.translate(0, 0.8, 0);
 cima2.translate(0, 0.9, 0);
-punta.translate(0, 1, 0);
+punta.translate(0, 1.4, 0);
 
 
 var baseMalla = new THREE.Mesh(base);
