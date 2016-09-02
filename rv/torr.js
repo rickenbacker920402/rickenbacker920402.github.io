@@ -5,7 +5,7 @@ var cima = new THREE.TorusGeometry( 0.35, 0.1, 16, 100 );
 var cima2 = new THREE.CylinderGeometry(0.55, 0.45, 0.2, 50, 25);
 var punta = new THREE.ConeGeometry( 0.15, 0.2, 32 );
 var punta1 = new THREE.ConeGeometry( 0.15, 0.2, 32 );
-var punta1 = new THREE.ConeGeometry( 0.15, 0.2, 32 );
+var punta2 = new THREE.ConeGeometry( 0.15, 0.2, 32 );
 var punta3 = new THREE.ConeGeometry( 0.15, 0.2, 32 );
 
 
