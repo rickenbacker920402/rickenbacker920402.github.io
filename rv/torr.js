@@ -2,6 +2,7 @@ var base = new THREE.CylinderGeometry(0.5, 0.5, 0.2);
 var base2 = new  THREE.CylinderGeometry(0.35, 0.35, 0.05);
 var base3 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
 base2.translate(0, 1, 0);
+base3.rotateX(Math.PI/4);
 base3.translate(0, .5, 0);
 
 var baseMalla = new THREE.Mesh(base);
