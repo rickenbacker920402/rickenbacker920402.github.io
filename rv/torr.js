@@ -28,13 +28,12 @@ torreForma.merge(cima2Malla.geometry,cima2Malla.matrix);
 
 var material = new THREE.MeshNormalMaterial();
 var torreMalla = new THREE.Mesh(torreForma,material);
-torreMalla.translate(0, 0, 0);
 
 var escena = new THREE.Scene();
 escena.add(torreMalla);
 var camara = new THREE.PerspectiveCamera();
 camara.position.z=5;
 var renderizador = new THREE.WebGLRenderer();
-renderizador.setSize(window.innerHeight*1.2,window.innerHeight*1.2);
+renderizador.setSize(window.innerHeight*1.2,window.innerHeight*1.5);
 document.body.appendChild(renderizador.domElement);
 renderizador.render(escena,camara);
