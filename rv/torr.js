@@ -7,6 +7,7 @@ var cima2 = new THREE.CylinderGeometry(0.55, 0.45, 0.2, 50, 25);
 base2.rotateX(Math.PI/2);
 cima.rotateX(Math.PI/2);
 
+base.translate(0, -3, 0);
 base2.translate(0, 0.1, 0);
 base3.translate(0, 1, 0);
 cima.translate(0, 1.7, 0);
