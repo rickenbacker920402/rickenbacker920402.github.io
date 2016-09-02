@@ -20,8 +20,8 @@ cima.translate(0, 0.8, 0);
 cima2.translate(0, 0.9, 0);
 punta.translate(0, 1.2, 0.5);
 punta1.translate(0, 1.2, -0.2);
-punta2.translate(0.35, 1.2, 0);
-punta3.translate(-0.35, 1.2, 0);
+punta2.translate(0.35, 1.2, 1.5);
+punta3.translate(-0.35, 1.2, 1.5);
 
 
 var baseMalla = new THREE.Mesh(base);
