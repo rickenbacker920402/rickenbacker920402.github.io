@@ -3,7 +3,7 @@ var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
 var base3 = new  THREE.CylinderGeometry(0.35, 0.55, 1.5, 50, 25);
 var cima = new THREE.TorusGeometry( 0.35, 0.1, 16, 100 );
 var cima2 = new THREE.CylinderGeometry(0.55, 0.45, 0.2, 50, 25);
-var punta = new THREE.ConeGeometry( 0.1, 0.2, 32 );
+var punta = new THREE.ConeGeometry( 0.15, 0.2, 32 );
 
 
 base2.rotateX(Math.PI/2);
@@ -15,7 +15,7 @@ base2.translate(0, -0.9, 0);
 base3.translate(0, 0.05, 0);
 cima.translate(0, 0.8, 0);
 cima2.translate(0, 0.9, 0);
-punta.translate(0, 1.2, 0.45);
+punta.translate(0, 1.2, 0.55);
 
 
 var baseMalla = new THREE.Mesh(base);
