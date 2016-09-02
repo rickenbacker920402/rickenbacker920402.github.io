@@ -1,6 +1,6 @@
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
-var base3 = new  THREE.CylinderGeometry(0.5, 0.5, 0.2);
+var base3 = new  THREE.CylinderGeometry(0.6, 0.4, 0.8);
 
 base2.rotateX(Math.PI/2);
 
