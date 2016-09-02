@@ -5,7 +5,7 @@ var base3 = new THREE.TorusGeometry( 0.25, 0.2, 16, 100 );
 base3.rotateX(Math.PI/2);
 
 base2.translate(0, 1, 0);
-base3.translate(0, .2, 0);
+base3.translate(0, .1, 0);
 
 var baseMalla = new THREE.Mesh(base);
 var base2Malla = new THREE.Mesh(base2);
