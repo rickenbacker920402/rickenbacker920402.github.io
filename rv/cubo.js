@@ -9,17 +9,17 @@ forma.vertices.push( new THREE.Vector3( 1, -1, -1) );
 forma.vertices.push( new THREE.Vector3( 1, 1, -1 ) );
 
 forma.faces.push( new THREE.Face3( 0, 1, 2) );
-forma.faces.push( new THREE.Face3( 0, 2, 3) );
+forma.faces.push( new THREE.Face3( 0, 3, 2) );
 forma.faces.push( new THREE.Face3( 0, 3, 4) );
-forma.faces.push( new THREE.Face3( 4, 2, 5) );
-forma.faces.push( new THREE.Face3( 5, 4, 7) );
-forma.faces.push( new THREE.Face3( 4, 0, 7) );
-forma.faces.push( new THREE.Face3( 7, 1, 6) );
-forma.faces.push( new THREE.Face3( 6, 7, 0) );
-forma.faces.push( new THREE.Face3( 5, 6, 7) );
+forma.faces.push( new THREE.Face3( 0, 7, 4) );
+forma.faces.push( new THREE.Face3( 2, 3, 4) );
+forma.faces.push( new THREE.Face3( 2, 5, 2) );
+forma.faces.push( new THREE.Face3( 5, 2, 1) );
 forma.faces.push( new THREE.Face3( 5, 6, 1) );
-forma.faces.push( new THREE.Face3( 5, 1, 2) );
-forma.faces.push( new THREE.Face3( 3, 4, 2) );
+forma.faces.push( new THREE.Face3( 6, 1, 0) );
+forma.faces.push( new THREE.Face3( 6, 7, 0) );
+forma.faces.push( new THREE.Face3( 6, 7, 4) );
+forma.faces.push( new THREE.Face3( 6, 5, 4) );
 
 forma.computeBoundingSphere();
 forma.computeFaceNormals();
