@@ -7,7 +7,7 @@ var camara = new THREE.PerspectiveCamera(campoVision,
                                           planoCercano,
                                           planoLejano);
 camara.position.z = 15;
-var cubo = new THREE.Mesh (new THREE.Boxgeo,etry( 2, 2, 2),
+var cubo = new THREE.Mesh (new THREE.BoxGeometry( 2, 2, 2),
                           new THREE.MeshNormalMaterial());
 cubo.rotateX(Math.PI/4);
 var esfera1 = new THREE.Mesh(new THREE.SphereGeometry(1 ),
