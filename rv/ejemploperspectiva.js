@@ -1,5 +1,5 @@
 var campoVision = 45; //grados
-var relacionAspecto = window.innerWidth / window.innerHeigth;
+var relacionAspecto = window.innerWidth / window.innerHeight;
 var planoCercano =1;
 var planoLejano = 1000;
 var camara = new THREE.PerspectiveCamera(campoVision,
@@ -22,6 +22,6 @@ escena.add(esfera1);
 escena.add(esfera2);
 escena.add(cubo);
 var renderizador = new THREE.WebGLRenderer();
-renderizador.setSize( window.innerWidth, window.innerHeigth);
+renderizador.setSize( window.innerWidth, window.innerHeight);
 document.body.appendChild(renderizador.domElement);
 renderizador.render(escena, camara);
