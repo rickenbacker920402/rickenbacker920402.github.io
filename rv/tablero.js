@@ -1,10 +1,9 @@
-for(var i=0; i<=7; i++){
-for(var j=0; j<=7; j++){
-var tablero[i][j] = var geometry = new THREE.BoxGeometry( 10, 10, 10 );
+var tablero =  new array();
+for(var i=0; i<=63; i++){
+tablero[i]  = new THREE.BoxGeometry( 10, 10, 10 );
 for(var f=0; f<=7; f+10){
 for(var c=0; c<=70; c+10){
 tablero.translate(f, c, 0);
-}
 }
 }
 }
