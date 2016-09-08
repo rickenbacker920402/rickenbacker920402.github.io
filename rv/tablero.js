@@ -1,4 +1,4 @@
-var tablero =  new Array();
+var tablero =  new THREE.Vector();
 for(var i=0; i<=63; i++){
 tablero[i]  = new THREE.BoxGeometry( 10, 10, 10 );
 for(var f=0; f<=7; f+10){
