@@ -3,7 +3,7 @@ for(var i=0; i<=63; i++){
 tablero[i]  = new THREE.BoxGeometry( 10, 10, 10 );
 for(var f=0; f<=70; f+10){
 for(var c=0; c<=70; c+10){
-tablero[i].translate(f, c, 0);
+tablero[i].position(f, c, 0);
 }
 }
 }
