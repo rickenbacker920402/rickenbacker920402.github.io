@@ -17,15 +17,33 @@ camara.position.y = -100;
 camara.lookAt(new THREE.Vector3(45,45,0));
 
 
-
+//Torre 1
 var torreMalla = new THREE.Mesh(torreForma,material);
 torreMalla.rotateX(Math.PI*3/2);
 torreMalla.scale.set(5,5,7);
 torreMalla.position.set(10,10,-10);
 
+//Torre 2
+var torreMalla1 = new THREE.Mesh(torreForma,material);
+torreMalla.rotateX(Math.PI*3/2);
+torreMalla.scale.set(5,5,7);
+torreMalla.position.set(10,80,-10);
+
+//Torre 3
+var torreMalla2 = new THREE.Mesh(torreForma,materia2);
+torreMalla.rotateX(Math.PI*3/2);
+torreMalla.scale.set(5,5,7);
+torreMalla.position.set(80,10,-10);
+
+//Torre 4
+var torreMalla3 = new THREE.Mesh(torreForma,materia2);
+torreMalla.rotateX(Math.PI*3/2);
+torreMalla.scale.set(5,5,7);
+torreMalla.position.set(80,80,-10);
 var casillaBlanca = new Array();
 var casillaNegra = new Array();
 
+//Tablero
 var box = new THREE.BoxGeometry( 10, 10, 10 ,10,10,10);
 var mboxBlanca = new THREE.MeshLambertMaterial({color : 0x999a9b });
 var mboxNegra =  new THREE.MeshLambertMaterial({color : 0x6b6b6b });
@@ -86,8 +104,7 @@ for(var f=1; f<=8; f++)
     }
   }
 }
-casillaBlanca.position.z=0;
-casillaNegra.position.z=0;
+
 
 escena.add(mallaTablero);
 escena.add(torreMalla);
