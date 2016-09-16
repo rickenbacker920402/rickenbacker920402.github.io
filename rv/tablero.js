@@ -9,8 +9,6 @@ var camara = new THREE.PerspectiveCamera(campoVision,
 camara.position.z = -120;
 camara.position.x = -150;
 camara.position.y = -150;
-camara.rotateX(Math.PI/4);
-camara.rotateY(Math.PI/4);
 camara.lookAt(new THREE.Vector3(45,45,0));
 
 
@@ -33,6 +31,8 @@ var escena = new THREE.Scene();
 for(var i=1; i<=32; i++){
 casillaBlanca[i] = new THREE.Mesh(box, mboxBlanca);
 casillaNegra[i] = new THREE.Mesh(box, mboxNegra);
+casillaNegra[i].rotateX(Math.PI/4);
+casillaBlanca[i].rotateX(Math.PI/4);
 }
 
 for(var f=1; f<=8; f++)
