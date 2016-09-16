@@ -20,7 +20,7 @@ var mboxNegra =  new THREE.MeshBasicMaterial({color : 0x6b6b6b});
 var bordeTablero = new THREE.BoxGeometry( 10, 10, 7,10,10,10 );
 var mbTablero = new THREE.MeshBasicMaterial({color : #644703});
 var mallaTablero = new THREE.Mesh(bordeTablero, mbTablero);
-malla.position.set(40,40,0);
+mallaTablero.position.set(40,40,0);
 var n=1;
 var b=1;
 var escena = new THREE.Scene();
