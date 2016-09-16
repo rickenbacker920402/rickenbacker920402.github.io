@@ -53,5 +53,5 @@ torreForma.merge(punta2Malla.geometry,punta2Malla.matrix);
 torreForma.merge(punta3Malla.geometry,punta3Malla.matrix);
 torreForma.merge(anilloMalla.geometry,anilloMalla.matrix);
 
-var material = new THREE.MeshLambertMaterial({color : 0x999a9b});
-var material2 = new THREE.MeshLambertMaterial({color : 0x6b6b6b});
+var material = new THREE.MeshLambertMaterial({color : 0xfafdff});
+var material2 = new THREE.MeshLambertMaterial({color : 0x2c4d64});
