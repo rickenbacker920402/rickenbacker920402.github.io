@@ -14,7 +14,7 @@ camara.position.z = 150;
 var casillaBlanca = new Array();
 var casillaNegra = new Array();
 
-var box = new THREE.BoxGeometry( 10, 10, 10,10,10,10 );
+var box = new THREE.BoxGeometry( 10, 10, 7 );
 var mboxBlanca = new THREE.MeshBasicMaterial({color : #ffffff});
 var mboxNegra =  new THREE.MeshBasicMaterial({color : 0x6b6b6b});
 var bordeTablero = new THREE.BoxGeometry( 10, 10, 7,10,10,10 );
