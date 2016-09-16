@@ -108,7 +108,6 @@ for(var f=1; f<=8; f++)
   }
 }
 
-escena.add(Tablero);
 escena.add(mallaTablero);
 escena.add(torreMalla);
 escena.add(torreMalla1);
