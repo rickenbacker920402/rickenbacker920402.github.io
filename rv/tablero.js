@@ -112,8 +112,9 @@ for(var f=1; f<=8; f++)
     }
   }
 }
-
-escena.add(Ajedrez);
+var material2 = new THREE.MeshLambertMaterial();
+var Tablero = new THREE.Mesh(Ajedrez,material2);
+escena.add(Tablero);
 escena.add(mallaTablero);
 escena.add(torreMalla);
 escena.add(torreMalla1);
@@ -124,7 +125,7 @@ var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerWidth, window.innerHeight);
 renderizador.shadowMapEnabled = true;
 document.body.appendChild(renderizador.domElement);
-Ajedrez.receiveShadow = true;
+Tablero.receiveShadow = true;
 mallaTablero.castShadow = true;
 mallaTablero.receiveShadow = true;
 torreMalla.castShadow = true;
