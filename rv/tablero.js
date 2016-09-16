@@ -6,9 +6,9 @@ var camara = new THREE.PerspectiveCamera(campoVision,
                                           relacionAspecto,
                                           planoCercano,
                                           planoLejano);
-camara.position.z = -120;
-camara.position.x = 45;
-camara.position.y = 45;
+camara.position.z = -45;
+camara.position.x = 95;
+camara.position.y = 95;
 camara.lookAt(new THREE.Vector3(45,45,0));
 
 
