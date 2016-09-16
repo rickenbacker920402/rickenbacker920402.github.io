@@ -14,6 +14,7 @@ camara.lookAt(new THREE.Vector3(45,45,0));
 
 
 var torreMalla = new THREE.Mesh(torreForma,material);
+torreMalla.scale.set(7,7,8);
 torreMalla.rotateX(Math.PI/8);
 torreMalla.position.set(15,15,-30);
 
