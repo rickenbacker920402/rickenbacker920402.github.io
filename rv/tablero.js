@@ -9,7 +9,7 @@ var camara = new THREE.PerspectiveCamera(campoVision,
 camara.position.z = 150;
 camara.position.y = -100;
 camara.position.x = 150;
-camara.lookAt(new THREE.Vector3(95,95,0));
+camara.lookAt(new THREE.Vector3(95,0,0));
 
 
 
