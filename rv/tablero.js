@@ -94,7 +94,7 @@ for(var f=1; f<=8; f++)
       if(c%2==0)
       {
       casillaBlanca[b].position.set((f*10),(c*10),0);
-      Ajedrez.merge(casillaBlanca[b].geometry,casillaNegra[b].matrix);
+      Ajedrez.merge(casillaBlanca[b].geometry,casillaBlanca[b].matrix);
       //escena.add(casillaBlanca[b]);
       //casillaBlanca[b].castShadow = true;
       //casillaBlanca[b].receiveShadow = true;
