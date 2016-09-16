@@ -1,8 +1,9 @@
+//Iluminacion
 var iluminacion = new THREE.PointLight(0xFFFFFF);
 iluminacion.position.z = -120;
 iluminacion.position.x = -45;
 iluminacion.position.y = -45;
-
+//Perspective camera
 var campoVision = 45; //grados
 var relacionAspecto = window.innerWidth / window.innerHeight;
 var planoCercano =100;
