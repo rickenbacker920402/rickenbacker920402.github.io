@@ -25,25 +25,27 @@ torreMalla.position.set(10,10,-10);
 
 //Torre 2
 var torreMalla1 = new THREE.Mesh(torreForma,material);
-torreMalla.rotateX(Math.PI*3/2);
-torreMalla.scale.set(5,5,7);
-torreMalla.position.set(10,80,-10);
+torreMalla1.rotateX(Math.PI*3/2);
+torreMalla1.scale.set(5,5,7);
+torreMalla1.position.set(10,80,-10);
 
 //Torre 3
 var torreMalla2 = new THREE.Mesh(torreForma,material2);
-torreMalla.rotateX(Math.PI*3/2);
-torreMalla.scale.set(5,5,7);
-torreMalla.position.set(80,10,-10);
+torreMalla2.rotateX(Math.PI*3/2);
+torreMalla2.scale.set(5,5,7);
+torreMalla2.position.set(80,10,-10);
 
 //Torre 4
 var torreMalla3 = new THREE.Mesh(torreForma,material2);
-torreMalla.rotateX(Math.PI*3/2);
-torreMalla.scale.set(5,5,7);
-torreMalla.position.set(80,80,-10);
+torreMalla3.rotateX(Math.PI*3/2);
+torreMalla3.scale.set(5,5,7);
+torreMalla3.position.set(80,80,-10);
+
+//Tablero
+
 var casillaBlanca = new Array();
 var casillaNegra = new Array();
 
-//Tablero
 var box = new THREE.BoxGeometry( 10, 10, 10 ,10,10,10);
 var mboxBlanca = new THREE.MeshLambertMaterial({color : 0x999a9b });
 var mboxNegra =  new THREE.MeshLambertMaterial({color : 0x6b6b6b });
