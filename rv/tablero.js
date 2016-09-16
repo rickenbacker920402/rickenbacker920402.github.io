@@ -1,3 +1,8 @@
+var iluminacion = new THREE.PointLight(0xFFFFFF);
+iluminacion.position.z = -120;
+iluminacion.position.x = -45;
+iluminacion.position.y = -45;
+
 var campoVision = 45; //grados
 var relacionAspecto = window.innerWidth / window.innerHeight;
 var planoCercano =100;
@@ -22,10 +27,10 @@ var casillaBlanca = new Array();
 var casillaNegra = new Array();
 
 var box = new THREE.BoxGeometry( 10, 10, 10 ,10,10,10);
-var mboxBlanca = new THREE.MeshBasicMaterial({color : 0x999a9b });
-var mboxNegra =  new THREE.MeshBasicMaterial({color : 0x6b6b6b });
+var mboxBlanca = new THREE.MeshLambertMaterial({color : 0x999a9b });
+var mboxNegra =  new THREE.MeshLambertMaterial({color : 0x6b6b6b });
 var bordeTablero = new THREE.BoxGeometry( 100, 100, 7,10,10,10 );
-var mbTablero = new THREE.MeshBasicMaterial({color : 0x644703 });
+var mbTablero = new THREE.MeshLambertMaterial({color : 0x644703 });
 var mallaTablero = new THREE.Mesh(bordeTablero, mbTablero);
 mallaTablero.position.set(45,45,0);
 var n=1;
@@ -47,12 +52,14 @@ for(var f=1; f<=8; f++)
       {
        casillaNegra[n].position.set((f*10),(c*10),0); 
        escena.add(casillaNegra[n]);
+       casillaNegra[n].castShadow = true;
        n=n+1;
       }
       else
       {
        casillaBlanca[b].position.set((f*10),(c*10),0);
        escena.add(casillaBlanca[b]);
+       casillaBlanca[b].castShadow = true;
        b=b+1;
       }
     }
@@ -62,12 +69,14 @@ for(var f=1; f<=8; f++)
       {
       casillaBlanca[b].position.set((f*10),(c*10),0);
       escena.add(casillaBlanca[b]);
+      casillaBlanca[b].castShadow = true;
       b=b+1;
       }
       else
       {
       casillaNegra[n].position.set((f*10),(c*10),0);
       escena.add(casillaNegra[n]);
+      casillaNegra[n].castShadow = true;
       n=n+1;
       }
     }
@@ -76,7 +85,12 @@ for(var f=1; f<=8; f++)
 
 escena.add(mallaTablero);
 escena.add(torreMalla);
+escena.add(iluminacion);
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerWidth, window.innerHeight);
+renderizador.shadowMapEnabled = true;
 document.body.appendChild(renderizador.domElement);
+mallaTablero.castShadow = true;
+torreMalla.castShadow = true;
+iluminacion.castShadow = true;
 renderizador.render(escena, camara);
