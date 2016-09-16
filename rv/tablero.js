@@ -73,7 +73,6 @@ for(var f=1; f<=8; f++)
       if(c%2==0)
       {
        casillaNegra[n].position.set((f*10),(c*10),0);
-       Ajedrez.merge(casillaNegra[n].geometry,casillaNegra[n].matrix);
        //escena.add(casillaNegra[n]);
        //casillaNegra[n].castShadow = true;
        //casillaNegra[n].receiveShadow = true;
@@ -82,7 +81,6 @@ for(var f=1; f<=8; f++)
       else
       {
        casillaBlanca[b].position.set((f*10),(c*10),0);
-       Ajedrez.merge(casillaBlanca[b].geometry,casillaBlanca[b].matrix);
        //escena.add(casillaBlanca[b]);
        //casillaBlanca[b].castShadow = true;
        //casillaBlanca[b].receiveShadow = true;
@@ -94,7 +92,6 @@ for(var f=1; f<=8; f++)
       if(c%2==0)
       {
       casillaBlanca[b].position.set((f*10),(c*10),0);
-      Ajedrez.merge(casillaBlanca[b].geometry,casillaBlanca[b].matrix);
       //escena.add(casillaBlanca[b]);
       //casillaBlanca[b].castShadow = true;
       //casillaBlanca[b].receiveShadow = true;
@@ -103,7 +100,6 @@ for(var f=1; f<=8; f++)
       else
       {
       casillaNegra[n].position.set((f*10),(c*10),0);
-      Ajedrez.merge(casillaNegra[n].geometry,casillaNegra[n].matrix);
       //escena.add(casillaNegra[n]);
       //casillaNegra[n].castShadow = true;
       //casillaNegra[n].receiveShadow = true;
@@ -112,6 +108,8 @@ for(var f=1; f<=8; f++)
     }
   }
 }
+Ajedrez.merge(casillaNegra.geometry,casillaNegra.matrix);
+Ajedrez.merge(casillaBlanca.geometry,casillaBlanca.matrix);
 var material2 = new THREE.MeshLambertMaterial();
 var Tablero = new THREE.Mesh(Ajedrez,material2);
 Tablero.position.set(45,45,0);
