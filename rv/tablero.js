@@ -13,6 +13,8 @@ camara.lookAt(new THREE.Vector3(45,45,0));
 
 
 
+var torreMalla = new THREE.Mesh(torreForma,material);
+torreMalla.rotateX(Math.PI/8);
 
 var casillaBlanca = new Array();
 var casillaNegra = new Array();
@@ -71,6 +73,7 @@ for(var f=1; f<=8; f++)
 }
 
 escena.add(mallaTablero);
+escena.add(torreMalla);
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerWidth, window.innerHeight);
 document.body.appendChild(renderizador.domElement);
