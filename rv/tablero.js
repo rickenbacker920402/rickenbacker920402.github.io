@@ -57,6 +57,7 @@ mallaTablero.position.set(45,45,0);
 var n=1;
 var b=1;
 var escena = new THREE.Scene();
+var Ajedrez = new THREE.Geometry();
 
 for(var i=1; i<=32; i++){
 casillaBlanca[i] = new THREE.Mesh(box, mboxBlanca);
@@ -71,18 +72,20 @@ for(var f=1; f<=8; f++)
     {
       if(c%2==0)
       {
-       casillaNegra[n].position.set((f*10),(c*10),0); 
-       escena.add(casillaNegra[n]);
-       casillaNegra[n].castShadow = true;
-       casillaNegra[n].receiveShadow = true;
+       casillaNegra[n].position.set((f*10),(c*10),0);
+       Ajedrez.merge(casillaNegra[n].geometry,casillaNegra[n].matrix);
+       //escena.add(casillaNegra[n]);
+       //casillaNegra[n].castShadow = true;
+       //casillaNegra[n].receiveShadow = true;
        n=n+1;
       }
       else
       {
        casillaBlanca[b].position.set((f*10),(c*10),0);
-       escena.add(casillaBlanca[b]);
-       casillaBlanca[b].castShadow = true;
-       casillaBlanca[b].receiveShadow = true;
+       Ajedrez.merge(casillaBlanca[b].geometry,casillaBlanca[b].matrix);
+       //escena.add(casillaBlanca[b]);
+       //casillaBlanca[b].castShadow = true;
+       //casillaBlanca[b].receiveShadow = true;
        b=b+1;
       }
     }
@@ -91,24 +94,26 @@ for(var f=1; f<=8; f++)
       if(c%2==0)
       {
       casillaBlanca[b].position.set((f*10),(c*10),0);
-      escena.add(casillaBlanca[b]);
-      casillaBlanca[b].castShadow = true;
-      casillaBlanca[b].receiveShadow = true;
+      Ajedrez.merge(casillaBlanca[b].geometry,casillaNegra[b].matrix);
+      //escena.add(casillaBlanca[b]);
+      //casillaBlanca[b].castShadow = true;
+      //casillaBlanca[b].receiveShadow = true;
       b=b+1;
       }
       else
       {
       casillaNegra[n].position.set((f*10),(c*10),0);
-      escena.add(casillaNegra[n]);
-      casillaNegra[n].castShadow = true;
-      casillaNegra[n].receiveShadow = true;
+      Ajedrez.merge(casillaNegra[n].geometry,casillaNegra[n].matrix);
+      //escena.add(casillaNegra[n]);
+      //casillaNegra[n].castShadow = true;
+      //casillaNegra[n].receiveShadow = true;
       n=n+1;
       }
     }
   }
 }
 
-
+escena.add(Ajedrez);
 escena.add(mallaTablero);
 escena.add(torreMalla);
 escena.add(torreMalla1);
@@ -119,6 +124,7 @@ var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerWidth, window.innerHeight);
 renderizador.shadowMapEnabled = true;
 document.body.appendChild(renderizador.domElement);
+Ajedrez.receiveShadow = true;
 mallaTablero.castShadow = true;
 mallaTablero.receiveShadow = true;
 torreMalla.castShadow = true;
