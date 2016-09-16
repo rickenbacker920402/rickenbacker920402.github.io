@@ -1,31 +1,72 @@
-var tablero = new Array();
-for(var i=0; i<=63; i++){
-tablero[i]  = new THREE.BoxGeometry( 10, 10, 10 );
-for(var f=0; f<=70; f+10){
-for(var c=0; c<=70; c+10){
-tablero[i].position.x(f);
-tablero[i].position.y(c);
-}
-}
-}
-
-var tableroMalla = new THREE.Mesh(tablero);
+var campoVision = 45; //grados
+var relacionAspecto = window.innerWidth / window.innerHeight;
+var planoCercano =1;
+var planoLejano = 1000;
+var camara = new THREE.PerspectiveCamera(campoVision,
+                                          relacionAspecto,
+                                          planoCercano,
+                                          planoLejano);
+camara.position.z = 150;
 
 
 
-var tableroForma = new THREE.Geometry();
 
-tableroForma.merge(tableroMalla.geometry,tableroMalla.matrix);
+var casillaBlanca = new Array();
+var casillaNegra = new Array();
 
-
-var material = new THREE.MeshNormalMaterial();
-var torreMalla = new THREE.Mesh(tableroForma,material);
-tableroMalla.rotateX(Math.PI/8);
-
+var box = new THREE.BoxGeometry( 10, 10, 10,10,10,10 );
+var mboxBlanca =  MeshBasicMaterial({color : #f2f5f7});
+var mboxNegra =  MeshBasicMaterial({color : #4f585f});
+var bordeTablero = new THREE.BoxGeometry( 10, 10, 7,10,10,10 );
+var mbTablero = new MeshBasicMaterial({color : #644703});
+var mallaTablero = new THREE.Mesh(bordeTablero, mbTablero);
+malla.position.set(40,40,0);
+var n=1;
+var b=1;
 var escena = new THREE.Scene();
-escena.add(tableroMalla);
-var camara = new THREE.PerspectiveCamera();
-camara.position.z=100;
+
+for(var i=1; i<=32; i++){
+casillaBlanca[i] = new THREE.Mesh(box, mboxBlanca);
+casillaNegra[i] = new THREE.Mesh(box, mboxNegra);
+}
+
+for(var f=1; f<=8; f++)
+{
+  for(var c=1; c<=8; c++)
+  {
+    if(f%2==0)
+    {
+      if(c%2==0)
+      {
+       casillaNegra[n].position.set((f*10),(c*10),0); 
+       escena.add(casillaNegra[n]);
+       n=n+1;
+      }
+      else
+      {
+       casillaBlanca[b].position.set((f*10),(c*10),0);
+       escena.add(casillaBlanca[b]);
+       b=b+1;
+      }
+    else
+    {
+      if(c%2==0)
+      {
+      casillaBlanca[b].position.set((f*10),(c*10),0);
+      escena.add(casillaBlanca[b]);
+      b=b+1;
+      }
+      else
+      {
+      casillaNegra[n].position.set((f*10),(c*10),0);
+      escena.add(casillaNegra[n]);
+      n=n+1;
+      }
+    }
+  }
+}
+
+escena.add(mallaTablero);
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*1.2,window.innerHeight*1.5);
 document.body.appendChild(renderizador.domElement);
