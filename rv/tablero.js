@@ -8,7 +8,7 @@ var camara = new THREE.PerspectiveCamera(campoVision,
                                           planoLejano);
 camara.position.z = -120;
 camara.position.x = -180;
-camara.position.y = 180;
+camara.position.y = -180;
 camara.lookAt(new THREE.Vector3(45,45,0));
 
 
@@ -23,7 +23,7 @@ var mboxNegra =  new THREE.MeshBasicMaterial({color : 0x6b6b6b });
 var bordeTablero = new THREE.BoxGeometry( 100, 100, 7,10,10,10 );
 var mbTablero = new THREE.MeshBasicMaterial({color : 0x644703 });
 var mallaTablero = new THREE.Mesh(bordeTablero, mbTablero);
-mallaTablero.position.set(45,45,20);
+mallaTablero.position.set(45,45,0);
 var n=1;
 var b=1;
 var escena = new THREE.Scene();
