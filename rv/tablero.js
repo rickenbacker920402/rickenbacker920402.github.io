@@ -14,9 +14,9 @@ camara.lookAt(new THREE.Vector3(45,45,0));
 
 
 var torreMalla = new THREE.Mesh(torreForma,material);
-torreMalla.scale.set(5,5,5);
 torreMalla.rotateX(Math.PI/4);
 torreMalla.position.set(15,15,-30);
+torreMalla.scale.set(5,5,5);
 
 var casillaBlanca = new Array();
 var casillaNegra = new Array();
