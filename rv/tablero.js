@@ -13,7 +13,7 @@ var camara = new THREE.PerspectiveCamera(campoVision,
                                           planoLejano);
 camara.position.z = -100;
 camara.position.x = 45;
-camara.position.y = -60;
+camara.position.y = -100;
 camara.lookAt(new THREE.Vector3(45,45,0));
 
 
@@ -21,7 +21,7 @@ camara.lookAt(new THREE.Vector3(45,45,0));
 var torreMalla = new THREE.Mesh(torreForma,material);
 torreMalla.rotateX(Math.PI);
 torreMalla.position.set(15,15,-30);
-torreMalla.scale.set(6,6,7);
+torreMalla.scale.set(5,5,7);
 
 var casillaBlanca = new Array();
 var casillaNegra = new Array();
