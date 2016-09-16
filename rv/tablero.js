@@ -67,7 +67,7 @@ for(var f=1; f<=8; f++)
 }
 
 escena.add(mallaTablero);
-var renderizador = new THREE.WebGLRenderer();
-renderizador.setSize(window.innerHeight*1.2,window.innerHeight*1.5);
-document.body.appendChild(renderizador.domElement);
+var lienzo = document.getElementById("basicMaterial");
+var renderizador = new THREE.WebGLRenderer( {canvas: lienzo, antialias: true});
+renderizador.setSize( 600, 600);
 renderizador.render(escena,camara);
