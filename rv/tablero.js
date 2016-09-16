@@ -86,8 +86,8 @@ for(var f=1; f<=8; f++)
     }
   }
 }
-casillaBlanca.position.z=0
-casillaNegra.position.z=0
+casillaBlanca.position.z=0;
+casillaNegra.position.z=0;
 
 escena.add(mallaTablero);
 escena.add(torreMalla);
