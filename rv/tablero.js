@@ -114,6 +114,8 @@ for(var f=1; f<=8; f++)
 }
 var material2 = new THREE.MeshLambertMaterial();
 var Tablero = new THREE.Mesh(Ajedrez,material2);
+Tablero.position.set(45,45,0);
+
 escena.add(Tablero);
 escena.add(mallaTablero);
 escena.add(torreMalla);
