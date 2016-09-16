@@ -16,13 +16,13 @@ camara.position.x = 40;
 var casillaBlanca = new Array();
 var casillaNegra = new Array();
 
-var box = new THREE.BoxGeometry( 10, 10, 10 );
+var box = new THREE.BoxGeometry( 10, 10, 10 ,10,10,10);
 var mboxBlanca = new THREE.MeshBasicMaterial({color : 0x999a9b });
 var mboxNegra =  new THREE.MeshBasicMaterial({color : 0x6b6b6b });
 var bordeTablero = new THREE.BoxGeometry( 100, 100, 7,10,10,10 );
 var mbTablero = new THREE.MeshBasicMaterial({color : 0x644703 });
 var mallaTablero = new THREE.Mesh(bordeTablero, mbTablero);
-mallaTablero.position.set(40,40,0);
+mallaTablero.position.set(45,45,0);
 var n=1;
 var b=1;
 var escena = new THREE.Scene();
