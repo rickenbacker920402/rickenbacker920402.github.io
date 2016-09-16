@@ -48,6 +48,7 @@ for(var f=1; f<=8; f++)
        escena.add(casillaBlanca[b]);
        b=b+1;
       }
+    }
     else
     {
       if(c%2==0)
