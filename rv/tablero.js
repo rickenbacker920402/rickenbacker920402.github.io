@@ -110,6 +110,9 @@ for(var f=1; f<=8; f++)
 
 escena.add(mallaTablero);
 escena.add(torreMalla);
+escena.add(torreMalla1);
+escena.add(torreMalla2);
+escena.add(torreMalla3);
 escena.add(iluminacion);
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerWidth, window.innerHeight);
