@@ -7,8 +7,8 @@ var camara = new THREE.PerspectiveCamera(campoVision,
                                           planoCercano,
                                           planoLejano);
 camara.position.z = 150;
-camara.position.y = 150;
-camara.position.x = 150;
+camara.position.y = 40;
+camara.position.x = 40;
 
 
 
