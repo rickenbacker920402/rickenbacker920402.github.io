@@ -16,7 +16,7 @@ camara.updateProjectionMatrix();
 
 camara.position.z = -100;
 camara.position.x = 45;
-camara.position.y = -100;
+camara.position.y = -50;
 camara.lookAt(new THREE.Vector3(45,45,0));
 
 
