@@ -15,8 +15,8 @@ var casillaBlanca = new Array();
 var casillaNegra = new Array();
 
 var box = new THREE.BoxGeometry( 10, 10, 10,10,10,10 );
-var mboxBlanca = new THREE.MeshBasicMaterial({color : #f2f5f7});
-var mboxNegra =  new THREE.MeshBasicMaterial({color : #4f585f});
+var mboxBlanca = new THREE.MeshBasicMaterial({color : #ffffff});
+var mboxNegra =  new THREE.MeshBasicMaterial({color : #9ea1aa});
 var bordeTablero = new THREE.BoxGeometry( 10, 10, 7,10,10,10 );
 var mbTablero = new THREE.MeshBasicMaterial({color : #644703});
 var mallaTablero = new THREE.Mesh(bordeTablero, mbTablero);
