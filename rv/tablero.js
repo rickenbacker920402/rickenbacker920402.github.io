@@ -1,6 +1,6 @@
 var campoVision = 45; //grados
 var relacionAspecto = window.innerWidth / window.innerHeight;
-var planoCercano =1;
+var planoCercano =100;
 var planoLejano = 1000;
 var camara = new THREE.PerspectiveCamera(campoVision,
                                           relacionAspecto,
@@ -15,10 +15,10 @@ var casillaBlanca = new Array();
 var casillaNegra = new Array();
 
 var box = new THREE.BoxGeometry( 10, 10, 7 );
-var mboxBlanca = new THREE.MeshBasicMaterial({color : #ffffff});
-var mboxNegra =  new THREE.MeshBasicMaterial({color : 0x6b6b6b});
+var mboxBlanca = new THREE.MeshBasicMaterial({color : 0x999a9b });
+var mboxNegra =  new THREE.MeshBasicMaterial({color : 0x6b6b6b });
 var bordeTablero = new THREE.BoxGeometry( 10, 10, 7,10,10,10 );
-var mbTablero = new THREE.MeshBasicMaterial({color : #644703});
+var mbTablero = new THREE.MeshBasicMaterial({color : 0x644703 });
 var mallaTablero = new THREE.Mesh(bordeTablero, mbTablero);
 mallaTablero.position.set(40,40,0);
 var n=1;
