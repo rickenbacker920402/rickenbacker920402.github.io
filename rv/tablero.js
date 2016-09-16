@@ -15,10 +15,10 @@ var casillaBlanca = new Array();
 var casillaNegra = new Array();
 
 var box = new THREE.BoxGeometry( 10, 10, 10,10,10,10 );
-var mboxBlanca =  MeshBasicMaterial({color : #f2f5f7});
-var mboxNegra =  MeshBasicMaterial({color : #4f585f});
+var mboxBlanca = new THREE.MeshBasicMaterial({color : #f2f5f7});
+var mboxNegra =  new THREE.MeshBasicMaterial({color : #4f585f});
 var bordeTablero = new THREE.BoxGeometry( 10, 10, 7,10,10,10 );
-var mbTablero = new MeshBasicMaterial({color : #644703});
+var mbTablero = new THREE.MeshBasicMaterial({color : #644703});
 var mallaTablero = new THREE.Mesh(bordeTablero, mbTablero);
 malla.position.set(40,40,0);
 var n=1;
