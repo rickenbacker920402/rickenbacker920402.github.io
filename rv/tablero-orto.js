@@ -6,10 +6,10 @@ iluminacion.position.y = -45;
 
 var camara = new THREE.OrthographicCamera();
 
-camara.left = window.innerWidth /-4;
-camara.right = window.innerWidth /4;
-camara.top = window.innerHeight /4;
-camara.bottom = window.innerHeight /-4;
+camara.left = window.innerWidth /-10;
+camara.right = window.innerWidth /10;
+camara.top = window.innerHeight /10;
+camara.bottom = window.innerHeight /-10;
 camara.near = 100;
 camara.far = 1000;
 camara.updateProjectionMatrix();
