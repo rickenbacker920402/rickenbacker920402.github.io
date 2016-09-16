@@ -8,6 +8,7 @@ var camara = new THREE.PerspectiveCamera(campoVision,
                                           planoLejano);
 camara.position.z = 150;
 camara.position.y = 150;
+camara.position.x = 150;
 
 
 
@@ -18,7 +19,7 @@ var casillaNegra = new Array();
 var box = new THREE.BoxGeometry( 10, 10, 7 );
 var mboxBlanca = new THREE.MeshBasicMaterial({color : 0x999a9b });
 var mboxNegra =  new THREE.MeshBasicMaterial({color : 0x6b6b6b });
-var bordeTablero = new THREE.BoxGeometry( 10, 10, 7,10,10,10 );
+var bordeTablero = new THREE.BoxGeometry( 100, 100, 7,10,10,10 );
 var mbTablero = new THREE.MeshBasicMaterial({color : 0x644703 });
 var mallaTablero = new THREE.Mesh(bordeTablero, mbTablero);
 mallaTablero.position.set(40,40,0);
