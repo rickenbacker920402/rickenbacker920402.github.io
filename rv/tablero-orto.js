@@ -6,17 +6,17 @@ iluminacion.position.y = -45;
 
 var camara = new THREE.OrthographicCamera();
 
-camara.left = window.innerWidth /-10;
-camara.right = window.innerWidth /10;
-camara.top = window.innerHeight /10;
-camara.bottom = window.innerHeight /-10;
+camara.left = window.innerWidth /-12;
+camara.right = window.innerWidth /12;
+camara.top = window.innerHeight /12;
+camara.bottom = window.innerHeight /-12;
 camara.near = 100;
 camara.far = 1000;
 camara.updateProjectionMatrix();
 
 camara.position.z = -100;
 camara.position.x = 45;
-camara.position.y = -50;
+camara.position.y = -100;
 camara.lookAt(new THREE.Vector3(45,45,0));
 
 
