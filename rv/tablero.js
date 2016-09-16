@@ -121,5 +121,8 @@ document.body.appendChild(renderizador.domElement);
 mallaTablero.castShadow = true;
 mallaTablero.receiveShadow = true;
 torreMalla.castShadow = true;
+torreMalla1.castShadow = true;
+torreMalla2.castShadow = true;
+torreMalla3.castShadow = true;
 iluminacion.castShadow = true;
 renderizador.render(escena, camara);
