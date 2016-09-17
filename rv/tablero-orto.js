@@ -123,7 +123,7 @@ casillaBlanca[25].castShadow = true;
 casillaBlanca[29].castShadow = true;
 casillaBlanca[30].castShadow = true;
 casillaBlanca[31].castShadow = true;
-casillaBlanca[32].castShadow = true;
+//casillaBlanca[32].castShadow = true;
 
 escena.add(mallaTablero);
 escena.add(torreMalla);
