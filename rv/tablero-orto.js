@@ -75,7 +75,7 @@ for(var f=1; f<=8; f++)
       {
        casillaNegra[n].position.set((f*10),(c*10),0);
        escena.add(casillaNegra[n]);
-       casillaNegra[n].castShadow = true;
+       //casillaNegra[n].castShadow = true;
        casillaNegra[n].receiveShadow = true;
        n=n+1;
       }
@@ -83,7 +83,7 @@ for(var f=1; f<=8; f++)
       {
        casillaBlanca[b].position.set((f*10),(c*10),0);
        escena.add(casillaBlanca[b]);
-       casillaBlanca[b].castShadow = true;
+       //casillaBlanca[b].castShadow = true;
        casillaBlanca[b].receiveShadow = true;
        b=b+1;
       }
@@ -94,7 +94,7 @@ for(var f=1; f<=8; f++)
       {
       casillaBlanca[b].position.set((f*10),(c*10),0);
       escena.add(casillaBlanca[b]);
-      casillaBlanca[b].castShadow = true;
+      //casillaBlanca[b].castShadow = true;
       casillaBlanca[b].receiveShadow = true;
       b=b+1;
       }
@@ -102,7 +102,7 @@ for(var f=1; f<=8; f++)
       {
       casillaNegra[n].position.set((f*10),(c*10),0);
       escena.add(casillaNegra[n]);
-      casillaNegra[n].castShadow = true;
+      //casillaNegra[n].castShadow = true;
       casillaNegra[n].receiveShadow = true;
       n=n+1;
       }
