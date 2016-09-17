@@ -109,21 +109,21 @@ for(var f=1; f<=8; f++)
     }
   }
 }
-casillaNegra[5].castShadow = true;
-casillaNegra[13].castShadow = true;
-casillaNegra[21].castShadow = true;
+casillaNegra[8].castShadow = true;
+casillaNegra[16].castShadow = true;
+casillaNegra[24].castShadow = true;
 casillaNegra[29].castShadow = true;
 casillaNegra[30].castShadow = true;
 casillaNegra[31].castShadow = true;
 casillaNegra[32].castShadow = true;
-casillaBlanca[1].castShadow = true;
-casillaBlanca[9].castShadow = true;
-casillaBlanca[17].castShadow = true;
-casillaBlanca[25].castShadow = true;
+casillaBlanca[4].castShadow = true;
+casillaBlanca[12].castShadow = true;
+casillaBlanca[20].castShadow = true;
+casillaBlanca[28].castShadow = true;
 casillaBlanca[29].castShadow = true;
 casillaBlanca[30].castShadow = true;
 casillaBlanca[31].castShadow = true;
-//casillaBlanca[32].castShadow = true;
+casillaBlanca[32].castShadow = true;
 
 escena.add(mallaTablero);
 escena.add(torreMalla);
