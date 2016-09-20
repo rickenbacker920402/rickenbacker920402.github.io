@@ -29,7 +29,7 @@ camara.lookAt(new THREE.Vector3(45,45,0));
 
 var material3 = new THREE.MeshLambertMaterial({color : 0xfafdff});
 var material4 = new THREE.MeshLambertMaterial({color : 0x2c4d64});
-material2.materials.opacity = 0.75;
+material2.opacity = 0.75;
 material3.materials.opacity = 0.5;
 material4.materials.opacity = 0.25;
 material2.materials.transparent = true;
