@@ -36,21 +36,21 @@ torreMalla.position.set(10,10,-10);
 
 //Torre 2
 var torreMalla1 = new THREE.Mesh(torreForma,material2);
-torreMalla1.materials[0].opacity = 0.75;
+torreMalla1.materials.opacity = 0.75;
 torreMalla1.rotateX(Math.PI*3/2);
 torreMalla1.scale.set(5,5,7);
 torreMalla1.position.set(10,80,-10);
 
 //Torre 3
 var torreMalla2 = new THREE.Mesh(torreForma,material);
-torreMalla2.materials[0].opacity = 0.5;
+torreMalla2.materials.opacity = 0.5;
 torreMalla2.rotateX(Math.PI*3/2);
 torreMalla2.scale.set(5,5,7);
 torreMalla2.position.set(80,10,-10);
 
 //Torre 4
 var torreMalla3 = new THREE.Mesh(torreForma,material2);
-torreMalla3.materials[0].opacity = 0.25;
+torreMalla3.materials.opacity = 0.25;
 torreMalla3.rotateX(Math.PI*3/2);
 torreMalla3.scale.set(5,5,7);
 torreMalla3.position.set(80,80,-10);
