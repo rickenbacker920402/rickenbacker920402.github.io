@@ -140,6 +140,9 @@ escena.add(torreMalla1);
 escena.add(torreMalla2);
 escena.add(torreMalla3);
 escena.add(iluminacion);
+escena.add(iluminacion1);
+escena.add(iluminacion2);
+
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerWidth, window.innerHeight);
 renderizador.shadowMapEnabled = true;
@@ -151,4 +154,6 @@ torreMalla1.castShadow = true;
 torreMalla2.castShadow = true;
 torreMalla3.castShadow = true;
 iluminacion.castShadow = true;
+iluminacion1.castShadow = true;
+iluminacion2.castShadow = true;
 renderizador.render(escena, camara);
