@@ -32,6 +32,9 @@ var material4 = new THREE.MeshLambertMaterial({color : 0x2c4d64});
 material2.materials.opacity = 0.75;
 material3.materials.opacity = 0.5;
 material4.materials.opacity = 0.25;
+material2.materials.transparent = true;
+material3.materials.transparent = true;
+material4.materials.transparent = true;
 //Torre 1
 var torreMalla = new THREE.Mesh(torreForma,material);
 torreMalla.rotateX(Math.PI*3/2);
