@@ -10,6 +10,7 @@ document.body.appendChild(renderizador.domElement);
 
 }
 var main = function(p){
+  p(1);
 renderizador.render(escena, camara);
 }
 var escena,camara,renderizador;
