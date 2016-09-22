@@ -16,7 +16,7 @@ var loop = function(){
 //  p(1);......2
 renderizador.render(escena, camara);
 malla.rotateY(0.01);
-if (Math.abs(malla.position.x)<5)
+if (Math.abs(malla.position.x)<100)
 step = -step;
 malla.position.x+=step;
 
