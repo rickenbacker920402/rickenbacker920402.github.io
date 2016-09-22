@@ -11,8 +11,6 @@ document.body.appendChild(renderizador.domElement);
 }
 var loop = function(){
   requestAnimationFrame(loop);
-  
-}
 //var main = function(p){......1
 //  p(1);......2
 renderizador.render(escena, camara);
