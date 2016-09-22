@@ -13,5 +13,6 @@ var main = function(p){
 renderizador.render(escena, camara);
 }
 var escena,camara,renderizador;
-init(1);
-main(2);
+//init(1);
+//main(2);
+main(init);
