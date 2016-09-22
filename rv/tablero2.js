@@ -48,7 +48,7 @@ torreMalla1.scale.set(5,5,7);
 torreMalla1.position.set(10,80,-10);
 
 //Torre 3
-var torreMalla2 = new THREE.Mesh(torreForma,materia3);
+var torreMalla2 = new THREE.Mesh(torreForma,material3);
 torreMalla2.rotateX(Math.PI*3/2);
 torreMalla2.scale.set(5,5,7);
 torreMalla2.position.set(80,10,-10);
