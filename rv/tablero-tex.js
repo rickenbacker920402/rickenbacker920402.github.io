@@ -20,7 +20,7 @@ AJEDREZ.escena.add(AJEDREZ.casillaN[i]);
 }
 }
 
-AJEDEREZ.retrollamada2 = function (ajedrez){
+AJEDREZ.retrollamada2 = function (ajedrez){
 var material2 = new THREE.MeshLambertMaterial({ map: ajedrez} );
 AJEDREZ.malla2 = new THREE.Mesh( new THREE.BoxGeometry(100,100,7,10,10,10), material2);
 AJEDREZ.escena.add(AJEDREZ.malla2);
