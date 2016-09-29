@@ -71,6 +71,7 @@ for(var f=1; f<=8; f++)
 
 
 AJEDREZ.setup = function(){
+AJEDREZ.posicion();
 AJEDREZ.escena = new THREE.Scene();
 
 var cargador = new THREE.TextureLoader();
@@ -99,7 +100,6 @@ AJEDREZ.renderizador.render(TEXTURA.escena, TEXTURA.camara);
 }
 
 AJEDREZ.setup();
-AJEDREZ.posicion();
 AJEDREZ.loop();
 
 
