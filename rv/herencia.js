@@ -8,7 +8,7 @@ var esferaForma = new THREE.SphereGeometry(.65);
 esferaForma.translate(0,1,0);
 
 var troncoMalla = new THREE.Mesh(troncoForma);
-varvar esferaMalla = new THREE.Mesh(esferaForma);
+var esferaMalla = new THREE.Mesh(esferaForma);
 
 this.merge(troncoMalla.geometry, troncoMalla.matrix);
 this.merge(esferaMalla.geometry, esferaMalla.matrix);
