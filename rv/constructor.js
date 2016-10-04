@@ -21,7 +21,7 @@ var arbol1 = new Arbol();
 var arbol2 = new Arbol();
 
 arbol1.malla.position.x =-5;
-arbo2l.malla.position.x = 5;
+arbol2.malla.position.x = 5;
 
 CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
 CONSTRUCTOR.camara.position.z = 20;
