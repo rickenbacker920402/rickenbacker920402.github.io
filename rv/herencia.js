@@ -35,7 +35,7 @@ PROTOTIPO.escena.add(arbol1);
 PROTOTIPO.escena.add(arbol2);
 }
 
-PROTOTIPO.loop = fucntion(){
+PROTOTIPO.loop = function(){
 requesAnimationFrame(PROTOTIPO.loop);
 PROTOTIPO.renderizador.render(PROTOTIPO.escena,PROTOTIPO.camara);
 }
