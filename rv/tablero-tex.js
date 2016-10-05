@@ -109,7 +109,7 @@ AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
 }
 
 AJEDREZ.setup();
-AJEDREZ.escena.add(luzpuntual);
+AJEDREZ.escena.add(luzPuntual);
 AJEDREZ.loop();
 
 
