@@ -94,9 +94,9 @@ AJEDREZ.renderizador.setSize(600, 600);
 }
 
 AJEDREZ.loop = function(){
-requestAnimationFrame(TEXTURA.loop);
+requestAnimationFrame(AJEDREZ.loop);
 
-if (TEXTURA.malla !== undefined) {
+if (AJEDREZ.malla !== undefined) {
 AJEDREZ.malla.rotateX(0.01);
 AJEDREZ.malla.rotateY(0.01);
 }
