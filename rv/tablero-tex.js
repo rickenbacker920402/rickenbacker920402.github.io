@@ -1,3 +1,8 @@
+var luzPuntual = new THREE.PointLight(0xFFFFFF);
+luzPuntual.position.x = -120;
+luzPuntual.position.y = -45;
+luzPuntual.position.z = -45;
+
 var AJEDREZ = new Object();
 //
 AJEDREZ.retrollamada = function (ajedrez){
@@ -104,6 +109,7 @@ AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
 }
 
 AJEDREZ.setup();
+AJEDREZ.escena.add(luzpuntual);
 AJEDREZ.loop();
 
 
