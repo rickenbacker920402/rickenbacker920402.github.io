@@ -100,7 +100,7 @@ if (AJEDREZ.malla !== undefined) {
 AJEDREZ.malla.rotateX(0.01);
 AJEDREZ.malla.rotateY(0.01);
 }
-AJEDREZ.renderizador.render(TEXTURA.escena, TEXTURA.camara);
+AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
 }
 
 AJEDREZ.setup();
