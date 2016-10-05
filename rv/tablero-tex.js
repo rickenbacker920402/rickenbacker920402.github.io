@@ -76,7 +76,6 @@ AJEDREZ.escena.add(AJEDREZ.malla2);
 }
 
 AJEDREZ.setup = function(){
-AJEDREZ.posicion();
 AJEDREZ.escena = new THREE.Scene();
 
 var cargador = new THREE.TextureLoader();
