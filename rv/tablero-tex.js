@@ -1,5 +1,5 @@
 var AJEDREZ = new Object();
-
+//
 AJEDREZ.retrollamada = function (ajedrez){
 var material = new THREE.MeshLambertMaterial({ map: ajedrez} );
 AJEDREZ.malla = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material);
