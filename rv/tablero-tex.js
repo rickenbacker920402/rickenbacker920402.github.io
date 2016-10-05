@@ -8,41 +8,14 @@ for(var i=1; i<=32; i++){
 AJEDREZ.casillaB[i] = AJEDREZ.malla;
 AJEDREZ.escena.add(AJEDREZ.casillaB[i]);
 }
-}
-
-AJEDREZ.retrollamada1 = function (ajedrez){
-var material1 = new THREE.MeshLambertMaterial({ map: ajedrez} );
-AJEDREZ.malla1 = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material1);
-AJEDREZ.casillaN = new Array();
-for(var i=1; i<=32; i++){
-AJEDREZ.casillaN[i] = AJEDREZ.malla1;
-AJEDREZ.escena.add(AJEDREZ.casillaN[i]);
-}
-}
-
-AJEDREZ.retrollamada2 = function (ajedrez){
-var material2 = new THREE.MeshLambertMaterial({ map: ajedrez} );
-AJEDREZ.malla2 = new THREE.Mesh( new THREE.BoxGeometry(100,100,7,10,10,10), material2);
-AJEDREZ.escena.add(AJEDREZ.malla2);
-}
-
-AJEDREZ.posicion = function(){
-var n=1;
-var b=1;
-AJEDREZ.malla2.position.set(45,45,0);
-
-for(var f=1; f<=8; f++)
+  b=1;
+ for(var f=1; f<=8; f++)
 {
   for(var c=1; c<=8; c++)
   {
     if(f%2==0)
     {
-      if(c%2==0)
-      {
-       AJEDREZ.casillaN[n].position.set((f*10),(c*10),0);
-       n=n+1;
-      }
-      else
+      if(c%2==1)
       {
        AJEDREZ.casillaB[b].position.set((f*10),(c*10),0);
        b=b+1;
@@ -55,7 +28,37 @@ for(var f=1; f<=8; f++)
       AJEDREZ.casillaB[b].position.set((f*10),(c*10),0);
       b=b+1;
       }
-      else
+    }
+  }
+}
+ 
+  
+}
+
+AJEDREZ.retrollamada1 = function (ajedrez){
+var material1 = new THREE.MeshLambertMaterial({ map: ajedrez} );
+AJEDREZ.malla1 = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material1);
+AJEDREZ.casillaN = new Array();
+for(var i=1; i<=32; i++){
+AJEDREZ.casillaN[i] = AJEDREZ.malla1;
+AJEDREZ.escena.add(AJEDREZ.casillaN[i]);
+}
+  n=1;
+  for(var f=1; f<=8; f++)
+{
+  for(var c=1; c<=8; c++)
+  {
+    if(f%2==0)
+    {
+      if(c%2==0)
+      {
+       AJEDREZ.casillaN[n].position.set((f*10),(c*10),0);
+       n=n+1;
+      }
+    }
+    else
+    {
+      if(c%2==1)
       {
       AJEDREZ.casillaN[n].position.set((f*10),(c*10),0);
       n=n+1;
@@ -63,12 +66,14 @@ for(var f=1; f<=8; f++)
     }
   }
 }
-
 }
 
-
-
-
+AJEDREZ.retrollamada2 = function (ajedrez){
+var material2 = new THREE.MeshLambertMaterial({ map: ajedrez} );
+AJEDREZ.malla2 = new THREE.Mesh( new THREE.BoxGeometry(100,100,7,10,10,10), material2);
+  AJEDREZ.malla2.position.set(45,45,0);
+AJEDREZ.escena.add(AJEDREZ.malla2);
+}
 
 AJEDREZ.setup = function(){
 AJEDREZ.posicion();
