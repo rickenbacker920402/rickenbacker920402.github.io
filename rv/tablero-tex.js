@@ -115,6 +115,7 @@ if (AJEDREZ.casillaN[j] !== undefined && AJEDREZ.casillaB[j] !== undefined)
   AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
 }
 }
+}
 AJEDREZ.setup();
 AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 AJEDREZ.loop();
