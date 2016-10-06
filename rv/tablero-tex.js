@@ -58,6 +58,7 @@ AJEDREZ.casillaN[i] = AJEDREZ.malla1;
       if(c%2==0)
       {
        AJEDREZ.casillaN[n].position.set((f*10),(c*10),0);
+        AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
        n=n+1;
       }
     }
@@ -66,12 +67,12 @@ AJEDREZ.casillaN[i] = AJEDREZ.malla1;
       if(c%2==1)
       {
       AJEDREZ.casillaN[n].position.set((f*10),(c*10),0);
+      AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
       n=n+1;
       }
     }
   }
 }
-AJEDREZ.escena.add(AJEDREZ.casillaN);
 }
 
 AJEDREZ.retrollamada2 = function (ajedrez){
