@@ -14,7 +14,7 @@ for(var i=1; i<=32; i++){
 AJEDREZ.casillaB[i] = AJEDREZ.malla;
 AJEDREZ.escena.add(AJEDREZ.casillaB[i]);
 }
-  b=1;
+var  b=1;
  for(var f=1; f<=8; f++)
 {
   for(var c=1; c<=8; c++)
@@ -51,7 +51,7 @@ for(var i=1; i<=32; i++){
 AJEDREZ.casillaN[i] = AJEDREZ.malla1;
 AJEDREZ.escena.add(AJEDREZ.casillaN[i]);
 }
-  n=1;
+var  n=1;
   for(var x=1; x<=8; x++)
 {
   for(var z=1; z<=8; z++)
