@@ -106,8 +106,6 @@ AJEDREZ.loop = function(){
 requestAnimationFrame(AJEDREZ.loop);
 
 if (AJEDREZ.malla !== undefined) {
-AJEDREZ.malla.rotateX(0.01);
-AJEDREZ.malla.rotateY(0.01);
 }
 AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
 }
