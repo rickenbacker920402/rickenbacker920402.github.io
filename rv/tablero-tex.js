@@ -108,14 +108,17 @@ AJEDREZ.renderizador.setSize(600, 600);
 
 AJEDREZ.loop = function(){
 requestAnimationFrame(AJEDREZ.loop);
-
-if (AJEDREZ.malla !== undefined) {
+if (AJEDREZ.casillaN !== undefined) {
+}
+if (AJEDREZ.casillaB !== undefined) {
+}
+if (AJEDREZ.malla2 !== undefined) {
 }
 AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
 }
 
 AJEDREZ.setup();
 AJEDREZ.escena.add(luzPuntual);
-//AJEDREZ.loop();
+AJEDREZ.loop();
 
 
