@@ -1,9 +1,10 @@
-var luzPuntual = new THREE.PointLight(0xFFFFFF);
-luzPuntual.position.x = -120;
-luzPuntual.position.y = -45;
-luzPuntual.position.z = -45;
+
 
 var AJEDREZ = new Object();
+AJEDREZ.luzPuntual = new THREE.PointLight(0xFFFFFF);
+AJEDREZ.luzPuntual.position.x = -120;
+AJEDREZ.luzPuntual.position.y = -45;
+AJEDREZ.luzPuntual.position.z = -45;
 //
 AJEDREZ.retrollamada = function (ajedrez){
 var material = new THREE.MeshLambertMaterial({ map: ajedrez} );
@@ -122,7 +123,7 @@ AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
 }
 
 AJEDREZ.setup();
-AJEDREZ.escena.add(luzPuntual);
+AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 AJEDREZ.loop();
 
 
