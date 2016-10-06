@@ -52,24 +52,24 @@ AJEDREZ.casillaN[i] = AJEDREZ.malla1;
 //AJEDREZ.escena.add(AJEDREZ.casillaN[i]);
 }
   n=1;
-  for(var f=1; f<=8; f++)
+  for(var x=1; x<=8; x++)
 {
-  for(var c=1; c<=8; c++)
+  for(var z=1; z<=8; z++)
   {
-    if(f%2==0)
+    if(x%2==0)
     {
-      if(c%2==0)
+      if(z%2==0)
       {
-       AJEDREZ.casillaN[n].position.set((f*10),(c*10),0);
+       AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
         AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
        n=n+1;
       }
     }
     else
     {
-      if(c%2==1)
+      if(z%2==1)
       {
-      AJEDREZ.casillaN[n].position.set((f*10),(c*10),0);
+      AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
       AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
       n=n+1;
       }
@@ -89,11 +89,11 @@ AJEDREZ.setup = function(){
 AJEDREZ.escena = new THREE.Scene();
 
 var cargador = new THREE.TextureLoader();
+  cargador.load("MarmolBlanco.jpg", AJEDREZ.retrollamada);
 var cargador1 = new THREE.TextureLoader();
+  cargador1.load("MarmolGris.jpg", AJEDREZ.retrollamada1);
 var cargador2 = new THREE.TextureLoader();
-cargador.load("MarmolBlanco.jpg", AJEDREZ.retrollamada);
-cargador1.load("MarmolGris.jpg", AJEDREZ.retrollamada1);
-cargador2.load("marmolcafe.jpg", AJEDREZ.retrollamada2);
+  cargador2.load("marmolcafe.jpg", AJEDREZ.retrollamada2);
 
 AJEDREZ.camara = new THREE.PerspectiveCamera( 75, window.innerWidth/ window.innerHeight, 100, 1000);
   
