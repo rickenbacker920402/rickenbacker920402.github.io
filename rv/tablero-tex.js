@@ -114,11 +114,8 @@ if (AJEDREZ.malla !== undefined && AJEDREZ.malla2 !==undefined)
 {
   AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
 }
-    var setupDone = false;
-if (!setupDone){
-     AJEDREZ.setup(); 
 }
-}
+AJEDREZ.setup(); 
 AJEDREZ.loop();
 
 
