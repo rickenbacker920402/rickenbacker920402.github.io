@@ -46,7 +46,7 @@ AJEDREZ.malla1 = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), mater
 AJEDREZ.casillaN = new Array();
 for(var i=1; i<=32; i++){
 AJEDREZ.casillaN[i] = AJEDREZ.malla1;
-AJEDREZ.escena.add(AJEDREZ.casillaN[i]);
+//AJEDREZ.escena.add(AJEDREZ.casillaN[i]);
 }
   n=1;
   for(var f=1; f<=8; f++)
@@ -71,6 +71,7 @@ AJEDREZ.escena.add(AJEDREZ.casillaN[i]);
     }
   }
 }
+AJEDREZ.escena.add(AJEDREZ.casillaN);
 }
 
 AJEDREZ.retrollamada2 = function (ajedrez){
