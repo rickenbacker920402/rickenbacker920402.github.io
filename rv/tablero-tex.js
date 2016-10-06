@@ -90,8 +90,12 @@ cargador.load("MarmolBlanco.jpg", AJEDREZ.retrollamada);
 cargador.load("MarmolGris.jpg", AJEDREZ.retrollamada1);
 cargador.load("marmolcafe.jpg", AJEDREZ.retrollamada2);
 
-AJEDREZ.camara = new THREE.PerspectiveCamera( 75, window.innerWidth/ window.innerHeight, 0.1, 1000);
-AJEDREZ.camara.position.z =100;
+AJEDREZ.camara = new THREE.PerspectiveCamera( 75, window.innerWidth/ window.innerHeight, 100, 1000);
+  
+AJEDREZ.camara.position.z =-150;
+AJEDREZ.camara.position.x =45;
+AJEDREZ.camara.position.y =-45;
+AJEDREZ.camara.lookAt(new THREE.Vector3(45,45,0));
 
 var lienzo = document.getElementById("ejemplo-textura");
 AJEDREZ.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
