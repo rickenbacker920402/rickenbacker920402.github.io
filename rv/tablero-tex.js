@@ -110,7 +110,7 @@ AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 
 AJEDREZ.loop = function(){
 requestAnimationFrame(AJEDREZ.loop);
-if (AJEDREZ.malla !== undefined && AJEDREZ.malla2 !==undefined)
+if (AJEDREZ.malla !== undefined && AJEDREZ.malla1 !==undefined)
 {
   AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
 }
