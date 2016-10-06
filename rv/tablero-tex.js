@@ -110,7 +110,7 @@ AJEDREZ.renderizador.setSize(600, 600);
 AJEDREZ.loop = function(){
 requestAnimationFrame(AJEDREZ.loop);
   for (var j=1;j<=32;j++){
-if (AJEDREZ.casillaN[j] !== undefined && AJEDREZ.casillaB[j] !== undefined)
+if (AJEDREZ.casillaN[j] !== undefined)
 {
   AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
 }
