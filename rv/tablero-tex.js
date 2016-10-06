@@ -105,6 +105,7 @@ AJEDREZ.camara.lookAt(new THREE.Vector3(45,45,0));
 var lienzo = document.getElementById("ejemplo-textura");
 AJEDREZ.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
 AJEDREZ.renderizador.setSize(600, 600);
+AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 }
 
 AJEDREZ.loop = function(){
@@ -118,8 +119,6 @@ if (AJEDREZ.malla !== undefined && AJEDREZ.malla2 !==undefined)
      AJEDREZ.setup(); 
 }
 }
-
-AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 AJEDREZ.loop();
 
 
