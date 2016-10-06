@@ -12,7 +12,7 @@ AJEDREZ.malla = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), materi
 AJEDREZ.casillaB = new Array();
 for(var i=1; i<=32; i++){
 AJEDREZ.casillaB[i] = AJEDREZ.malla;
-AJEDREZ.escena.add(AJEDREZ.casillaB[i]);
+//AJEDREZ.escena.add(AJEDREZ.casillaB[i]);
 }
 var  b=1;
  for(var f=1; f<=8; f++)
@@ -24,7 +24,7 @@ var  b=1;
       if(c%2==1)
       {
        AJEDREZ.casillaB[b].position.set((f*10),(c*10),0);
-       //AJEDREZ.escena.add(AJEDREZ.casillaB[b]);
+       AJEDREZ.escena.add(AJEDREZ.casillaB[b]);
        b=b+1;
       }
     }
@@ -33,7 +33,7 @@ var  b=1;
       if(c%2==0)
       {
       AJEDREZ.casillaB[b].position.set((f*10),(c*10),0);
-      //AJEDREZ.escena.add(AJEDREZ.casillaB[b]);
+      AJEDREZ.escena.add(AJEDREZ.casillaB[b]);
       b=b+1;
       }
     }
@@ -49,7 +49,7 @@ AJEDREZ.malla1 = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), mater
 AJEDREZ.casillaN = new Array();
 for(var i=1; i<=32; i++){
 AJEDREZ.casillaN[i] = AJEDREZ.malla1;
-AJEDREZ.escena.add(AJEDREZ.casillaN[i]);
+//AJEDREZ.escena.add(AJEDREZ.casillaN[i]);
 }
 var  n=1;
   for(var x=1; x<=8; x++)
@@ -61,7 +61,7 @@ var  n=1;
       if(z%2==0)
       {
        AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
-       // AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
+        AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
        n=n+1;
       }
     }
@@ -70,7 +70,7 @@ var  n=1;
       if(z%2==1)
       {
       AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
-     // AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
+     AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
       n=n+1;
       }
     }
