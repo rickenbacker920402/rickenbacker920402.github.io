@@ -6,8 +6,8 @@ AJEDREZ.luzPuntual.position.x = -120;
 AJEDREZ.luzPuntual.position.y = -45;
 AJEDREZ.luzPuntual.position.z = -45;
 //
-AJEDREZ.retrollamada = function (ajedrez){
-var material = new THREE.MeshLambertMaterial({ map: ajedrez} );
+AJEDREZ.retrollamada = function (textura1){
+var material = new THREE.MeshLambertMaterial({ map: textura1} );
 AJEDREZ.malla = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material);
 AJEDREZ.casillaB = new Array();
 for(var i=1; i<=32; i++){
@@ -43,8 +43,8 @@ var  b=1;
   
 }
 
-AJEDREZ.retrollamada1 = function (ajedrez){
-var material1 = new THREE.MeshLambertMaterial({ map: ajedrez} );
+AJEDREZ.retrollamada1 = function (textura2){
+var material1 = new THREE.MeshLambertMaterial({ map: textura2} );
 AJEDREZ.malla1 = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material1);
 AJEDREZ.casillaN = new Array();
 for(var i=1; i<=32; i++){
@@ -78,8 +78,8 @@ var  n=1;
 }
 }
 
-AJEDREZ.retrollamada2 = function (ajedrez){
-var material2 = new THREE.MeshLambertMaterial({ map: ajedrez} );
+AJEDREZ.retrollamada2 = function (textura3){
+var material2 = new THREE.MeshLambertMaterial({ map: textura3} );
 AJEDREZ.malla2 = new THREE.Mesh( new THREE.BoxGeometry(100,100,7,10,10,10), material2);
   AJEDREZ.malla2.position.set(45,45,0);
 AJEDREZ.escena.add(AJEDREZ.malla2);
@@ -95,7 +95,7 @@ var cargador1 = new THREE.TextureLoader();
 var cargador2 = new THREE.TextureLoader();
   cargador2.load("marmolcafe.jpg", AJEDREZ.retrollamada2);
 
-AJEDREZ.camara = new THREE.PerspectiveCamera( 75, window.innerWidth/ window.innerHeight, 100, 1000);
+AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 100, 1000);
   
 AJEDREZ.camara.position.z =-150;
 AJEDREZ.camara.position.x =45;
