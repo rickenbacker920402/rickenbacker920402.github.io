@@ -21,7 +21,8 @@ var  b=1;
   {
     if(f%2==0)
     {
-      if(c%2==0)
+      if(c%2==0){
+      }
        else
       {
        AJEDREZ.casillaB[b].position.set((f*10),(c*10),0);
@@ -68,7 +69,8 @@ var  n=1;
     }
     else
     {
-      if(z%2==0)
+      if(z%2==0){
+      }
        else
       {
       AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
