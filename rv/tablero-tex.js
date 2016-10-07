@@ -7,11 +7,11 @@ AJEDREZ.luzPuntual.position.y = -45;
 AJEDREZ.luzPuntual.position.z = -45;
 //
 AJEDREZ.retrollamada = function (textura1){
-var material = new THREE.MeshLambertMaterial({ map: textura1} );
-var malla = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material);
+AJEDREZ.material = new THREE.MeshLambertMaterial({ map: textura1} );
+AJEDREZ.malla = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), AJEDREZ.material);
 AJEDREZ.casillaB = new Array();
 for(var i=1; i<=32; i++){
-AJEDREZ.casillaB[i] = malla;
+AJEDREZ.casillaB[i] = AJEDREZ.malla;
 //AJEDREZ.escena.add(AJEDREZ.casillaB[i]);
 }
 var  b=1;
