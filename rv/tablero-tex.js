@@ -81,7 +81,7 @@ var  n=1;
 AJEDREZ.retrollamada2 = function (textura3){
 var material2 = new THREE.MeshLambertMaterial({ map: textura3} );
 var malla2 = new THREE.Mesh( new THREE.BoxGeometry(100,100,7,10,10,10), material2);
-malla2.position.set(0,0,0);
+malla2.position.set(45,45,0);
 AJEDREZ.escena.add(malla2);
 }
 
