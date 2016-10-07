@@ -7,8 +7,8 @@ AJEDREZ.luzPuntual.position.y = -45;
 AJEDREZ.luzPuntual.position.z = -45;
 //
 AJEDREZ.retrollamada = function (textura1){
-AJEDREZ.material = new THREE.MeshLambertMaterial({ map: textura1} );
-AJEDREZ.malla = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), AJEDREZ.material);
+material = new THREE.MeshLambertMaterial({ map: textura1} );
+AJEDREZ.malla = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material);
 AJEDREZ.casillaB = new Array();
 for(var i=1; i<=32; i++){
 AJEDREZ.casillaB[i] = AJEDREZ.malla;
@@ -21,7 +21,8 @@ var  b=1;
   {
     if(f%2==0)
     {
-      if(c%2==1)
+      if(c%2==0)
+       else
       {
        AJEDREZ.casillaB[b].position.set((f*10),(c*10),0);
        AJEDREZ.escena.add(AJEDREZ.casillaB[b]);
@@ -67,7 +68,8 @@ var  n=1;
     }
     else
     {
-      if(z%2==1)
+      if(z%2==0)
+       else
       {
       AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
      AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
