@@ -22,6 +22,7 @@ var  b=1;
     if(f%2==0)
     {
       if(c%2==0){
+       b=b;
       }
        else
       {
@@ -70,6 +71,7 @@ var  n=1;
     else
     {
       if(z%2==0){
+       n=n
       }
        else
       {
