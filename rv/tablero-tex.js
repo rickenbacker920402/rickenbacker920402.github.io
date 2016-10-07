@@ -8,10 +8,10 @@ AJEDREZ.luzPuntual.position.z = -45;
 //
 AJEDREZ.retrollamada = function (textura1){
 var material = new THREE.MeshLambertMaterial({ map: textura1} );
-var malla = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material);
+AJEDREZ.malla = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material);
 AJEDREZ.casillaB = new Array();
 for(var i=1; i<=32; i++){
-AJEDREZ.casillaB[i] = malla;
+AJEDREZ.casillaB[i] = AJEDREZ.malla;
 //AJEDREZ.escena.add(AJEDREZ.casillaB[i]);
 }
 var  b=1;
@@ -45,10 +45,10 @@ var  b=1;
 
 AJEDREZ.retrollamada1 = function (textura2){
 var material1 = new THREE.MeshLambertMaterial({ map: textura2} );
-var malla1 = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material1);
+AJEDREZ.malla1 = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material1);
 AJEDREZ.casillaN = new Array();
 for(var i=1; i<=32; i++){
-AJEDREZ.casillaN[i] = malla1;
+AJEDREZ.casillaN[i] = AJEDREZ.malla1;
 //AJEDREZ.escena.add(AJEDREZ.casillaN[i]);
 }
 var  n=1;
@@ -81,7 +81,7 @@ var  n=1;
 AJEDREZ.retrollamada2 = function (textura3){
 var material2 = new THREE.MeshLambertMaterial({ map: textura3} );
 AJEDREZ.malla2 = new THREE.Mesh( new THREE.BoxGeometry(100,100,7,10,10,10), material2);
-malla2.position.set(45,45,0);
+AJEDREZ.malla2.position.set(45,45,0);
 AJEDREZ.escena.add(AJEDREZ.malla2);
 }
 
