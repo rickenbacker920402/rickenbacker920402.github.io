@@ -116,10 +116,12 @@ AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 
 AJEDREZ.loop = function(){
 requestAnimationFrame(AJEDREZ.loop);
-if (AJEDREZ.malla !== undefined && AJEDREZ.malla1 !==undefined)
+ for(var q=1;q<=32;q++){
+if (AJEDREZ.casillaB[q] !== undefined && AJEDREZ.casillaN[q] !==undefined)
 {
   AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
 }
+ }
 }
 AJEDREZ.setup(); 
 AJEDREZ.loop();
