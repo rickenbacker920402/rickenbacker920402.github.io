@@ -192,7 +192,7 @@ var cargador3 = new THREE.TextureLoader();
 var cargador4 = new THREE.TextureLoader();
   cargador4.load("MarmolGris.jpg", AJEDREZ.retrollamada4);
 
-AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 1000, 1000);
+AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 10, 1000);
   
 AJEDREZ.camara.position.z =-150;
 AJEDREZ.camara.position.x =45;
