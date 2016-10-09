@@ -1,10 +1,6 @@
 
 var AJEDREZ = new Object();
-AJEDREZ.luzPuntual = new THREE.PointLight(0xFFFFFF);
-AJEDREZ.luzPuntual.position.x = -120;
-AJEDREZ.luzPuntual.position.y = -45;
-AJEDREZ.luzPuntual.position.z = -45;
-AJEDREZ.luzPuntual.castShadow = true;
+
 
 //Torre Forma
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
@@ -191,6 +187,12 @@ var cargador3 = new THREE.TextureLoader();
   cargador3.load("MarmolBlanco.jpg", AJEDREZ.retrollamada3);
 var cargador4 = new THREE.TextureLoader();
   cargador4.load("MarmolGris.jpg", AJEDREZ.retrollamada4);
+ 
+AJEDREZ.luzPuntual = new THREE.PointLight(0xFFFFFF);
+AJEDREZ.luzPuntual.position.x = -120;
+AJEDREZ.luzPuntual.position.y = -45;
+AJEDREZ.luzPuntual.position.z = -45;
+AJEDREZ.luzPuntual.castShadow = true;
 
 AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 10, 1000);
   
