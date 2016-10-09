@@ -119,7 +119,7 @@ var  n=1;
       {
        AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
        AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
-       AJEDREZ.casillaN[i].receiveShadow = true;
+       AJEDREZ.casillaN[n].receiveShadow = true;
        n=n+1;
       }
     }
@@ -132,7 +132,7 @@ var  n=1;
       {
      AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
      AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
-     AJEDREZ.casillaN[i].receiveShadow = true;
+     AJEDREZ.casillaN[n].receiveShadow = true;
       n=n+1;
       }
     }
