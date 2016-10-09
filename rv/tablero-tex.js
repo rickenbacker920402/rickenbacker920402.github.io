@@ -2,7 +2,6 @@
 var AJEDREZ = new Object();
 
 
-
 //Torre Forma
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
@@ -59,7 +58,7 @@ torreForma.merge(punta2Malla.geometry,punta2Malla.matrix);
 torreForma.merge(punta3Malla.geometry,punta3Malla.matrix);
 torreForma.merge(anilloMalla.geometry,anilloMalla.matrix);
 
-
+//casillas blancas
 AJEDREZ.retrollamada = function (textura1){
 material = new THREE.MeshLambertMaterial({ map: textura1} );
 AJEDREZ.casillaB = new Array();
