@@ -204,9 +204,10 @@ AJEDREZ.camara.position.x =45;
 AJEDREZ.camara.position.y =-45;
 AJEDREZ.camara.lookAt(new THREE.Vector3(45,45,0));
 
-var lienzo = document.getElementById("ejemplo-textura");
-AJEDREZ.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
-AJEDREZ.renderizador.setSize(600, 600);
+//var lienzo = document.getElementById("ejemplo-textura");
+AJEDREZ.renderizador = new THREE.WebGLRenderer();
+AJEDREZ.renderizador.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(AJEDREZ.renderizador.domElement);
 AJEDREZ.renderizador.showMapEnabled = true;
 AJEDREZ.luzPuntual.castShadow = true;
  
