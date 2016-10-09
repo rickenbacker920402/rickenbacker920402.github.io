@@ -192,7 +192,7 @@ var cargador3 = new THREE.TextureLoader();
 var cargador4 = new THREE.TextureLoader();
   cargador4.load("MarmolGris.jpg", AJEDREZ.retrollamada4);
 
-AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 100, 1000);
+AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 1000, 1000);
   
 AJEDREZ.camara.position.z =-150;
 AJEDREZ.camara.position.x =45;
@@ -201,7 +201,8 @@ AJEDREZ.camara.lookAt(new THREE.Vector3(45,45,0));
 
 var lienzo = document.getElementById("ejemplo-textura");
 AJEDREZ.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
-AJEDREZ.renderizador.setSize(600, 600);
+AJEDREZ.renderizador.setSize(800, 800);
+AJEDREZ.renderizador.showMapEnabled = true;
 AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 AJEDREZ.luzPuntual.castShadow = true;
 }
