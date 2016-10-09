@@ -16,7 +16,7 @@ AJEDREZ.camara.lookAt(new THREE.Vector3(45,45,0));
 
 AJEDREZ.renderizador = new THREE.WebGLRenderer();
 AJEDREZ.renderizador.setSize(window.innerWidth, window.innerHeight);
-AJEDREZ.document.body.appendChild(AJEDREZ.renderizador.domElement);
+document.body.appendChild(AJEDREZ.renderizador.domElement);
 AJEDREZ.renderizador.showMapEnabled = true;
 
 //Torre Forma
