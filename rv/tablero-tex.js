@@ -4,6 +4,7 @@ AJEDREZ.luzPuntual = new THREE.PointLight(0xFFFFFF);
 AJEDREZ.luzPuntual.position.x = -120;
 AJEDREZ.luzPuntual.position.y = -45;
 AJEDREZ.luzPuntual.position.z = -45;
+AJEDREZ.luzPuntual.castShadow = true;
 //Torre Forma
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
@@ -66,6 +67,7 @@ material = new THREE.MeshLambertMaterial({ map: textura1} );
 AJEDREZ.casillaB = new Array();
 for(var i=1; i<=32; i++){
 AJEDREZ.casillaB[i] = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material);
+ AJEDREZ.casillaB[i].receiveShadow = true;
 }
 var  b=1;
  for(var f=1; f<=8; f++)
@@ -104,6 +106,7 @@ var material1 = new THREE.MeshLambertMaterial({ map: textura2} );
 AJEDREZ.casillaN = new Array();
 for(var i=1; i<=32; i++){
 AJEDREZ.casillaN[i] = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material1);
+AJEDREZ.casillaN[i].receiveShadow = true;
 }
 var  n=1;
   for(var x=1; x<=8; x++)
@@ -140,6 +143,7 @@ var material2 = new THREE.MeshLambertMaterial({ map: textura3} );
 AJEDREZ.malla2 = new THREE.Mesh( new THREE.BoxGeometry(100,100,7,10,10,10), material2);
 AJEDREZ.malla2.position.set(45,45,0);
 AJEDREZ.escena.add(AJEDREZ.malla2);
+ AJEDREZ.malla2.receiveShadow = true;
 }
 
 AJEDREZ.retrollamada3 = function (textura4){
@@ -150,6 +154,7 @@ var material3 = new THREE.MeshLambertMaterial({map : textura4});
   AJEDREZ.torreB[i].rotateX(Math.PI*3/2);
   AJEDREZ.torreB[i].scale.set(5,5,7);
   AJEDREZ.escena.add(AJEDREZ.torreB[i]); 
+  AJEDREZ.torreB[i].castShadow = true;
  }
  AJEDREZ.torreB[1].position.set(10,10,-10);
  AJEDREZ.torreB[2].position.set(10,80,-10);
@@ -163,6 +168,7 @@ var material4 = new THREE.MeshLambertMaterial({map : textura5});
   AJEDREZ.torreN[i].rotateX(Math.PI*3/2)
   AJEDREZ.torreN[i].scale.set(5,5,7);
   AJEDREZ.escena.add(AJEDREZ.torreN[i]); 
+  AJEDREZ.torreN[i].castShadow = true;
  }
  AJEDREZ.torreN[1].position.set(80,10,-10);
  AJEDREZ.torreN[2].position.set(80,80,-10);
