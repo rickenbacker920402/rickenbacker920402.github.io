@@ -5,8 +5,7 @@ AJEDREZ.luzPuntual = new THREE.PointLight(0xFFFFFF);
 AJEDREZ.luzPuntual.position.x = -120;
 AJEDREZ.luzPuntual.position.y = -45;
 AJEDREZ.luzPuntual.position.z = -45;
-AJEDREZ.luzPuntual.castShadow = true;
-;
+
 
 AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 1, 1000);
   
@@ -208,7 +207,9 @@ var cargador3 = new THREE.TextureLoader();
   cargador3.load("MarmolBlanco.jpg", AJEDREZ.retrollamada3);
 var cargador4 = new THREE.TextureLoader();
   cargador4.load("MarmolGris.jpg", AJEDREZ.retrollamada4);
-AJEDREZ.escena.add(AJEDREZ.luzPuntual)
+AJEDREZ.escena.add(AJEDREZ.luzPuntual);
+AJEDREZ.luzPuntual.castShadow = true;
+
    
 }
 
