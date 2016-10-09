@@ -1,24 +1,6 @@
 
 var AJEDREZ = new Object();
 
-var luzPuntual = new THREE.PointLight(0xFFFFFF);
-luzPuntual.position.x = -120;
-luzPuntual.position.y = -45;
-luzPuntual.position.z = -45;
-luzPuntual.castShadow = true;
-
-AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 10, 1000);
-  
-AJEDREZ.camara.position.z =-150;
-AJEDREZ.camara.position.x =45;
-AJEDREZ.camara.position.y =-45;
-AJEDREZ.camara.lookAt(new THREE.Vector3(45,45,0));
-
-var lienzo = document.getElementById("ejemplo-textura");
-AJEDREZ.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
-AJEDREZ.renderizador.setSize(800, 800);
-AJEDREZ.renderizador.showMapEnabled = true;
-AJEDREZ.escena.add(luzPuntual);
 
 
 //Torre Forma
@@ -206,6 +188,25 @@ var cargador3 = new THREE.TextureLoader();
   cargador3.load("MarmolBlanco.jpg", AJEDREZ.retrollamada3);
 var cargador4 = new THREE.TextureLoader();
   cargador4.load("MarmolGris.jpg", AJEDREZ.retrollamada4);
+  
+AJEDREZ.luzPuntual = new THREE.PointLight(0xFFFFFF);
+AJEDREZ.luzPuntual.position.x = -120;
+AJEDREZ.luzPuntual.position.y = -45;
+AJEDREZ.luzPuntual.position.z = -45;
+AJEDREZ.luzPuntual.castShadow = true;
+
+AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 10, 1000);
+  
+AJEDREZ.camara.position.z =-150;
+AJEDREZ.camara.position.x =45;
+AJEDREZ.camara.position.y =-45;
+AJEDREZ.camara.lookAt(new THREE.Vector3(45,45,0));
+
+var lienzo = document.getElementById("ejemplo-textura");
+AJEDREZ.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
+AJEDREZ.renderizador.setSize(600, 600);
+AJEDREZ.renderizador.showMapEnabled = true;
+AJEDREZ.escena.add(AJEDREZ.luzPuntual);
  
 
 }
