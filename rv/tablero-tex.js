@@ -67,7 +67,6 @@ material = new THREE.MeshLambertMaterial({ map: textura1} );
 AJEDREZ.casillaB = new Array();
 for(var i=1; i<=32; i++){
 AJEDREZ.casillaB[i] = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material);
-AJEDREZ.casillaB[i].receiveShadow = true;
 }
 var  b=1;
  for(var f=1; f<=8; f++)
@@ -83,6 +82,7 @@ var  b=1;
       {
        AJEDREZ.casillaB[b].position.set((f*10),(c*10),0);
        AJEDREZ.escena.add(AJEDREZ.casillaB[b]);
+       AJEDREZ.casillaB[b].receiveShadow = true;
        b=b+1;
       }
     }
@@ -92,6 +92,7 @@ var  b=1;
       {
       AJEDREZ.casillaB[b].position.set((f*10),(c*10),0);
       AJEDREZ.escena.add(AJEDREZ.casillaB[b]);
+       AJEDREZ.casillaB[b].receiveShadow = true;
       b=b+1;
       }
     }
@@ -106,7 +107,6 @@ var material1 = new THREE.MeshLambertMaterial({ map: textura2} );
 AJEDREZ.casillaN = new Array();
 for(var i=1; i<=32; i++){
 AJEDREZ.casillaN[i] = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material1);
-AJEDREZ.casillaN[i].receiveShadow = true;
 }
 var  n=1;
   for(var x=1; x<=8; x++)
@@ -118,7 +118,8 @@ var  n=1;
       if(z%2==0)
       {
        AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
-        AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
+       AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
+       AJEDREZ.casillaN[i].receiveShadow = true;
        n=n+1;
       }
     }
@@ -129,8 +130,9 @@ var  n=1;
       }
        else
       {
-      AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
+     AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
      AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
+     AJEDREZ.casillaN[i].receiveShadow = true;
       n=n+1;
       }
     }
