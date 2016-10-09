@@ -197,7 +197,7 @@ AJEDREZ.luzPuntual.position.y = -45;
 AJEDREZ.luzPuntual.position.z = -45;
 AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 
-AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 10, 1000);
+AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 1, 1000);
   
 AJEDREZ.camara.position.z =-150;
 AJEDREZ.camara.position.x =45;
