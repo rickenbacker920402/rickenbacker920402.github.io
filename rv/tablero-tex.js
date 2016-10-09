@@ -147,6 +147,7 @@ var material3 = new THREE.MeshLambertMaterial({map : textura4});
  AJEDREZ.torreB = new Array();
  for (var i=1;i<=2;i++){
   AJEDREZ.torreB[i] = new THREE.Mesh( torreForma, material3);
+  AJEDREZ.torreB[i].rotateX(Math.PI*3/2);
   AJEDREZ.torreB[i].scale.set(5,5,7);
   AJEDREZ.escena.add(AJEDREZ.torreB[i]); 
  }
@@ -158,7 +159,8 @@ AJEDREZ.retrollamada4 = function (textura5){
 var material4 = new THREE.MeshLambertMaterial({map : textura5});
  AJEDREZ.torreN = new Array();
  for (var i=1;i<=2;i++){
-  AJEDREZ.torreN[i] = new THREE.Mesh( torreForma, material3);
+  AJEDREZ.torreN[i] = new THREE.Mesh( torreForma, material4);
+  AJEDREZ.torreN[i].rotateX(Math.PI*3/2)
   AJEDREZ.torreN[i].scale.set(5,5,7);
   AJEDREZ.escena.add(AJEDREZ.torreN[i]); 
  }
