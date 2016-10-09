@@ -4,7 +4,7 @@ AJEDREZ.luzPuntual = new THREE.PointLight(0xFFFFFF);
 AJEDREZ.luzPuntual.position.x = -120;
 AJEDREZ.luzPuntual.position.y = -45;
 AJEDREZ.luzPuntual.position.z = -45;
-AJEDREZ.luzPuntual.castShadow = true;
+
 //Torre Forma
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
@@ -201,6 +201,7 @@ var lienzo = document.getElementById("ejemplo-textura");
 AJEDREZ.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
 AJEDREZ.renderizador.setSize(600, 600);
 AJEDREZ.escena.add(AJEDREZ.luzPuntual);
+AJEDREZ.luzPuntual.castShadow = true;
 }
 
 AJEDREZ.loop = function(){
