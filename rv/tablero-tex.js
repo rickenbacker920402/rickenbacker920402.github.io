@@ -67,7 +67,7 @@ material = new THREE.MeshLambertMaterial({ map: textura1} );
 AJEDREZ.casillaB = new Array();
 for(var i=1; i<=32; i++){
 AJEDREZ.casillaB[i] = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material);
- AJEDREZ.casillaB[i].receiveShadow = true;
+AJEDREZ.casillaB[i].receiveShadow = true;
 }
 var  b=1;
  for(var f=1; f<=8; f++)
@@ -155,6 +155,7 @@ var material3 = new THREE.MeshLambertMaterial({map : textura4});
   AJEDREZ.torreB[i].scale.set(5,5,7);
   AJEDREZ.escena.add(AJEDREZ.torreB[i]); 
   AJEDREZ.torreB[i].castShadow = true;
+  AJEDREZ.torreB[i].receiveShadow = true;
  }
  AJEDREZ.torreB[1].position.set(10,10,-10);
  AJEDREZ.torreB[2].position.set(10,80,-10);
@@ -169,6 +170,7 @@ var material4 = new THREE.MeshLambertMaterial({map : textura5});
   AJEDREZ.torreN[i].scale.set(5,5,7);
   AJEDREZ.escena.add(AJEDREZ.torreN[i]); 
   AJEDREZ.torreN[i].castShadow = true;
+  AJEDREZ.torreN[i].receiveShadow = true;
  }
  AJEDREZ.torreN[1].position.set(80,10,-10);
  AJEDREZ.torreN[2].position.set(80,80,-10);
