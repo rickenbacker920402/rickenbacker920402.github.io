@@ -206,12 +206,7 @@ AJEDREZ.luzPuntual.castShadow = true;
 
 AJEDREZ.loop = function(){
 requestAnimationFrame(AJEDREZ.loop);
- for(var q=1;q<=32;q++){
-if (AJEDREZ.casillaB[q] !== undefined && AJEDREZ.casillaN[q] !==undefined)
-{
-  AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
-}
- }
+AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
 }
 AJEDREZ.setup(); 
 AJEDREZ.loop();
