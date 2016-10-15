@@ -25,8 +25,18 @@ AJEDREZ.Casilla = function(){
  var casillaM = new THREE.Mesh(casillaF);
  this.merge(casillaM.geometry,casillaM.matrix);
 }
-
 AJEDREZ.Casilla.prototype = new THREE.Geometry();
+
+AJEDREZ.Borde = function(){
+  THREE.Geometry.call(this);
+  var bordeF = new THREE.BoxGeometry(100,100,7,10,10,10);
+  var bordeM = new THREE.Mesh(bordeF);
+  this.merge(bordeM.geometry,bordeM.matrix);
+}
+AJEDREZ.Borde.prototype = new THREE.Geometry();
+
+AJEDREZ.Torre = function(){
+  THREE.Geometry.call(this);
 
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
@@ -39,13 +49,10 @@ var punta2 = new THREE.ConeGeometry( 0.15, 0.2, 32 );
 var punta3 = new THREE.ConeGeometry( 0.15, 0.2, 32 );
 var anillo = new THREE.TorusGeometry( 0.4, 0.1, 16, 100 );
 
-
-
 base2.rotateX(Math.PI/2);
 cima.rotateX(Math.PI/2);
 anillo.rotateX(Math.PI/2);
-
-
+  
 base.translate(0, -1, 0);
 base2.translate(0, -0.9, 0);
 base3.translate(0, 0.05, 0);
@@ -56,7 +63,6 @@ punta1.translate(0, 1.1, -0.35);
 punta2.translate(0.35, 1.1, 0);
 punta3.translate(-0.35, 1.1, 0);
 anillo.translate(0,-0.2, 0);
-
 
 var baseMalla = new THREE.Mesh(base);
 var base2Malla = new THREE.Mesh(base2);
@@ -69,19 +75,21 @@ var punta2Malla = new THREE.Mesh(punta2);
 var punta3Malla = new THREE.Mesh(punta3);
 var anilloMalla = new THREE.Mesh(anillo);
 
+this.merge(baseMalla.geometry,baseMalla.matrix);
+this.merge(base2Malla.geometry,base2Malla.matrix);
+this.merge(base3Malla.geometry,base3Malla.matrix);
+this.merge(cimaMalla.geometry,cimaMalla.matrix);
+this.merge(cima2Malla.geometry,cima2Malla.matrix);
+this.merge(puntaMalla.geometry,puntaMalla.matrix);
+this.merge(punta1Malla.geometry,punta1Malla.matrix);
+this.merge(punta2Malla.geometry,punta2Malla.matrix);
+this.merge(punta3Malla.geometry,punta3Malla.matrix);
+this.merge(anilloMalla.geometry,anilloMalla.matrix);
+this.rotateX(Math.PI*3/2);
+this.scale.set(5,5,7);
+}
 
-var torreForma = new THREE.Geometry();
-
-torreForma.merge(baseMalla.geometry,baseMalla.matrix);
-torreForma.merge(base2Malla.geometry,base2Malla.matrix);
-torreForma.merge(base3Malla.geometry,base3Malla.matrix);
-torreForma.merge(cimaMalla.geometry,cimaMalla.matrix);
-torreForma.merge(cima2Malla.geometry,cima2Malla.matrix);
-torreForma.merge(puntaMalla.geometry,puntaMalla.matrix);
-torreForma.merge(punta1Malla.geometry,punta1Malla.matrix);
-torreForma.merge(punta2Malla.geometry,punta2Malla.matrix);
-torreForma.merge(punta3Malla.geometry,punta3Malla.matrix);
-torreForma.merge(anilloMalla.geometry,anilloMalla.matrix);
+AJEDREZ.Torre.prototype = new THREE.Geometry();
 
 //casillas blancas
 AJEDREZ.retrollamada = function (textura1){
@@ -127,9 +135,10 @@ var  b=1;
 
 AJEDREZ.retrollamada1 = function (textura2){
 var material1 = new THREE.MeshLambertMaterial({ map: textura2} );
+var cF = new AJEDREZ.Casilla();
 AJEDREZ.casillaN = new Array();
 for(var i=1; i<=32; i++){
-AJEDREZ.casillaN[i] = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material1);
+AJEDREZ.casillaN[i] = new THREE.Mesh( cF, material1);
 
 }
 var  n=1;
@@ -167,7 +176,8 @@ var  n=1;
 
 AJEDREZ.retrollamada2 = function (textura3){
 var material2 = new THREE.MeshLambertMaterial({ map: textura3} );
-AJEDREZ.malla2 = new THREE.Mesh( new THREE.BoxGeometry(100,100,7,10,10,10), material2);
+var bF = new Borde();
+AJEDREZ.malla2 = new THREE.Mesh(bF , material2);
 AJEDREZ.malla2.position.set(45,45,0);
 AJEDREZ.escena.add(AJEDREZ.malla2);
 AJEDREZ.malla2.receiveShadow = true;
@@ -175,11 +185,10 @@ AJEDREZ.malla2.receiveShadow = true;
 
 AJEDREZ.retrollamada3 = function (textura4){
 var material3 = new THREE.MeshLambertMaterial({map : textura4});
+var tF = new Torre();
  AJEDREZ.torreB = new Array();
  for (var i=1;i<=2;i++){
-  AJEDREZ.torreB[i] = new THREE.Mesh( torreForma, material3);
-  AJEDREZ.torreB[i].rotateX(Math.PI*3/2);
-  AJEDREZ.torreB[i].scale.set(5,5,7);
+  AJEDREZ.torreB[i] = new THREE.Mesh( tF, material3);
   AJEDREZ.escena.add(AJEDREZ.torreB[i]);
   AJEDREZ.torreB[i].castShadow = true;
   AJEDREZ.torreB[i].receiveShadow = true;
@@ -190,11 +199,10 @@ var material3 = new THREE.MeshLambertMaterial({map : textura4});
 
 AJEDREZ.retrollamada4 = function (textura5){
 var material4 = new THREE.MeshLambertMaterial({map : textura5});
+var tF = new Torre();
  AJEDREZ.torreN = new Array();
  for (var i=1;i<=2;i++){
-  AJEDREZ.torreN[i] = new THREE.Mesh( torreForma, material4);
-  AJEDREZ.torreN[i].rotateX(Math.PI*3/2);
-  AJEDREZ.torreN[i].scale.set(5,5,7);
+  AJEDREZ.torreN[i] = new THREE.Mesh( tF, material4);
   AJEDREZ.escena.add(AJEDREZ.torreN[i]); 
   AJEDREZ.torreN[i].castShadow = true;
   AJEDREZ.torreN[i].receiveShadow = true;
