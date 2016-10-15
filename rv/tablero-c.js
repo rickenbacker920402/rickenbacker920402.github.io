@@ -83,10 +83,11 @@ torreForma.merge(anilloMalla.geometry,anilloMalla.matrix);
 
 //casillas blancas
 AJEDREZ.retrollamada = function (textura1){
-material = new THREE.MeshLambertMaterial({ map: textura1} );
+var material = new THREE.MeshLambertMaterial({ map: textura1} );
+var cF = new AJEDREZ.Casilla();
 AJEDREZ.casillaB = new Array();
 for(var i=1; i<=32; i++){
-AJEDREZ.casillaB[i] = new AJEDREZ.Casilla();
+AJEDREZ.casillaB[i] = new THREE.Mesh(cF,material);
 }
 var  b=1;
  for(var f=1; f<=8; f++)
