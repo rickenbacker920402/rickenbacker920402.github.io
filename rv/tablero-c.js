@@ -215,15 +215,15 @@ AJEDREZ.setup = function(){
 AJEDREZ.escena = new THREE.Scene();
 
 var cargador = new THREE.TextureLoader();
-  cargador.load("MarmolBlanco.jpg", AJEDREZ.retrollamada);
+  cargador.load("aluminio.jpg", AJEDREZ.retrollamada);
 var cargador1 = new THREE.TextureLoader();
-  cargador1.load("MarmolGris.jpg", AJEDREZ.retrollamada1);
+  cargador1.load("metaln.jpg", AJEDREZ.retrollamada1);
 var cargador2 = new THREE.TextureLoader();
-  cargador2.load("marmolcafe.jpg", AJEDREZ.retrollamada2);
+  cargador2.load("cromo.jpg", AJEDREZ.retrollamada2);
 var cargador3 = new THREE.TextureLoader();
-  cargador3.load("MarmolBlanco.jpg", AJEDREZ.retrollamada3);
+  cargador3.load("aluminio.jpg", AJEDREZ.retrollamada3);
 var cargador4 = new THREE.TextureLoader();
-  cargador4.load("MarmolGris.jpg", AJEDREZ.retrollamada4);
+  cargador4.load("metaln.jpg", AJEDREZ.retrollamada4);
 AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 AJEDREZ.luzPuntual.castShadow = true;
 
