@@ -199,7 +199,7 @@ var tF = new AJEDREZ.Torre();
 
 AJEDREZ.retrollamada4 = function (textura5){
 var material4 = new THREE.MeshLambertMaterial({map : textura5});
-var tF = new Torre();
+var tF = new AJEDREZ.Torre();
  AJEDREZ.torreN = new Array();
  for (var i=1;i<=2;i++){
   AJEDREZ.torreN[i] = new THREE.Mesh( tF, material4);
