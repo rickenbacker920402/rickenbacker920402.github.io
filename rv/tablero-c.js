@@ -91,6 +91,35 @@ this.scale(5,5,7);
 
 AJEDREZ.Torre.prototype = new THREE.Geometry();
 
+//Peon
+AJEDREZ.Peon = function(){
+THREE.Geometry.call(this);  
+var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
+var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
+var base3 = new  THREE.CylinderGeometry(0.25, 0.55, 1, 50, 25);
+var cima = new THREE.SphereGeometry( 0.4, 32, 32 );
+
+base2.rotateX(Math.PI/2);
+base.translate(0, -1, 0);
+base2.translate(0, -0.9, 0);
+base3.translate(0, -0.2, 0);
+cima.translate(0, 0.5, 0);
+
+var baseMalla = new THREE.Mesh(base);
+var base2Malla = new THREE.Mesh(base2);
+var base3Malla = new THREE.Mesh(base3);
+var cimaMalla = new THREE.Mesh(cima);
+
+this.merge(baseMalla.geometry,baseMalla.matrix);
+this.merge(base2Malla.geometry,base2Malla.matrix);
+this.merge(base3Malla.geometry,base3Malla.matrix);
+this.merge(cimaMalla.geometry,cimaMalla.matrix);
+this.rotateX(Math.PI*3/2);
+this.scale(5,5,7);
+}
+
+AJEDREZ.Peon.prototype = new THREE.Geometry();
+
 //casillas blancas
 AJEDREZ.retrollamada = function (textura1){
 var material = new THREE.MeshLambertMaterial({ map: textura1} );
@@ -186,29 +215,47 @@ AJEDREZ.malla2.receiveShadow = true;
 AJEDREZ.retrollamada3 = function (textura4){
 var material3 = new THREE.MeshLambertMaterial({map : textura4});
 var tF = new AJEDREZ.Torre();
+var pF = new AJEDREZ.Peon();
  AJEDREZ.torreB = new Array();
+ AJEDREZ.peonB = new Array();
  for (var i=1;i<=2;i++){
   AJEDREZ.torreB[i] = new THREE.Mesh( tF, material3);
   AJEDREZ.escena.add(AJEDREZ.torreB[i]);
   AJEDREZ.torreB[i].castShadow = true;
   AJEDREZ.torreB[i].receiveShadow = true;
+   
+  AJEDREZ.peonB[i] = new THREE.Mesh( pF, material3);
+  AJEDREZ.escena.add(AJEDREZ.peonB[i]);
+  AJEDREZ.peonB[i].castShadow = true;
+  AJEDREZ.peonB[i].receiveShadow = true;
  }
  AJEDREZ.torreB[1].position.set(10,10,-10);
  AJEDREZ.torreB[2].position.set(80,10,-10); 
+ AJEDREZ.peonB[1].position.set(10,20,-10);
+ AJEDREZ.peonB[2].position.set(80,20,-10);
 }
 
 AJEDREZ.retrollamada4 = function (textura5){
 var material4 = new THREE.MeshLambertMaterial({map : textura5});
 var tF = new AJEDREZ.Torre();
+var pF = new AJEDREZ.Peon();
  AJEDREZ.torreN = new Array();
+ AJEDREZ.peonN = new Array();
  for (var i=1;i<=2;i++){
   AJEDREZ.torreN[i] = new THREE.Mesh( tF, material4);
   AJEDREZ.escena.add(AJEDREZ.torreN[i]); 
   AJEDREZ.torreN[i].castShadow = true;
   AJEDREZ.torreN[i].receiveShadow = true;
+   
+  AJEDREZ.peonN[i] = new THREE.Mesh( pF, material3);
+  AJEDREZ.escena.add(AJEDREZ.peonN[i]);
+  AJEDREZ.peonN[i].castShadow = true;
+  AJEDREZ.peonN[i].receiveShadow = true;
  }
  AJEDREZ.torreN[1].position.set(10,80,-10);
  AJEDREZ.torreN[2].position.set(80,80,-10);
+ AJEDREZ.peonN[1].position.set(10,70,-10);
+ AJEDREZ.peonN[2].position.set(80,70,-10);
 }
 
 AJEDREZ.setup = function(){
