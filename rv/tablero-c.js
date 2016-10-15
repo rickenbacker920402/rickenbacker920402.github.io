@@ -194,7 +194,7 @@ var tF = new AJEDREZ.Torre();
   AJEDREZ.torreB[i].receiveShadow = true;
  }
  AJEDREZ.torreB[1].position.set(10,10,-10);
- AJEDREZ.torreB[2].position.set(10,80,-10);
+ AJEDREZ.torreB[2].position.set(80,10,-10); 
 }
 
 AJEDREZ.retrollamada4 = function (textura5){
@@ -207,7 +207,7 @@ var tF = new AJEDREZ.Torre();
   AJEDREZ.torreN[i].castShadow = true;
   AJEDREZ.torreN[i].receiveShadow = true;
  }
- AJEDREZ.torreN[1].position.set(80,10,-10);
+ AJEDREZ.torreN[1].position.set(10,80,-10);
  AJEDREZ.torreN[2].position.set(80,80,-10);
 }
 
