@@ -1,13 +1,13 @@
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
 var base3 = new  THREE.CylinderGeometry(0.25, 0.55, .95, 50, 25);
-var cima = new THREE.SphereGeometry( 0.5, 32, 32 );
+var cima = new THREE.SphereGeometry( 0.35, 32, 32 );
 
 base2.rotateX(Math.PI/2);
 base.translate(0, -1, 0);
 base2.translate(0, -0.9, 0);
 base3.translate(0, -0.15, 0);
-cima.translate(0, 0.8, 0);
+cima.translate(0, 0.75, 0);
 
 var baseMalla = new THREE.Mesh(base);
 var base2Malla = new THREE.Mesh(base2);
