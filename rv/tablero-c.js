@@ -247,7 +247,7 @@ var pF = new AJEDREZ.Peon();
   AJEDREZ.torreN[i].castShadow = true;
   AJEDREZ.torreN[i].receiveShadow = true;
    
-  AJEDREZ.peonN[i] = new THREE.Mesh( pF, material3);
+  AJEDREZ.peonN[i] = new THREE.Mesh( pF, material4);
   AJEDREZ.escena.add(AJEDREZ.peonN[i]);
   AJEDREZ.peonN[i].castShadow = true;
   AJEDREZ.peonN[i].receiveShadow = true;
