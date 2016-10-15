@@ -23,7 +23,7 @@ peonForma.merge(cimaMalla.geometry,cimaMalla.matrix);
 
 var material = new THREE.MeshNormalMaterial();
 var peonMalla = new THREE.Mesh(peonForma,material);
-peonMalla.rotateX(Math.PI/8);
+//peonMalla.rotateX(Math.PI/8);
 
 var escena = new THREE.Scene();
 escena.add(peonMalla);
