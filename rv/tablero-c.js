@@ -115,7 +115,7 @@ this.merge(base2Malla.geometry,base2Malla.matrix);
 this.merge(base3Malla.geometry,base3Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix);
 this.rotateX(Math.PI*3/2);
-this.scale(5,5,7);
+this.scale(5,5,5);
 }
 
 AJEDREZ.Peon.prototype = new THREE.Geometry();
