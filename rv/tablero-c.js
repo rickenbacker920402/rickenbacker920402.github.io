@@ -86,7 +86,7 @@ this.merge(punta2Malla.geometry,punta2Malla.matrix);
 this.merge(punta3Malla.geometry,punta3Malla.matrix);
 this.merge(anilloMalla.geometry,anilloMalla.matrix);
 this.rotateX(Math.PI*3/2);
-this.scale.set(5,5,7);
+this.scale(5,5,7);
 }
 
 AJEDREZ.Torre.prototype = new THREE.Geometry();
