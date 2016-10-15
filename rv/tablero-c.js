@@ -1,7 +1,7 @@
 var AJEDREZ = new Object();
 
 AJEDREZ.luzPuntual = new THREE.PointLight(0xFFFFFF);
-AJEDREZ.luzPuntual.position.x = -120;
+AJEDREZ.luzPuntual.position.x = -50;
 AJEDREZ.luzPuntual.position.y = -20;
 AJEDREZ.luzPuntual.position.z = -20;
 
