@@ -20,7 +20,10 @@ AJEDREZ.renderizador.showMapEnabled = true;
 
 //Torre Forma
 AJEDREZ.Casilla = function(){
- this.casillaF = new THREE.BoxGeometry(10,10,10,10,10,10);
+ var casillaF = new THREE.BoxGeometry(10,10,10,10,10,10);
+ var casillaM = new THREE.Mesh(casillaF);
+ this.merge(casillaM.geometry,casillaM.matrix);
+ 
 }
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
