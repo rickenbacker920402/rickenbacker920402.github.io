@@ -176,7 +176,7 @@ var  n=1;
 
 AJEDREZ.retrollamada2 = function (textura3){
 var material2 = new THREE.MeshLambertMaterial({ map: textura3} );
-var bF = new Borde();
+var bF = new AJEDREZ.Borde();
 AJEDREZ.malla2 = new THREE.Mesh(bF , material2);
 AJEDREZ.malla2.position.set(45,45,0);
 AJEDREZ.escena.add(AJEDREZ.malla2);
@@ -185,7 +185,7 @@ AJEDREZ.malla2.receiveShadow = true;
 
 AJEDREZ.retrollamada3 = function (textura4){
 var material3 = new THREE.MeshLambertMaterial({map : textura4});
-var tF = new Torre();
+var tF = new AJEDREZ.Torre();
  AJEDREZ.torreB = new Array();
  for (var i=1;i<=2;i++){
   AJEDREZ.torreB[i] = new THREE.Mesh( tF, material3);
