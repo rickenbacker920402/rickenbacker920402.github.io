@@ -26,8 +26,8 @@ escena = new THREE.Scene();
 escena.add(pieza);
 }
 function loop(){
-requestAnimationFrame(PROTOTIPO.loop);
+requestAnimationFrame(loop);
 pieza.rotateY=0.1;
-PROTOTIPO.renderizador.render(PROTOTIPO.escena,PROTOTIPO.camara);
+renderizador.render(escena,camara);
 }
 
