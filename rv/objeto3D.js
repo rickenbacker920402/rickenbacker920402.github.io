@@ -10,7 +10,7 @@ this.piernaDer.position.z = 2;
 this.piernaDer.position.y =-2.5;
 cuerpo.position.z = 2.5;
 }
-var pieza;
+var pieza,camara, escena;
 Pieza.prototupe = new THREE.Object3D;
 
 function setup(){
@@ -31,3 +31,5 @@ pieza.rotateY(0.1);
 renderizador.render(escena,camara);
 }
 
+setup();
+loop();
