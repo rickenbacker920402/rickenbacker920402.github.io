@@ -10,9 +10,9 @@ this.piernaIzq.position.z = -2.5;
 this.piernaIzq.position.y = -5;
 this.piernaIzq.position.x = 2.5;
 this.piernaDer.position.z = 2.5;
-this.piernaDer.position.y =5;
-this.piernaDer.position.x =2.5;
-this.piernaIzq.rotateX(0.1);
+this.piernaDer.position.y =-5;
+this.piernaDer.position.x =-2.5;
+
 cuerpo.position.z = 2.5;
   
 }
@@ -34,6 +34,7 @@ escena.add(pieza);
 function loop(){
 requestAnimationFrame(loop);
 pieza.rotateY(0.1);
+pieza.piernaIzq.rotateX(0.1);
 renderizador.render(escena,camara);
 }
 
