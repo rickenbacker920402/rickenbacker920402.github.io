@@ -9,7 +9,7 @@ this.add(this.piernaIzq, this.piernaDer, cuerpo);
 this.piernaIzq.position.z = -2.5;
 this.piernaIzq.position.y = -5;
 this.piernaIzq.position.x = 2.5;
-this.piernaDer.position.z = 2.5;
+this.piernaDer.position.z = -2.5;
 this.piernaDer.position.y =-5;
 this.piernaDer.position.x =2.5;
 
