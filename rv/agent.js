@@ -2,7 +2,7 @@ function Agent(x=0,  y=0){
 THREE.Object3D.call(this);
 this.position.x = z;
 this.position.y = y;
-
+}
 Agent.prototype = new THREE.Object3D();
 Agent.prototype.sense = function(environment) {};
 Agent.prototype.plan = function(environment) {};
