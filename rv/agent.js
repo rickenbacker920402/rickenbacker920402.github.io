@@ -94,7 +94,7 @@ document.body.appendChild(renderer.domElement);
 }
 
 function loop(){
-requestAnimationFrame( loop);
+requestAnimationFrame(loop);
 entorno.sense();
 entorno.plan();
 entorno.act();
@@ -104,7 +104,7 @@ renderer.render(entorno, camara);
 setup();
 loop();
 
-
+//
 
 
 
