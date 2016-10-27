@@ -102,7 +102,7 @@ console.log('Unknown command');
 
 Robot.prototype.opertaions = {};
 
-Robot.prototype.operations.goStraight = finction(robot, distance){
+Robot.prototype.operations.goStraight = function(robot, distance){
 if (distance === undefined)
 distance = 0.05;
 robot.position.x += distance*Math.cos(robot.rotation.z);
