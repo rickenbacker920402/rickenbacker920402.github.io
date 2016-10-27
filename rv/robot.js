@@ -90,7 +90,7 @@ this.actuator.commands.push('goStraight');
 };
 
 Robot.prototype.act = function(environment){
-var command = tis.actuator.commands.pop();
+var command = this.actuator.commands.pop();
 
 if(command === undefined)
 console.log('Undefined command');
