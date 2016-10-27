@@ -174,5 +174,5 @@ renderer.render( environment,camera);
 
 var environment , camera, renderer;
 setup();
-looo();
+loop();
 
