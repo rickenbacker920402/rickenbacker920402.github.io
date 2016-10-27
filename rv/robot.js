@@ -97,7 +97,7 @@ console.log('Undefined command');
 else if (comand in this.operations)
 this.operations[command](this);
 else
-console.log('Unknown command');.
+console.log('Unknown command');
 };
 
 Robot.prototype.opertaions = {};
