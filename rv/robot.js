@@ -164,7 +164,7 @@ environment.add(camera);
 }
 
 function loop(){
-requesAnimationFrame(loop);
+requestAnimationFrame(loop);
 environment.sense();
 environment.plan();
 environment.act();
