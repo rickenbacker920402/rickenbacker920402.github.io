@@ -156,7 +156,7 @@ environment.setMap(mapa);
 camera = new THREE.PerspectiveCamera();
 camera.position.z = 30;
 
-render = new THREE.WebGLRenderer();
+renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderer.domElement);
 
@@ -172,7 +172,7 @@ environment.act();
 renderer.render( environment,camera);
 }
 
-var environment , camera, render;
+var environment , camera, renderer;
 setup();
 loop();
 
