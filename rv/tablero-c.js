@@ -240,7 +240,7 @@ var pF = new AJEDREZ.Peon();
  AJEDREZ.peonB[5].position.set(50,20,-10);
  AJEDREZ.peonB[6].position.set(60,20,-10);
 AJEDREZ.peonB[7].position.set(70,20,-10);
-AJEDREZ.peonB[3].position.set(80,20,-10);
+AJEDREZ.peonB[8].position.set(80,20,-10);
 }
 
 AJEDREZ.retrollamada4 = function (textura5){
