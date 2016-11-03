@@ -20,7 +20,7 @@ for (var i = 0; i < this.children.lenght; i++){
 if (this.children[i].sense !== undefined)
 this.children[i].sense(this);
 }
-
+}
 
 Environment.prototype.plan = function(){
 for ( var i = 0; i < this.children.length; i++){
@@ -54,7 +54,7 @@ else if (map[i][j] === "r")
 this.add( new Robot(0.5, j -_offset, -(i-_offset)));
 }
 }
-
+}
 function sensor(position, direction){
 THREE.Raycaster.call(this, position, direction);
 this.colision = flase;
