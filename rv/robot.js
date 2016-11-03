@@ -176,3 +176,4 @@ var environment, camera, renderer;
 setup();
 loop();
 
+}
