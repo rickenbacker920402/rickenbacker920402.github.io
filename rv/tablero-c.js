@@ -254,16 +254,23 @@ var pF = new AJEDREZ.Peon();
   AJEDREZ.escena.add(AJEDREZ.torreN[i]); 
   AJEDREZ.torreN[i].castShadow = true;
   AJEDREZ.torreN[i].receiveShadow = true;
-   
-  AJEDREZ.peonN[i] = new THREE.Mesh( pF, material4);
-  AJEDREZ.escena.add(AJEDREZ.peonN[i]);
-  AJEDREZ.peonN[i].castShadow = true;
-  AJEDREZ.peonN[i].receiveShadow = true;
+ }
+  for (var j=1;j<=8;j++){   
+  AJEDREZ.peonN[j] = new THREE.Mesh( pF, material4);
+  AJEDREZ.escena.add(AJEDREZ.peonN[j]);
+  AJEDREZ.peonN[j].castShadow = true;
+  AJEDREZ.peonN[j].receiveShadow = true;
  }
  AJEDREZ.torreN[1].position.set(10,80,-10);
  AJEDREZ.torreN[2].position.set(80,80,-10);
  AJEDREZ.peonN[1].position.set(10,70,-10);
- AJEDREZ.peonN[2].position.set(80,70,-10);
+ AJEDREZ.peonN[2].position.set(20,70,-10);
+ AJEDREZ.peonN[3].position.set(30,70,-10);
+ AJEDREZ.peonN[4].position.set(40,70,-10);
+ AJEDREZ.peonN[5].position.set(50,70,-10);
+ AJEDREZ.peonN[6].position.set(60,70,-10);
+ AJEDREZ.peonN[7].position.set(70,70,-10); 
+ AJEDREZ.peonN[8].position.set(80,70,-10);
 }
 
 AJEDREZ.setup = function(){
