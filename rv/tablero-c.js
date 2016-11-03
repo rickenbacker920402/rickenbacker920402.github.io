@@ -218,7 +218,7 @@ var tF = new AJEDREZ.Torre();
 var pF = new AJEDREZ.Peon();
  AJEDREZ.torreB = new Array();
  AJEDREZ.peonB = new Array();
- for (var i=1;i<=2;i++){
+ for (var i=1;i<=8;i++){
   AJEDREZ.torreB[i] = new THREE.Mesh( tF, material3);
   AJEDREZ.escena.add(AJEDREZ.torreB[i]);
   AJEDREZ.torreB[i].castShadow = true;
@@ -232,7 +232,8 @@ var pF = new AJEDREZ.Peon();
  AJEDREZ.torreB[1].position.set(10,10,-10);
  AJEDREZ.torreB[2].position.set(80,10,-10); 
  AJEDREZ.peonB[1].position.set(10,20,-10);
- AJEDREZ.peonB[2].position.set(80,20,-10);
+ AJEDREZ.peonB[2].position.set(20,20,-10);
+ AJEDREZ.peonB[3].position.set(30,20,-10);
 }
 
 AJEDREZ.retrollamada4 = function (textura5){
