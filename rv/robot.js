@@ -3,10 +3,12 @@ THREE.Object3D.call(this);
 this.position.x = x;
 this.position.y = y;
 }
+
 Agent.prototype = new THREE.Object3D();
 Agent.prototype.sense = function(environment) {};
 Agent.prototype.plan = function(environment) {};
 Agent.prototype.act = function(environment) {};
+
 function Environment(){
 THREE.Scene.call(this);
 }
@@ -18,7 +20,7 @@ for (var i = 0; i < this.children.lenght; i++){
 if (this.children[i].sense !== undefined)
 this.children[i].sense(this);
 }
-}
+
 
 Environment.prototype.plan = function(){
 for ( var i = 0; i < this.children.length; i++){
@@ -176,4 +178,4 @@ var environment, camera, renderer;
 setup();
 loop();
 
-}
+
