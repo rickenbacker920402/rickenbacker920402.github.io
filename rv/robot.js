@@ -97,7 +97,7 @@ var command = this.actuator.commands.pop();
 
 if(command === undefined)
 console.log('Undefined command');
-else if (comand in this.operations)
+else if (command in this.operations)
 this.operations[command](this);
 else
 console.log('Unknown command');
