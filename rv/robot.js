@@ -119,7 +119,7 @@ robot.rotation.z += angle;
 
 Robot.prototype.operations.rotateCCW = function(robot, angle){
 if (angle === undefined)
-angle = MATH.PI/2;
+angle = Math.PI/2;
 robot.rotation.z += angle;
 };
 
@@ -153,7 +153,7 @@ mapa[24] = "xxxxxxxxxxxxxxxxxxxxxxxxx";
 
 environment = new Environment();
 
-environment.setMap(mapa);
+environment.setMap( mapa );
 
 camera = new THREE.PerspectiveCamera();
 camera.position.z = 30;
