@@ -56,11 +56,11 @@ this.add( new Robot(0.5, j - _offset, -(i - _offset)));
 }
 }
 }
-function sensor(position, direction){
+function Sensor(position, direction){
 THREE.Raycaster.call(this, position, direction);
-this.colision = flase;
+this.colision = false;
 }
-sensor.prototype = new THREE.Raycaster();
+Sensor.prototype = new THREE.Raycaster();
 
 function Robot(size, x, y){
 Agent.call(this, x,y);
