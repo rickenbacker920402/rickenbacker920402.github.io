@@ -55,13 +55,13 @@ if ((obstaculo1.length > 0 && (obstaculo1[0].distance <= radius)) || (obstaculo2
 this.colision = 1;
 else 
 this.colision = 0;
-}
+};
 
 Pelota.prototype.act = function(environment){
 if(this.colision === 1)
 this.step = this.step;
 this.position.x += this.step;
-}
+};
 
 function Pared(size, x=0, y=0){
 THREE.Object3D.call(this, x, y);
