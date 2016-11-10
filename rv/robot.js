@@ -67,7 +67,7 @@ Agent.call(this, x,y);
 
 this.sensor = new Sensor();
 this.actuator = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({color: '#aa0000'}));
-this.actuator.comands = [];
+this.actuator.commands = [];
 this.add(this.actuator);
 }
 
