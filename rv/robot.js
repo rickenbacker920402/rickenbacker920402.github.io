@@ -58,7 +58,7 @@ this.add( new Robot(0.5, j - _offset, -(i - _offset)));
 }
 function Sensor(position, direction){
 THREE.Raycaster.call(this, position, direction);
-this.colision = false;
+this.colision = true;
 }
 Sensor.prototype = new THREE.Raycaster();
 
@@ -109,7 +109,7 @@ Robot.prototype.operations.goStraight = function(robot, distance){
 if (distance === undefined)
 distance = 0.05;
 robot.position.x += distance*Math.cos(robot.rotation.z);
-robot.position.y -= distance*Math.sin(robot.rotation.z);
+robot.position.y += distance*Math.sin(robot.rotation.z);
 };
 
 Robot.prototype.operations.rotateCW = function(robot, angle){
