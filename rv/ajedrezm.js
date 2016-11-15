@@ -36,24 +36,24 @@ this.children[i].act(this);
 }
 }
 
-function Wall(size, x, y,textura){
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura}));
+function Wall(size, x, y){
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial());
 this.size = 10;
 this.position.x = x;
 this.position.y = y;
 }
 Wall.prototype = new THREE.Mesh();
 
-function Wall01(size, x, y,textura1){
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura1}));
+function Wall01(size, x, y){
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial());
 this.size = 10;
 this.position.x = x;
 this.position.y = y;
 }
 Wall01.prototype = new THREE.Mesh();
 
-function Wall02(size, x, y,textura2){
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura2}));
+function Wall02(size, x, y){
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial());
 this.size = 10;
 this.position.x = x;
 this.position.y = y;
