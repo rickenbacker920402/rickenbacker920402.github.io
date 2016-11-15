@@ -16,7 +16,7 @@ THREE.Scene.call(this);
 Environment.prototype = new THREE.Scene();
 
 Environment.prototype.sense = function(){
-for (var i = 0; i < this.children.lenght; i++){
+for (var i = 0; i < this.children.length; i++){
 if (this.children[i].sense !== undefined)
 this.children[i].sense(this);
 }
@@ -36,14 +36,6 @@ this.children[i].act(this);
 }
 }
 
-function Casilla(size, x, y){
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshNormalMaterial());
-this.size = size;
-this.position.x = x;
-this.position.y = y;
-}
-Casilla.prototype = new THREE.Mesh();
-
 function Wall(size, x, y){
 THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshNormalMaterial());
 this.size = size;
@@ -51,13 +43,14 @@ this.position.x = x;
 this.position.y = y;
 }
 Wall.prototype = new THREE.Mesh();
+
 Environment.prototype.setMap = function(map){
 var _offset = Math.floor(map.length/2);
 
 for (var i= 0; i< map.length ; i++){
 for (var j= 0; j < map.length; j++){
 if (map[i][j] === "x")
-this.add( new Wall(1, j-_offset, -(i-_offset)));
+this.add(new Wall(1, j - _offset, -(i-_offset)));
 else if (map[i][j] === "r")
 this.add( new Robot(0.5, j - _offset, -(i - _offset)));
 }
@@ -74,7 +67,7 @@ Agent.call(this, x,y);
 
 this.sensor = new Sensor();
 this.actuator = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({color: '#aa0000'}));
-this.actuator.comands = [];
+this.actuator.commands = [];
 this.add(this.actuator);
 }
 
@@ -185,3 +178,4 @@ renderer.render( environment,camera);
 var environment, camera, renderer;
 setup();
 loop();
+
