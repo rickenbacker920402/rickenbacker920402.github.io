@@ -37,8 +37,7 @@ this.children[i].act(this);
 }
 
 function Wall(textura){
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura}));
-this.size = 10;
+THREE.Mesh.call(this, new THREE.BoxGeometry(10, 10, 10), new THREE.MeshBasicMaterial({map: textura}));
 this.position.x = x;
 this.position.y = y;
 }
