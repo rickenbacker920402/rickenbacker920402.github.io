@@ -78,11 +78,11 @@ this.add( new Wall02(1, j - _offset, -(i - _offset)));
 
 function setup(){
 var cargador = new THREE.TextureLoader();
-cargador.load("marmolcafe.jpg", TEXTURA.retrollamada);
+cargador.load("marmolcafe.jpg", Wall);
 var cargador1 = new THREE.TextureLoader();
-cargador1.load("MarmolGris.jpg", TEXTURA.retrollamada1);
+cargador1.load("MarmolGris.jpg", Wall01);
 var cargador2 = new THREE.TextureLoader();
-cargador2.load("MarmolBlanco.jpg", TEXTURA.retrollamada2);
+cargador2.load("MarmolBlanco.jpg", Wall02);
 
 
 var mapa = new Array();
