@@ -174,7 +174,6 @@ environment.act();
 
 renderer.render( environment,camera);
 }
-
 var environment, camera, renderer;
 setup();
 loop();
