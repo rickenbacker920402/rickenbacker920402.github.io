@@ -37,12 +37,28 @@ this.children[i].act(this);
 }
 
 function Wall(size, x, y){
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshNormalMaterial());
-this.size = size;
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({color:0x875454}));
+this.size = 10;
 this.position.x = x;
 this.position.y = y;
 }
 Wall.prototype = new THREE.Mesh();
+
+function Wall01(size, x, y){
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({color:0x696363}));
+this.size = 10;
+this.position.x = x;
+this.position.y = y;
+}
+Wall01.prototype = new THREE.Mesh();
+
+function Wall02(size, x, y){
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({color:0xffffff}));
+this.size = 10;
+this.position.x = x;
+this.position.y = y;
+}
+Wall02.prototype = new THREE.Mesh();
 
 Environment.prototype.setMap = function(map){
 var _offset = Math.floor(map.length/2);
@@ -51,8 +67,10 @@ for (var i= 0; i< map.length ; i++){
 for (var j= 0; j < map.length; j++){
 if (map[i][j] === "x")
 this.add(new Wall(1, j - _offset, -(i-_offset)));
-else if (map[i][j] === "r")
-this.add( new Robot(0.5, j - _offset, -(i - _offset)));
+else if (map[i][j] === "y")
+this.add( new Wall01(1, j - _offset, -(i - _offset)));
+ else if (map[i][j] === "z")
+this.add( new Wall02(1, j - _offset, -(i - _offset)));
 }
 }
 }
@@ -62,95 +80,19 @@ this.colision = false;
 }
 Sensor.prototype = new THREE.Raycaster();
 
-function Robot(size, x, y){
-Agent.call(this, x,y);
-
-this.sensor = new Sensor();
-this.actuator = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({color: '#aa0000'}));
-this.actuator.commands = [];
-this.add(this.actuator);
-}
-
-Robot.prototype = new Agent();
-
-Robot.prototype.sense = function(environment){
-this.sensor.set(this.position, new THREE.Vector3(Math.cos(this.rotation.z), Math.sin(this.rotation.z), 0 ));
-var obstaculo = this.sensor.intersectObjects(environment.children, true);
-
-if((obstaculo.length > 0 &&(obstaculo[0].distance <= 0.5)))
-this.sensor.colision = true;
-else
-this.sensor.colision = false;
-};
-
-Robot.prototype.plan = function(environment){
-this.actuator.commands = [];
-
-if (this.sensor.colision == true)
-this.actuator.commands.push('rotateCCW');
-else
-this.actuator.commands.push('goStraight');
-};
-
-Robot.prototype.act = function(environment){
-var command = this.actuator.commands.pop();
-
-if(command === undefined)
-console.log('Undefined command');
-else if (command in this.operations)
-this.operations[command](this);
-else
-console.log('Unknown command');
-};
-
-Robot.prototype.operations = {};
-
-Robot.prototype.operations.goStraight = function(robot, distance){
-if (distance === undefined)
-distance = 0.05;
-robot.position.x += distance*Math.cos(robot.rotation.z);
-robot.position.y += distance*Math.sin(robot.rotation.z);
-};
-
-Robot.prototype.operations.rotateCW = function(robot, angle){
-if( angle === undefined)
-angle = -Math.PI/2;
-robot.rotation.z += angle;
-};
-
-Robot.prototype.operations.rotateCCW = function(robot, angle){
-if (angle === undefined)
-angle = Math.PI/2;
-robot.rotation.z += angle;
-};
 
 function setup(){
 var mapa = new Array();
-mapa[0] = "xxxxxxxxxxxxxxxxxxxxxxxxx";
-mapa[1] = "xr              r       x";
-mapa[2] = "x                       x";
-mapa[3] = "x                       x";
-mapa[4] = "x                       x";
-mapa[5] = "x                       x";
-mapa[6] = "x                       x";
-mapa[7] = "x                       x";
-mapa[8] = "xxxx  xxxxxxxxxxxxxxxxxxx";
-mapa[9] = "x                       x";
-mapa[10] = "x                       x";
-mapa[11] = "x                       x";
-mapa[12] = "x                       x";
-mapa[13] = "x                       x";
-mapa[14] = "x                       x";
-mapa[15] = "x                       x";
-mapa[16] = "x                       x";
-mapa[17] = "x                       x";
-mapa[18] = "x                       x";
-mapa[19] = "xxxxxxxxx    xxxxxxxxxxxx";
-mapa[20] = "x                       x";
-mapa[21] = "x                       x";
-mapa[22] = "x                       x";
-mapa[23] = "x                       x";
-mapa[24] = "xxxxxxxxxxxxxxxxxxxxxxxxx";
+mapa[0] = "xxxxxxxxxx";
+mapa[1] = "xyzyzyzyzx";
+mapa[2] = "xzyzyzyzyx";
+mapa[3] = "xyzyzyzyzx";
+mapa[4] = "xzyzyzyzyx";
+mapa[5] = "xyzyzyzyzx";
+mapa[6] = "xzyzyzyzyx";
+mapa[7] = "xyzyzyzyzx";
+mapa[8] = "xzyzyzyzyx";
+mapa[9] = "xxxxxxxxxx";
 
 environment = new Environment();
 
