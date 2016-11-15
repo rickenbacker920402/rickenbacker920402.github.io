@@ -44,6 +44,13 @@ this.position.y = y;
 }
 Casilla.prototype = new THREE.Mesh();
 
+function Wall(size, x, y){
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshNormalMaterial());
+this.size = size;
+this.position.x = x;
+this.position.y = y;
+}
+Wall.prototype = new THREE.Mesh();
 Environment.prototype.setMap = function(map){
 var _offset = Math.floor(map.length/2);
 
