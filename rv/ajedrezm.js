@@ -36,24 +36,24 @@ this.children[i].act(this);
 }
 }
 
-function Wall(size, x, y){
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({color:0x875454}));
+function Wall(size, x, y,textura){
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura}));
 this.size = 10;
 this.position.x = x;
 this.position.y = y;
 }
 Wall.prototype = new THREE.Mesh();
 
-function Wall01(size, x, y){
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({color:0x696363}));
+function Wall01(size, x, y,textura1){
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura1}));
 this.size = 10;
 this.position.x = x;
 this.position.y = y;
 }
 Wall01.prototype = new THREE.Mesh();
 
-function Wall02(size, x, y){
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({color:0xffffff}));
+function Wall02(size, x, y,textura2){
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura2}));
 this.size = 10;
 this.position.x = x;
 this.position.y = y;
@@ -77,6 +77,14 @@ this.add( new Wall02(1, j - _offset, -(i - _offset)));
 
 
 function setup(){
+var cargador = new THREE.TextureLoader();
+cargador.load("marmolcafe.jpg", TEXTURA.retrollamada);
+var cargador1 = new THREE.TextureLoader();
+cargador1.load("MarmolGris.jpg", TEXTURA.retrollamada1);
+var cargador2 = new THREE.TextureLoader();
+cargador2.load("MarmolBlanco.jpg", TEXTURA.retrollamada2);
+
+
 var mapa = new Array();
 mapa[0] = "xxxxxxxxxx";
 mapa[1] = "xyzyzyzyzx";
