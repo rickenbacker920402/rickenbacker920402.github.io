@@ -106,11 +106,6 @@ environment = new Environment();
 
 environment.setMap( mapa );
  
-var iluminacion = new THREE.PointLight(0xFFFFFF);
-iluminacion.position.z = -120;
-iluminacion.position.x = -45;
-iluminacion.position.y = -45;
-
 var campoVision = 45; //grados
 var relacionAspecto = window.innerWidth / window.innerHeight;
 var planoCercano =100;
@@ -127,6 +122,13 @@ camera.lookAt(new THREE.Vector3(45,45,0));
 renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth,window.innerHeight);
 document.body.appendChild(renderer.domElement);
+renderer.shadowMap.enabled=true;
+ 
+var iluminacion = new THREE.PointLight(0xFFFFFF);
+iluminacion.position.z = -120;
+iluminacion.position.x = -45;
+iluminacion.position.y = -45;
+iluminacion.castShadow = true;
 
 environment.add(camera);
 environment.add(iluminacion);
