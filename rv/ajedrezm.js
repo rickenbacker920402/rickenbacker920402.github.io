@@ -69,16 +69,15 @@ this.position.z = 0;
 EspacioBlanco.prototype = new THREE.Mesh();
 
 Environment.prototype.setMap = function(map){
-var _offset = Math.floor(map.length/2);
 textura=new THREE.TextureLoader();
 for (var i= 0; i< map.length ; i++){
 for (var j= 0; j < map.length; j++){
 if (map[i][j] === "x")
-this.add(new Borde(10,j - _offset, -(i-_offset)));
+this.add(new Borde(10,(i*10),(j*10)));
 else if (map[i][j] === "y")
-this.add( new EspacioGris(10,j - _offset, -(i-_offset)));
+this.add( new EspacioGris(10,(i*10),(j*10)));
  else if (map[i][j] === "z")
-this.add( new EspacioBlanco(10,j - _offset, -(i-_offset)));
+this.add( new EspacioBlanco(10,(i*10),(j*10)));
 }
 }
 }
