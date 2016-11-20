@@ -73,11 +73,11 @@ textura=new THREE.TextureLoader();
 for (var i= 0; i< map.length ; i++){
 for (var j= 0; j < map.length; j++){
 if (map[i][j] === "x")
-this.add(new Borde(10,(i*10),(j*10)));
+this.add(new Borde(10,(i*10)-50,(j*10)-50));
 else if (map[i][j] === "y")
-this.add( new EspacioGris(10,(i*10),(j*10)));
+this.add( new EspacioGris(10,(i*10)-50,(j*10)-50));
  else if (map[i][j] === "z")
-this.add( new EspacioBlanco(10,(i*10),(j*10)));
+this.add( new EspacioBlanco(10,(i*10)-50,(j*10)-50));
 }
 }
 }
@@ -110,7 +110,7 @@ camara = new THREE.PerspectiveCamera(campoVision,
                                           planoLejano);
 camara.position.z = 100;
 camara.position.y = -50;
-camara.lookAt(new THREE.Vector3(45,45,0));
+camara.lookAt(new THREE.Vector3(0,0,0));
 renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerWidth, window.innerHeight);
 renderizador.shadowMapEnabled = true;
