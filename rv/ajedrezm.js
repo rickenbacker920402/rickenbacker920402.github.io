@@ -125,7 +125,7 @@ camera.position.y = -50;
 camera.lookAt(new THREE.Vector3(45,45,0));
 
 renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerHeight,window.innerHeight);
+renderer.setSize( window.innerWidth,window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 environment.add(camera);
@@ -137,10 +137,11 @@ requestAnimationFrame(loop);
 environment.sense();
 environment.plan();
 environment.act();
-
 renderer.render( environment,camera);
 }
-var environment, camera,iluminacion, renderer;
+
+var environment, camera, iluminacion, renderer;
+
 setup();
 loop();
 
