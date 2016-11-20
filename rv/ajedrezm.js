@@ -140,7 +140,7 @@ environment.act();
 
 renderer.render( environment,camera);
 }
-var environment, camera, renderer;
+var environment, camera,iluminacion, renderer;
 setup();
 loop();
 
