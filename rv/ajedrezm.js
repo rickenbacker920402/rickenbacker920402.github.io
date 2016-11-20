@@ -69,7 +69,7 @@ this.position.z = 0;
 EspacioBlanco.prototype = new THREE.Mesh();
 
 Environment.prototype.setMap = function(map){
-var _offset = Math.floor(map.length/2);
+var _offset = 10;
 
 for (var i= 0; i< map.length ; i++){
 for (var j= 0; j < map.length; j++){
