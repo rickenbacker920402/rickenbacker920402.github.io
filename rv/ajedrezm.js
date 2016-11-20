@@ -116,10 +116,10 @@ camara.position.x = 45;
 camara.position.y = -50;
 camara.lookAt(new THREE.Vector3(45,45,0));
 
-renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth,window.innerHeight);
-document.body.appendChild(renderer.domElement);
-renderer.shadowMap.enabled=true;
+var renderizador = new THREE.WebGLRenderer();
+renderizador.setSize( window.innerWidth, window.innerHeight);
+renderizador.shadowMapEnabled = true;
+document.body.appendChild(renderizador.domElement);
  
 var iluminacion = new THREE.PointLight(0xFFFFFF);
 iluminacion.position.z = -120;
@@ -136,10 +136,10 @@ requestAnimationFrame(loop);
 environment.sense();
 environment.plan();
 environment.act();
-renderer.render( environment,camara);
+renderizador.render( environment,camara);
 }
 
-var environment, camara, renderer, iluminacion;
+var environment, camara, renderizador, iluminacion;
 
 setup();
 loop();
