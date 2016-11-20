@@ -103,12 +103,12 @@ environment.setMap( mapa );
 var campoVision = 45; 
 var relacionAspecto = window.innerWidth / window.innerHeight;
 var planoCercano =1;
-var planoLejano = 100;
+var planoLejano = 1000;
 camara = new THREE.PerspectiveCamera(campoVision,
                                           relacionAspecto,
                                           planoCercano,
                                           planoLejano);
-camara.position.z = 100;
+camara.position.z = 130;
 camara.position.y = -50;
 camara.lookAt(new THREE.Vector3(0,0,0));
 renderizador = new THREE.WebGLRenderer();
