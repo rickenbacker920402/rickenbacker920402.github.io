@@ -117,9 +117,9 @@ renderizador.shadowMapEnabled = true;
 document.body.appendChild(renderizador.domElement);
  
 iluminacion = new THREE.PointLight(0xFFFFFF);
-iluminacion.position.z = 120;
-iluminacion.position.x = -45;
-iluminacion.position.y = -45;
+iluminacion.position.z = 160;
+iluminacion.position.x = 100;
+iluminacion.position.y = 100;
 iluminacion.castShadow = true;
 
 environment.add(camara);
