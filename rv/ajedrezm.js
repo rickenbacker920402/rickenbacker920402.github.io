@@ -40,7 +40,7 @@ this.children[i].act(this);
 
 function Borde(size, x, y, textura){
 var textura1 = new THREE.TextureLoader();
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura1.load("marmolcafe.jpg")}));
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshLambertMaterial({map: textura1.load("marmolcafe.jpg")}));
 this.size = size;
 this.position.x = x;
 this.position.y = y;
@@ -50,7 +50,7 @@ Borde.prototype = new THREE.Mesh();
 
 function EspacioGris(size, x, y){
 var textura2 = new THREE.TextureLoader();
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura2.load("MarmolGris.jpg")}));
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshLambertMaterial({map: textura2.load("MarmolGris.jpg")}));
 this.size = size;
 this.position.x = x;
 this.position.y = y;
@@ -60,7 +60,7 @@ EspacioGris.prototype = new THREE.Mesh();
 
 function EspacioBlanco(size, x, y){
 var textura3 = new THREE.TextureLoader();
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura3.load("MarmolBlanco.jpg")}));
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshLambertMaterial({map: textura3.load("MarmolBlanco.jpg")}));
 this.size = size;
 this.position.x = x;
 this.position.y = y;
@@ -105,15 +105,31 @@ mapa[9] = "xxxxxxxxxx";
 environment = new Environment();
 
 environment.setMap( mapa );
+ 
+var iluminacion = new THREE.PointLight(0xFFFFFF);
+iluminacion.position.z = -120;
+iluminacion.position.x = -45;
+iluminacion.position.y = -45;
 
-camera = new THREE.PerspectiveCamera();
-camera.position.z = 30;
+var campoVision = 45; //grados
+var relacionAspecto = window.innerWidth / window.innerHeight;
+var planoCercano =100;
+var planoLejano = 1000;
+var camera = new THREE.PerspectiveCamera(campoVision,
+                                          relacionAspecto,
+                                          planoCercano,
+                                          planoLejano);
+camera.position.z = -150;
+camera.position.x = 45;
+camera.position.y = -50;
+camera.lookAt(new THREE.Vector3(45,45,0));
 
 renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderer.domElement);
 
 environment.add(camera);
+environment.add(iluminacion);
 }
 
 function loop(){
