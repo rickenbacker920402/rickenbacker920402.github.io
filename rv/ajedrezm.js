@@ -108,8 +108,8 @@ camara = new THREE.PerspectiveCamera(campoVision,
                                           relacionAspecto,
                                           planoCercano,
                                           planoLejano);
-camara.position.z = 230;
-//camara.position.y = -30;
+camara.position.z = 150;
+camara.position.y = -60;
 camara.lookAt(new THREE.Vector3(0,0,0));
 renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerWidth, window.innerHeight);
