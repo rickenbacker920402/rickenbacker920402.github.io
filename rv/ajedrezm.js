@@ -38,7 +38,7 @@ this.children[i].act(this);
 }
 }
 
-function Borde(size, x, y, textura){
+function Borde(size, x, y){
 var textura = new THREE.TextureLoader();
 THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshLambertMaterial({map: textura.load("marmolcafe.jpg")}));
 this.size = size;
