@@ -85,8 +85,6 @@ this.add( new EspacioBlanco(10,j - _offset, -(i-_offset)));
 
 
 function setup(){
-document.documentElement.style.overflow = 'hidden';
-
 
 var mapa = new Array();
 mapa[0] = "xxxxxxxxxx";
@@ -121,7 +119,7 @@ renderizador.setSize( window.innerWidth, window.innerHeight);
 renderizador.shadowMapEnabled = true;
 document.body.appendChild(renderizador.domElement);
  
-var iluminacion = new THREE.PointLight(0xFFFFFF);
+iluminacion = new THREE.PointLight(0xFFFFFF);
 iluminacion.position.z = -120;
 iluminacion.position.x = -45;
 iluminacion.position.y = -45;
@@ -136,7 +134,7 @@ requestAnimationFrame(loop);
 environment.sense();
 environment.plan();
 environment.act();
-renderizador.render( environment,camara);
+renderizador.render(environment,camara);
 }
 
 var environment, camara, renderizador, iluminacion;
