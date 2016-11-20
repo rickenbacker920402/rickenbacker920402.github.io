@@ -109,8 +109,7 @@ camara = new THREE.PerspectiveCamera(campoVision,
                                           relacionAspecto,
                                           planoCercano,
                                           planoLejano);
-camara.position.z = -150;
-camara.position.x = 45;
+camara.position.z = 100;
 camara.position.y = -50;
 camara.lookAt(new THREE.Vector3(45,45,0));
 renderizador = new THREE.WebGLRenderer();
@@ -119,7 +118,7 @@ renderizador.shadowMapEnabled = true;
 document.body.appendChild(renderizador.domElement);
  
 iluminacion = new THREE.PointLight(0xFFFFFF);
-iluminacion.position.z = -120;
+iluminacion.position.z = 120;
 iluminacion.position.x = -45;
 iluminacion.position.y = -45;
 iluminacion.castShadow = true;
