@@ -40,7 +40,7 @@ this.children[i].act(this);
 
 function Borde(size, x, y){
 var textura = new THREE.TextureLoader();
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshLambertMaterial({map: textura.load("marmolcafe.jpg")}));
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 0.7), new THREE.MeshLambertMaterial({map: textura.load("marmolcafe.jpg")}));
 this.size = size;
 this.position.x = x;
 this.position.y = y;
@@ -50,7 +50,7 @@ Borde.prototype = new THREE.Mesh();
 
 function EspacioGris(size, x, y){
 var textura = new THREE.TextureLoader();
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshLambertMaterial({map: textura.load("MarmolGris.jpg")}));
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10), new THREE.MeshLambertMaterial({map: textura.load("MarmolGris.jpg")}));
 this.size = size;
 this.position.x = x;
 this.position.y = y;
@@ -60,7 +60,7 @@ EspacioGris.prototype = new THREE.Mesh();
 
 function EspacioBlanco(size, x, y){
 var textura = new THREE.TextureLoader();
-THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshLambertMaterial({map: textura.load("MarmolBlanco.jpg")}));
+THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10), new THREE.MeshLambertMaterial({map: textura.load("MarmolBlanco.jpg")}));
 this.size = size;
 this.position.x = x;
 this.position.y = y;
