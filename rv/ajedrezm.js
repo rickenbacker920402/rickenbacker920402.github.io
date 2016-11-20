@@ -39,6 +39,7 @@ this.children[i].act(this);
 }
 
 function Wall(size, x, y, textura){
+var textura1 = new THREE.TextureLoader();
 THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura1.load("marmolcafe.jpg")}));
 this.size = 10;
 this.position.x = x;
@@ -47,6 +48,7 @@ this.position.y = y;
 Wall.prototype = new THREE.Mesh();
 
 function Wall01(size, x, y){
+var textura2 = new THREE.TextureLoader();
 THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura2.load("MarmolGris.jpg")}));
 this.size = 10;
 this.position.x = x;
@@ -55,6 +57,7 @@ this.position.y = y;
 Wall01.prototype = new THREE.Mesh();
 
 function Wall02(size, x, y){
+var textura3 = new THREE.TextureLoader();
 THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({map: textura3.load("MarmolBlanco.jpg")}));
 this.size = 10;
 this.position.x = x;
@@ -79,9 +82,9 @@ this.add( new Wall02(1, j - _offset, -(i - _offset)));
 
 
 function setup(){
-var textura1 = new THREE.TextureLoader();
-var textura2 = new THREE.TextureLoader();
-var textura3 = new THREE.TextureLoader();
+
+
+
 
 
 var mapa = new Array();
