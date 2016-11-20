@@ -85,9 +85,7 @@ this.add( new EspacioBlanco(10,j - _offset, -(i-_offset)));
 
 
 function setup(){
-
-
-
+document.documentElement.style.overflow = 'hidden';
 
 
 var mapa = new Array();
@@ -103,21 +101,20 @@ mapa[8] = "xzyzyzyzyx";
 mapa[9] = "xxxxxxxxxx";
 
 environment = new Environment();
-
 environment.setMap( mapa );
  
-var campoVision = 45; //grados
+var campoVision = 45; 
 var relacionAspecto = window.innerWidth / window.innerHeight;
 var planoCercano =100;
 var planoLejano = 1000;
-var camera = new THREE.PerspectiveCamera(campoVision,
+var camara = new THREE.PerspectiveCamera(campoVision,
                                           relacionAspecto,
                                           planoCercano,
                                           planoLejano);
-camera.position.z = -150;
-camera.position.x = 45;
-camera.position.y = -50;
-camera.lookAt(new THREE.Vector3(45,45,0));
+camara.position.z = -150;
+camara.position.x = 45;
+camara.position.y = -50;
+camara.lookAt(new THREE.Vector3(45,45,0));
 
 renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth,window.innerHeight);
@@ -130,7 +127,7 @@ iluminacion.position.x = -45;
 iluminacion.position.y = -45;
 iluminacion.castShadow = true;
 
-environment.add(camera);
+environment.add(camara);
 environment.add(iluminacion);
 }
 
@@ -139,10 +136,10 @@ requestAnimationFrame(loop);
 environment.sense();
 environment.plan();
 environment.act();
-renderer.render( environment,camera);
+renderer.render( environment,camara);
 }
 
-var environment, camera, iluminacion, renderer;
+var environment, camara, iluminacion, renderer;
 
 setup();
 loop();
