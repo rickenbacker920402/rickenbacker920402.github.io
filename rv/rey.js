@@ -4,7 +4,7 @@ var base3 = new THREE.CylinderGeometry(0.5, 0.6,0.4,50,25);
 var base4 = new THREE.TorusGeometry( 0.45, 0.1, 16, 100 );
 var base5 = new THREE.CylinderGeometry(0.3, 0.45,1,50,25);
 var base6 = new THREE.TorusGeometry( 0.3, 0.15, 16, 100 );
-var base7 = new THREE.CylinderGeometry(0.45, 0.35,0.4,50,25);
+var base7 = new THREE.CylinderGeometry(0.5, 0.35,0.4,50,25);
 
 
 base2.rotateX(Math.PI/2);
