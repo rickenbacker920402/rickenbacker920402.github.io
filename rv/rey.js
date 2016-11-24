@@ -1,7 +1,7 @@
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
 var base3 = new THREE.CylinderGeometry(0.5, 0.6,0.4,50,25);
-var base4 = new THREE.TorusGeometry( 0.4, 0.1, 16, 100 );
+var base4 = new THREE.TorusGeometry( 0.5, 0.1, 16, 100 );
 
 
 
