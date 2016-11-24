@@ -7,6 +7,8 @@ var base6 = new THREE.TorusGeometry( 0.3, 0.15, 16, 100 );
 var base7 = new THREE.CylinderGeometry(0.5, 0.35,0.4,50,25);
 var base8 = new THREE.TorusGeometry( 0.4, 0.1, 16, 100 );
 var base9 = new THREE.SphereGeometry( 0.4, 32,32 );
+var base10 = new THREE.SphereGeometry( 0.05, 32,32 );
+
 
 
 
@@ -27,6 +29,7 @@ base6.translate(0, 0.8, 0);
 base7.translate(0, 1.1, 0);
 base8.translate(0, 1.3, 0);
 base9.translate(0, 1.2, 0);
+base10.translate(0, 1.45, 0);
 
 
 
@@ -41,6 +44,7 @@ var base6Malla = new THREE.Mesh(base6);
 var base7Malla = new THREE.Mesh(base7);
 var base8Malla = new THREE.Mesh(base8);
 var base9Malla = new THREE.Mesh(base9);
+var base10Malla = new THREE.Mesh(base10);
 
 
 
@@ -55,6 +59,7 @@ torreForma.merge(base6Malla.geometry,base6Malla.matrix);
 torreForma.merge(base7Malla.geometry,base7Malla.matrix);
 torreForma.merge(base8Malla.geometry,base8Malla.matrix);
 torreForma.merge(base9Malla.geometry,base9Malla.matrix);
+torreForma.merge(base10Malla.geometry,base10Malla.matrix);
 
 
 
