@@ -53,5 +53,15 @@ torreForma.merge(punta2Malla.geometry,punta2Malla.matrix);
 torreForma.merge(punta3Malla.geometry,punta3Malla.matrix);
 torreForma.merge(anilloMalla.geometry,anilloMalla.matrix);
 
-var material = new THREE.MeshLambertMaterial({color : 0xfafdff});
-var material2 = new THREE.MeshLambertMaterial({color : 0x2c4d64});
+var material = new THREE.MeshNormalMaterial();
+var torreMalla = new THREE.Mesh(torreForma,material);
+torreMalla.rotateX(Math.PI/8);
+
+var escena = new THREE.Scene();
+escena.add(torreMalla);
+var camara = new THREE.PerspectiveCamera();
+camara.position.z=5;
+var renderizador = new THREE.WebGLRenderer();
+renderizador.setSize(window.innerHeight*1.2,window.innerHeight*1.5);
+document.body.appendChild(renderizador.domElement);
+renderizador.render(escena,camara);
