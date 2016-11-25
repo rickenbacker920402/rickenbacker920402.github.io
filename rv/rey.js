@@ -7,7 +7,7 @@ var base6 = new THREE.TorusGeometry( 0.3, 0.15, 16, 100 );
 var base7 = new THREE.CylinderGeometry(0.5, 0.35,0.4,50,25);
 var base8 = new THREE.TorusGeometry( 0.4, 0.1, 16, 100 );
 var base9 = new THREE.SphereGeometry( 0.4, 32,32 );
-var base10 = new THREE.SphereGeometry( 0.1, 32,32 );
+var base10 = new THREE.SphereGeometry( 0.01, 32,32 );
 
 
 
@@ -29,7 +29,7 @@ base6.translate(0, 0.8, 0);
 base7.translate(0, 1.1, 0);
 base8.translate(0, 1.3, 0);
 base9.translate(0, 1.2, 0);
-base10.translate(0, 1.7, 0);
+base10.translate(0, 1.9, 0);
 
 
 
