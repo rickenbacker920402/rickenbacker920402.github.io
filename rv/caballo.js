@@ -1,31 +1,11 @@
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
-var CustomSinCurve = THREE.Curve.create(
-
-	function ( scale ) { //custom curve constructor
-
-		this.scale = ( scale === undefined ) ? 1 : scale;
-
-	},
-
-	function ( t ) { //getPoint: t is between 0-1
-
-		var tx = t * 3 - 1.5;
-		var ty = Math.sin( 2 * Math.PI * t );
-		var tz = 0;
-
-		return new THREE.Vector3( tx, ty, tz ).multiplyScalar( this.scale );
-
-	}
-
-);
-
-var path = new CustomSinCurve( 0.7 );
-var base3 = new THREE.TubeGeometry(path,100,0.5,20,false);
+var base3 = new THREE.BoxGeometry(0.4,0.3,0.7);
 
 
 
 base2.rotateX(Math.PI/2);
+base3.rotateY(Math.PI/4);
 
 
 
