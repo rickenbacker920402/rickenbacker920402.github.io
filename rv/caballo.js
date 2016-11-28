@@ -20,7 +20,7 @@ var CustomSinCurve = THREE.Curve.create(
 
 );
 
-var path = new CustomSinCurve( 10 );
+var path = new CustomSinCurve( 0.7 );
 var base3 = new THREE.TubeGeometry(path,100,0.5,20,false);
 
 
