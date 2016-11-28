@@ -1,11 +1,11 @@
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
-var base3 = new THREE.BoxGeometry(0.4,1.5,0.7);
+var base3 = new THREE.BoxGeometry(0.7,1.5,0.4);
 
 //
 
 base2.rotateX(Math.PI/2);
-base3.rotateZ(Math.PI/4);
+base3.rotateZ(Math.PI/6);
 
 
 
@@ -13,7 +13,7 @@ base3.rotateZ(Math.PI/4);
 
 base.translate(0, -1, 0);
 base2.translate(0, -0.9, 0);
-base3.translate(0,-0.9,0);
+base3.translate(0,-0.6,0);
 
 
 
