@@ -1,5 +1,38 @@
 CaballoForma = function(){
  THREE.Geometry.call(this);
+ 
+var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
+var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
+var base3 = new THREE.BoxGeometry(0.7,1.5,0.5);
+var base4 = new THREE.CylinderGeometry(0.5, 0.5, 0.5, 50, 25, false,5.5,5);
+var base5 = new THREE.ConeGeometry( 0.1, 0.4, 32 );
+var base6 = new THREE.ConeGeometry( 0.1, 0.4, 32 );
+
+base2.rotateX(Math.PI/2);
+base4.rotateX(Math.PI/2);
+base4.rotateZ(Math.PI/2);
+
+base.translate(0, -1, 0);
+base2.translate(0, -0.9, 0);
+base3.translate(0,-0.4,0);
+base4.translate(0.15,0.3,0);
+base5.translate(0,0.8,0.15);
+base6.translate(0,0.8,-0.15);
+
+var baseMalla = new THREE.Mesh(base);
+var base2Malla = new THREE.Mesh(base2);
+var base3Malla = new THREE.Mesh(base3);
+var base4Malla = new THREE.Mesh(base4);
+var base5Malla = new THREE.Mesh(base5);
+var base6Malla = new THREE.Mesh(base6);
+ 
+this.merge(baseMalla.geometry,baseMalla.matrix);
+this.merge(base2Malla.geometry,base2Malla.matrix);
+this.merge(base3Malla.geometry,base3Malla.matrix);
+this.merge(base4Malla.geometry,base4Malla.matrix);
+this.merge(base5Malla.geometry,base5Malla.matrix);
+this.merge(base6Malla.geometry,base6Malla.matrix);
+this.scale(3,3,9);
 }
 
 CaballoForma.prototype = new THREE.Geometry();
@@ -42,8 +75,7 @@ this.merge(base4Malla.geometry,base4Malla.matrix);
 this.merge(base5Malla.geometry,base5Malla.matrix); 
 this.merge(cimaMalla.geometry,cimaMalla.matrix); 
 this.merge(cima1Malla.geometry,cima1Malla.matrix); 
-//this.rotateX(Math.PI*3/2);
-this.scale(3,3,7);
+this.scale(3,3,9);
 }
 
 AlfilForma.prototype = new THREE.Geometry();
@@ -109,7 +141,6 @@ this.merge(base9Malla.geometry,base9Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix); 
 this.merge(cima1Malla.geometry,cima1Malla.matrix);
 this.merge(cima2Malla.geometry,cima2Malla.matrix); 
-//this.rotateX(Math.PI*3/2);
 this.scale(5,5,10);
 }
 
@@ -550,6 +581,91 @@ Alfil.prototype.plan=function(environment)
     }
   }
 };
+
+function Peon(texturaP,x,y)
+{
+  cargador=new THREE.TextureLoader();
+  Agent.call(this,x,y);
+  this.texturaP = texturaP;
+  if(this.texturaP===true)
+ this.actuator=new THREE.Mesh(new PeonForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
+  else
+ this.actuator=new THREE.Mesh(new PeonForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
+ this.position.set=(x,y,0);
+ this.sensor=new Sensor();  
+ this.actuator.rotateX(Math.PI/2);
+ this.add(this.actuator);
+ this.actuator.castShadow=true;
+}
+Peon.prototype=new Agent();
+
+function Rey(texturaP,x,y)
+{
+  cargador=new THREE.TextureLoader();
+  Agent.call(this,x,y);
+  this.texturaP = texturaP;
+  if(this.texturaP===true)
+ this.actuator=new THREE.Mesh(new ReyForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
+  else
+ this.actuator=new THREE.Mesh(new ReyForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
+ this.position.set=(x,y,0);
+ this.sensor=new Sensor();  
+ this.actuator.rotateX(Math.PI/2);
+ this.add(this.actuator);
+ this.actuator.castShadow=true;
+}
+Rey.prototype=new Agent();
+
+function Reina(texturaP,x,y)
+{
+  cargador=new THREE.TextureLoader();
+  Agent.call(this,x,y);
+  this.texturaP = texturaP;
+  if(this.texturaP===true)
+ this.actuator=new THREE.Mesh(new ReinaForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
+  else
+ this.actuator=new THREE.Mesh(new ReinaForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
+ this.position.set=(x,y,0);
+ this.sensor=new Sensor();  
+ this.actuator.rotateX(Math.PI/2);
+ this.add(this.actuator);
+ this.actuator.castShadow=true;
+}
+Reina.prototype=new Agent();
+
+function Torre(texturaP,x,y)
+{
+  cargador=new THREE.TextureLoader();
+  Agent.call(this,x,y);
+  this.texturaP = texturaP;
+  if(this.texturaP===true)
+ this.actuator=new THREE.Mesh(new TorreForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
+  else
+ this.actuator=new THREE.Mesh(new TorreForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
+ this.position.set=(x,y,0);
+ this.sensor=new Sensor();  
+ this.actuator.rotateX(Math.PI/2);
+ this.add(this.actuator);
+ this.actuator.castShadow=true;
+}
+Torre.prototype=new Agent();
+
+function Caballo(texturaP,x,y)
+{
+  cargador=new THREE.TextureLoader();
+  Agent.call(this,x,y);
+  this.texturaP = texturaP;
+  if(this.texturaP===true)
+ this.actuator=new THREE.Mesh(new CaballoForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
+  else
+ this.actuator=new THREE.Mesh(new CaballoForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
+ this.position.set=(x,y,0);
+ this.sensor=new Sensor();  
+ this.actuator.rotateX(Math.PI/2);
+ this.add(this.actuator);
+ this.actuator.castShadow=true;
+}
+Caballo.prototype=new Agent();
 
 function SeleccionD(event)
 {
