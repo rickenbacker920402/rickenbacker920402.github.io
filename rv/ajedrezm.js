@@ -198,7 +198,7 @@ this.merge(base8Malla.geometry,base8Malla.matrix);
 this.merge(base9Malla.geometry,base9Malla.matrix);
 this.merge(base10Malla.geometry,base10Malla.matrix);
 this.rotateX(Math.PI*3/2);
-this.scale(4,10,4);
+this.scale(4,4,10);
 
 }
 
@@ -255,7 +255,7 @@ this.merge(punta2Malla.geometry,punta2Malla.matrix);
 this.merge(punta3Malla.geometry,punta3Malla.matrix);
 this.merge(anilloMalla.geometry,anilloMalla.matrix);
 this.rotateX(Math.PI*3/2);
-this.scale(4,10,4);
+this.scale(4,4,10);
 }
 
 TorreForma.prototype = new THREE.Geometry();
@@ -283,7 +283,7 @@ this.merge(base2Malla.geometry,base2Malla.matrix);
 this.merge(base3Malla.geometry,base3Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix);
 this.rotateX(Math.PI*3/2);
-this.scale(4,8,4);
+this.scale(4,4,8);
 }
 
 PeonForma.prototype = new THREE.Geometry();
@@ -964,7 +964,7 @@ function Caballo(texturaP,x,y)
  this.actuator=new THREE.Mesh(new CaballoForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
   else
  this.actuator=new THREE.Mesh(new CaballoForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
- this.position.set=(x,y,0.4);
+ this.position.set=(x,y,4);
  this.sensor=new Sensor();  
  this.actuator.rotateX(Math.PI/2);
  this.add(this.actuator);
