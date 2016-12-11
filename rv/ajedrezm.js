@@ -641,7 +641,7 @@ mapa[7] = "xyzyzyzyzx";
 mapa[8] = "xzyzyzyzyx";
 mapa[9] = "xxxxxxxxxx";
  
-var Piezas=new Array();
+var mapa2=new Array();
   Piezas[0]="          ";
   Piezas[1]=" tcarxact ";
   Piezas[2]=" pppppppp ";
@@ -655,7 +655,7 @@ var Piezas=new Array();
 
 environment = new Environment();
 environment.setMap( mapa );
-environment.setMapPiezas(Piezas);
+environment.setMapPiezas(mapa2);
  
 document.addEventListener('mousedown',SeleccionD);
 document.addEventListener('mouseup',SeleccionU);
