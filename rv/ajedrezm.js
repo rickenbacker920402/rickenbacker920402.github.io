@@ -257,6 +257,12 @@ this.scale(5,5,7);
 
 PeonForma.prototype = new THREE.Geometry();
 
+function Sensor(position,direction)
+{
+  THREE.Raycaster.call(this,position,direction);
+  this.colision=false;
+}
+Sensor.prototype = new THREE.Raycaster();
 
 function Agent(x=0,  y=0){
 THREE.Object3D.call(this);
@@ -265,9 +271,88 @@ this.position.y = y;
 }
 
 Agent.prototype = new THREE.Object3D();
-Agent.prototype.sense = function(environment) {};
+//Agent.prototype.sense = function(environment) {};
 Agent.prototype.plan = function(environment) {};
-Agent.prototype.act = function(environment) {};
+Agent.prototype.act = function(environment) {
+var command = this.actuator.commands.pop();
+  if(command===undefined)
+    console.log('Undefined command');
+  else if(command in this.operations)
+    this.operations[command](this);
+  else
+    console.log('Unknown command');
+};
+
+Agent.prototype.operations={};
+
+Agent.prototype.operations.goStraightX=function(pieza,distance)
+{
+  if(distance===undefined)
+  {
+    if(X<x)
+      distance=0.5;
+    else if(X===x)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+};
+
+Agent.prototype.operations.goStraightY=function(pieza,distance)
+{
+  if(distance===undefined)
+   {
+    if(Y<y)
+      distance=0.5;
+    else if(Y===y)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+};
+
+Agent.prototype.operations.goDiagonal=function(pieza,distance)
+{
+  if(distance===undefined)
+   {
+    if(Y<y&&X<x){
+      distance=0.5;
+      pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+      pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+    }
+     else if(Y<y&&X>x){
+      distance=0.5;
+      pieza.position.x-=distance*Math.cos(pieza.rotation.z);
+      pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+     }
+     else if(Y>y&&X<x){
+      distance=0.5;
+      pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+      pieza.position.y-=distance*Math.cos(pieza.rotation.z);
+     }
+     else if(Y>y&&X>x){
+      distance=0.5;
+      pieza.position.x-=distance*Math.cos(pieza.rotation.z);
+      pieza.position.y-=distance*Math.cos(pieza.rotation.z);
+     }
+    else if(Y===y)
+      distance=0;
+    else
+      distance=-0.5;  
+ } 
+};
+
+Agent.prototype.operations.stop=function(pieza,distance)
+{
+  if(distance===undefined)
+    distance=0;
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+};
+
+Agent.prototype.sense=function(environment){};
 
 function Environment(){
 THREE.Scene.call(this);
