@@ -642,16 +642,16 @@ mapa[8] = "xzyzyzyzyx";
 mapa[9] = "xxxxxxxxxx";
  
 var mapa2=new Array();
-  Piezas[0]="          ";
-  Piezas[1]=" tcarxact ";
-  Piezas[2]=" pppppppp ";
-  Piezas[3]="          ";
-  Piezas[4]="          ";
-  Piezas[5]="          ";
-  Piezas[6]="          ";
-  Piezas[7]=" PPPPPPPP ";
-  Piezas[8]=" TCARXACT ";
-  Piezas[9]="          ";
+  mapa2[0]="          ";
+  mapa2[1]=" tcarxact ";
+  mapa2[2]=" pppppppp ";
+  mapa2[3]="          ";
+  mapa2[4]="          ";
+  mapa2[5]="          ";
+  mapa2[6]="          ";
+  mapa2[7]=" PPPPPPPP ";
+  mapa2[8]=" TCARXACT ";
+  mapa2[9]="          ";
 
 environment = new Environment();
 environment.setMap( mapa );
