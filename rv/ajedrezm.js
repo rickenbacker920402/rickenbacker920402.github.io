@@ -480,7 +480,7 @@ if(map[i][j]==="c")
 }
 }
 
-function Alfil(sTP,x,y)
+function Torre(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
@@ -495,8 +495,8 @@ function Alfil(sTP,x,y)
   //this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
-Alfil.prototype=new Agent();
-Alfil.prototype.sense=function(environment){
+Torre.prototype=new Agent();
+Torre.prototype.sense=function(environment){
   if(Y!==y&&X!==x&&Math.abs(y-Y)===Math.abs(x-X)){
     if (X<x&&Y<y)
       this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.PI/4), Math.sin(Math.PI/4), 0));
@@ -534,7 +534,7 @@ Alfil.prototype.sense=function(environment){
     this.sensor.colision=false;
 };
 
-Alfil.prototype.plan=function(environment)
+Torre.prototype.plan=function(environment)
 {
   this.actuator.commands=[];
   if (this.sensor.colision === false){
