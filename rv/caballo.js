@@ -2,8 +2,8 @@ var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
 var base3 = new THREE.BoxGeometry(0.7,1.5,0.5);
 var base4 = new THREE.CylinderGeometry(0.5, 0.5, 0.5, 50, 25, false,5.5,5);
-var base5 = new THREE.ConeGeometry( 0.1, 0.2, 32 );
-var base6 = new THREE.ConeGeometry( 0.1, 0.2, 32 );
+var base5 = new THREE.ConeGeometry( 0.1, 0.4, 32 );
+var base6 = new THREE.ConeGeometry( 0.1, 0.4, 32 );
 
 //
 
