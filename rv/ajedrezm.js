@@ -428,14 +428,14 @@ this.add( new EspacioBlanco(10,(i*10)-50,(j*10)-50));
 Environment.prototype.setMapPiezas=function(map){
 for (var i= 0; i< map.length ; i++){
 for (var j= 0; j < map.length; j++){
-if(map[i][j]==="c")
+/*if(map[i][j]==="c")
       {
         this.add(new Caballo(true,(j*10)-50,(i*10)-55));
       }
       if(map[i][j]==="C")
       {
         this.add(new Caballo(false,(j*10)-50,(i*10)-50));
-      }
+      }*/
       if(map[i][j]==="a")
       {
         this.add(new Alfil(true,(j*10)-50,(i*10)-50));
@@ -444,7 +444,7 @@ if(map[i][j]==="c")
       {
         this.add(new Alfil(false,(j*10)-50,(i*10)-50));
       }
-      if(map[i][j]==="x")
+     /* if(map[i][j]==="x")
       {
         this.add(new Reina(true,(j*10)-50,(i*10)-50));
       }
@@ -476,11 +476,12 @@ if(map[i][j]==="c")
       {
         this.add(new Peon(false,(j*10)-50,(i*10)-50));
       } 
+      */
 }
 }
 }
 
-function Torre(sTP,x,y)
+function Alfil(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
@@ -495,8 +496,9 @@ function Torre(sTP,x,y)
   //this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
-Torre.prototype=new Agent();
-Torre.prototype.sense=function(environment){
+Alfil.prototype=new Agent();
+
+Alfil.prototype.sense=function(environment){
   if(Y!==y&&X!==x&&Math.abs(y-Y)===Math.abs(x-X)){
     if (X<x&&Y<y)
       this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.PI/4), Math.sin(Math.PI/4), 0));
@@ -534,7 +536,7 @@ Torre.prototype.sense=function(environment){
     this.sensor.colision=false;
 };
 
-Torre.prototype.plan=function(environment)
+Alfil.prototype.plan=function(environment)
 {
   this.actuator.commands=[];
   if (this.sensor.colision === false){
