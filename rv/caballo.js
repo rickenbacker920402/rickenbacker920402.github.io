@@ -7,11 +7,11 @@ var base4 = new THREE.CylinderGeometry(0.7, 0.7, 0.5, 50, 25, false,0,5);
 
 base2.rotateX(Math.PI/2);
 base3.rotateZ(Math.PI/6);
-base3.rotateX(Math.PI/4);
+base4.rotateX(Math.PI/4);
 
 base.translate(0, -1, 0);
 base2.translate(0, -0.9, 0);
-base3.translate(-0.5,-0.4,0);
+base3.translate(-0.3,-0.4,0);
 base4.translate(0,-0.1,0);
 
 
