@@ -387,7 +387,7 @@ THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 0.7), new THREE.MeshLamb
 this.size = size;
 this.position.x = x;
 this.position.y = y;
-this.position.z = 0;
+this.position.z = -10;
 }
 Borde.prototype = new THREE.Mesh();
 
@@ -397,7 +397,7 @@ THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10), new THREE.MeshLambe
 this.size = size;
 this.position.x = x;
 this.position.y = y;
-this.position.z = 0;
+this.position.z = -10;
 }
 EspacioGris.prototype = new THREE.Mesh();
 
@@ -407,7 +407,7 @@ THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10), new THREE.MeshLambe
 this.size = size;
 this.position.x = x;
 this.position.y = y;
-this.position.z = 0;
+this.position.z = -10;
 }
 EspacioBlanco.prototype = new THREE.Mesh();
 
@@ -490,11 +490,10 @@ function Alfil(sTP,x,y)
     this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
   else
     this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
-  //this.position.set=(x,y,0);
+  this.position.set=(x,y,0);
   this.sensor=new Sensor();
   this.add(this.actuator);
   this.actuator.rotateX(Math.PI/2);
- this.actuator.position.set=(x,y,10);
   this.actuator.castShadow=true;
 }
 Alfil.prototype=new Agent();
