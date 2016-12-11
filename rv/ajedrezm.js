@@ -32,7 +32,7 @@ this.merge(base3Malla.geometry,base3Malla.matrix);
 this.merge(base4Malla.geometry,base4Malla.matrix);
 this.merge(base5Malla.geometry,base5Malla.matrix);
 this.merge(base6Malla.geometry,base6Malla.matrix);
-this.scale(4,8,4);
+this.scale(5,10,5);
 }
 
 CaballoForma.prototype = new THREE.Geometry();
@@ -141,7 +141,7 @@ this.merge(base9Malla.geometry,base9Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix); 
 this.merge(cima1Malla.geometry,cima1Malla.matrix);
 this.merge(cima2Malla.geometry,cima2Malla.matrix); 
-this.scale(4,8,4);
+this.scale(4,6,4);
 }
 
 ReyForma.prototype = new THREE.Geometry();
@@ -198,7 +198,7 @@ this.merge(base8Malla.geometry,base8Malla.matrix);
 this.merge(base9Malla.geometry,base9Malla.matrix);
 this.merge(base10Malla.geometry,base10Malla.matrix);
 this.rotateX(Math.PI*3/2);
-this.scale(4,8,4);
+this.scale(4,10,4);
 
 }
 
@@ -255,7 +255,7 @@ this.merge(punta2Malla.geometry,punta2Malla.matrix);
 this.merge(punta3Malla.geometry,punta3Malla.matrix);
 this.merge(anilloMalla.geometry,anilloMalla.matrix);
 this.rotateX(Math.PI*3/2);
-this.scale(4,8,4);
+this.scale(4,10,4);
 }
 
 TorreForma.prototype = new THREE.Geometry();
@@ -461,7 +461,7 @@ for (var i= 0; i< map.length ; i++){
 for (var j= 0; j < map.length; j++){
 if(map[i][j]==="c")
       {
-        this.add(new Caballo(true,(j*10)-50,(i*10)-55));
+        this.add(new Caballo(true,(j*10)-50,(i*10)-50));
       }
       if(map[i][j]==="C")
       {
@@ -964,7 +964,7 @@ function Caballo(texturaP,x,y)
  this.actuator=new THREE.Mesh(new CaballoForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
   else
  this.actuator=new THREE.Mesh(new CaballoForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
- this.position.set=(x,y,0);
+ this.position.set=(x,y,0.4);
  this.sensor=new Sensor();  
  this.actuator.rotateX(Math.PI/2);
  this.add(this.actuator);
