@@ -481,20 +481,20 @@ for (var j= 0; j < map.length; j++){
 }
 }
 
-function Alfil(sTP,x,y)
+function Alfil(texturaP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  this.sTP = sTP;
-  if(this.sTP===true)
-    this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
+  this.texturaP = texturaP;
+  if(this.texturaP===true)
+ this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
   else
-    this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
-  this.position.set=(x,y,0);
-  this.sensor=new Sensor();
-  this.add(this.actuator);
-  this.actuator.rotateX(Math.PI/2);
-  this.actuator.castShadow=true;
+ this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
+ this.position.set=(x,y,0);
+ this.sensor=new Sensor();  
+ this.actuator.rotateX(Math.PI/2);
+ this.add(this.actuator);
+ this.actuator.castShadow=true;
 }
 Alfil.prototype=new Agent();
 
@@ -510,11 +510,11 @@ Alfil.prototype.sense=function(environment){
       this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.PI/4), -Math.sin(Math.PI/4), 0));
   }
   var obstaculo=this.sensor.intersectObjects(environment.children,true);    
-  if( obstaculo.length>0 && obstaculo[0].object.parent.sTP !== this.sTP ){
+  if( obstaculo.length>0 && obstaculo[0].object.parent.texturaP !== this.texturaP ){
     if ( Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2))<=(obstaculo[0].distance+10*Math.sqrt(2)) ){
       this.sensor.colision=false;
       if (obstaculo[0].distance<=Math.sqrt(2))
-        if (this.sTP === true){
+        if (this.texturaP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
           //bi++;
           bj+=10;
@@ -528,7 +528,7 @@ Alfil.prototype.sense=function(environment){
     else
       this.sensor.colision=true;
   }
-  else if ( obstaculo.length>0 && obstaculo[0].object.parent.sTP === this.sTP  ){
+  else if ( obstaculo.length>0 && obstaculo[0].object.parent.texturaP === this.texturaP  ){
     if( obstaculo[0].distance<Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2)) )
       this.sensor.colision=true;  
   }
