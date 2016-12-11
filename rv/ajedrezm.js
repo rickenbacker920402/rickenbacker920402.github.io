@@ -395,7 +395,7 @@ if(map[i][j]==="c")
 }
 }
 
-function Alfil(sTP,x,y)
+function Caballo(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
@@ -410,7 +410,7 @@ function Alfil(sTP,x,y)
   //this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
-Alfil.prototype=new Agent();
+Caballo.prototype=new Agent();
 
 
 
