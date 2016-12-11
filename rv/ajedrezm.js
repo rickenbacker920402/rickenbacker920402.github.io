@@ -521,7 +521,7 @@ function Alfil(texturaP,x,y)
  this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
   else
  this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
- this.actuator.scale.set(3,3,9);
+ this.actuator.scale.set(3,3,15);
  this.position.set=(x,y,0);
  this.sensor=new Sensor();  
  this.actuator.rotateX(Math.PI/2);
