@@ -593,7 +593,7 @@ function Peon(texturaP,x,y)
  this.actuator=new THREE.Mesh(new PeonForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
  this.position.set=(x,y,0);
  this.sensor=new Sensor();  
- this.actuator.rotateX(Math.PI/2);
+ //this.actuator.rotateX(Math.PI/2);
  this.add(this.actuator);
  this.actuator.castShadow=true;
 }
