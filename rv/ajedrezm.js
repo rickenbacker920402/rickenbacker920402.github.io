@@ -110,7 +110,7 @@ this.merge(cimaMalla.geometry,cimaMalla.matrix);
 this.merge(cima1Malla.geometry,cima1Malla.matrix);
 this.merge(cima2Malla.geometry,cima2Malla.matrix); 
 //this.rotateX(Math.PI*3/2);
-this.scale(5,5,7);
+this.scale(5,5,10);
 }
 
 ReyForma.prototype = new THREE.Geometry();
