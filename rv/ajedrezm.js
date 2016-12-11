@@ -466,7 +466,7 @@ if(map[i][j]==="c")
       if(map[i][j]==="C")
       {
         this.add(new Caballo(false,(j*10)-50,(i*10)-50));
-      }*/
+      }
       if(map[i][j]==="a")
       {
         this.add(new Alfil(true,(j*10)-50,(i*10)-50));
