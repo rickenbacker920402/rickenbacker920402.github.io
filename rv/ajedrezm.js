@@ -485,7 +485,7 @@ function Alfil(sTP,x,y)
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
   this.sTP = sTP;
-  if(this.sTP===true)
+  if(this.sTP===1)
     this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
   else
     this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
@@ -694,7 +694,7 @@ environment.act();
 renderizador.render(environment,camara);
 }
 
-var environment, camara, renderizador, iluminacion;
+var environment, camara, renderizador, iluminacion,bi=0,bj=0,nj=0,ni=0,turno=false,sTC,id,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
