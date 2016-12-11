@@ -494,7 +494,7 @@ function Alfil(sTP,x,y)
   this.sensor=new Sensor();
   this.add(this.actuator);
   this.actuator.rotateX(Math.PI/2);
- this.actuator.position.set=(x,y,0);
+ this.actuator.position.set=(x,y,10);
   this.actuator.castShadow=true;
 }
 Alfil.prototype=new Agent();
