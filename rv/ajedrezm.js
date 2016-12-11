@@ -599,6 +599,104 @@ function Peon(texturaP,x,y)
 }
 Peon.prototype=new Agent();
 
+Peon.prototype.sense=function(environment){
+  if (this.texturaP === true){
+    if (y===Y&&x!==X){
+      this.sensor.set(this.position, new THREE.Vector3(0, 1, 0));
+      var diagon=false;
+    }
+    else if (Y!==y&&X!==x&&Math.abs(y-Y)===Math.abs(x-X)){
+      var diagon=true;
+      if (X<x&&Y<y)
+        this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.PI/4), Math.sin(Math.PI/4), 0));
+      else if (X>x&&Y<y)
+        this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.PI/4), Math.sin(Math.PI/4), 0));
+      }
+  }
+  else{
+    if (y===Y&&x!==X){
+      this.sensor.set(this.position, new THREE.Vector3(0, -1, 0));
+      var diagon=false;
+    }
+    else if (Y!==y&&X!==x&&Math.abs(y-Y)===Math.abs(x-X)){
+      var diagon=true;
+      if (X<x&&Y>y)
+        this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.PI/4), -Math.sin(Math.PI/4), 0));
+      else if (X>x&&Y>y)
+        this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.PI/4), -Math.sin(Math.PI/4), 0));
+    }
+  }  
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);
+  if (diagon === false){
+    this.diagonal=false;
+    if( obstaculo.length>0 && obstaculo[0].distance<Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2)) ){
+      this.sensor.colision=true;
+      obstaculo[0].object.material.color.setHex(0xff00ff);}
+    else
+      this.sensor.colision=false;
+  }
+  else{ 
+    if( obstaculo.length>0 && obstaculo[0].object.parent.texturaP !== this.texturaP ){
+      if (obstaculo[0].distance<=10*Math.sqrt(2)){
+        this.diagonal=true;
+        this.sensor.colision=false;
+      }
+      if (obstaculo[0].distance<Math.sqrt(2)){
+        if (this.texturaP === true){
+          obstaculo[0].object.translate(50+bi,-50+bj,0);
+          //bi++;
+          bj+=10;
+        }
+        else{
+          obstaculo[0].object.translate(-50+ni,-50+nj,0);
+          //ni-=10;
+          nj+=10;
+        }
+      }
+    }
+    else
+      this.sensor.colision=false;
+  }
+};
+
+Peon.prototype.plan=function(environment)
+{
+  this.actuator.commands=[];
+  if (this.sensor.colision === false){
+      if(Y>=-25 && Y<-15) {
+        if( y-Y<=20 && y-Y>0 && x===X ) 
+          this.actuator.commands.push('goStraightY');
+      }
+      else if(y-Y<=10 && y-Y>0 && x===X)
+        this.actuator.commands.push('goStraightY');
+    if (this.sTP===true){
+      if( y-Y<=10 && y-Y>0 && Math.abs(x-X)<=10 ){
+        if(this.diagonal === true)
+          this.actuator.commands.push('goDiagonal');
+      }
+    }
+    else{
+      if(Y<=25 && Y>15) {
+        if( Y-y<=20 && Y-y>0 && x===X ) 
+          this.actuator.commands.push('goStraightY');
+      }
+      else if(Y-y<=10 && Y-y>0 && x===X)
+        this.actuator.commands.push('goStraightY');
+      if( Y-y<=10 && Y-y>0 && Math.abs(x-X)<=10 ){
+        if(this.diagonal === true)
+          this.actuator.commands.push('goDiagonal');
+      }
+    }
+    if(X===x&&Y===y)
+      {
+        this.actuator.commands.push('stop');
+        seleccionF2=false;
+        seleccionF1=false;
+        this.diagonal=false;
+      }
+  }  
+};
+
 function Rey(texturaP,x,y)
 {
   cargador=new THREE.TextureLoader();
@@ -615,6 +713,82 @@ function Rey(texturaP,x,y)
  this.actuator.castShadow=true;
 }
 Rey.prototype=new Agent();
+
+Rey.prototype.sense=function(environment){
+    if(X!==x&&Y===y){
+    if (X<x)
+      this.sensor.set(this.position, new THREE.Vector3(1, 0, 0));
+    else
+      this.sensor.set(this.position, new THREE.Vector3(-1, 0, 0));
+  }
+  else if(Y!==y&&X===x){
+    if (Y<y)
+      this.sensor.set(this.position, new THREE.Vector3(0, 1, 0));
+    else
+      this.sensor.set(this.position, new THREE.Vector3(0, -1, 0));
+  }
+  else if(Y!==y&&X!==x&&Math.abs(y-Y)===Math.abs(x-X)){
+    if (X<x&&Y<y)
+      this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.PI/4), Math.sin(Math.PI/4), 0));
+    else if (X<x&&Y>y)
+      this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.PI/4), -Math.sin(Math.PI/4), 0));
+    else if (X>x&&Y<y)
+      this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.PI/4), Math.sin(Math.PI/4), 0));
+    else if (X>x&&Y>y)
+      this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.PI/4), -Math.sin(Math.PI/4), 0));
+  }
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);
+  if( obstaculo.length>0 && obstaculo[0].distance<Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2)) ){
+    this.sensor.colision=true;
+    obstaculo[0].object.material.color.setHex(0xff00ff);}
+  else
+    this.sensor.colision=false;
+  if( obstaculo.length>0 && obstaculo[0].object.parent.texturaP !== this.texturaP ){
+    if ( Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2))<=(obstaculo[0].distance+10*Math.sqrt(2)) ){
+      this.sensor.colision=false;
+      if (obstaculo[0].distance<=Math.sqrt(2))
+        if (this.texturaP === true){
+          obstaculo[0].object.translate(50+bi,-50+bj,0);
+          //bi++;
+          bj+=10;
+        }
+      else{
+          obstaculo[0].object.translate(-50+ni,-50+nj,0);
+          //ni-=10;
+          nj+=10;
+        }
+    }
+    else
+      this.sensor.colision=true;
+  }
+  else if ( obstaculo.length>0 && obstaculo[0].object.parent.texturaP === this.texturaP  ){
+    if( obstaculo[0].distance<Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2)) )
+      this.sensor.colision=true;  
+  }
+  else
+    this.sensor.colision=false;
+};
+
+Rey.prototype.plan=function(environment)
+{
+  this.actuator.commands=[];
+  if (this.sensor.colision === false){
+    if( Math.abs(x-X)<=10 && Math.abs(y-Y)<=10 ){ 
+      if (x!==X && y!==Y && Math.abs(y-Y)===Math.abs(x-X))
+        this.actuator.commands.push('goDiagonal');
+      else if(x===X && y!==Y) 
+        this.actuator.commands.push('goStraightY');
+      else if(x!==X && y===Y)
+        this.actuator.commands.push('goStraightX');
+      else if(X===x&&Y===y)
+      {
+        this.actuator.commands.push('stop');
+        seleccionF2=false;
+        seleccionF1=false;
+      }
+    }
+  }
+};
 
 function Reina(texturaP,x,y)
 {
@@ -633,6 +807,75 @@ function Reina(texturaP,x,y)
 }
 Reina.prototype=new Agent();
 
+Reina.prototype.sense=function(environment){
+  if(X!==x&&Y===y){
+    if (X<x)
+      this.sensor.set(this.position, new THREE.Vector3(1, 0, 0));
+    else
+      this.sensor.set(this.position, new THREE.Vector3(-1, 0, 0));
+  }
+  else if(Y!==y&&X===x){
+    if (Y<y)
+      this.sensor.set(this.position, new THREE.Vector3(0, 1, 0));
+    else
+      this.sensor.set(this.position, new THREE.Vector3(0, -1, 0));
+  }
+  else if(Y!==y&&X!==x&&Math.abs(y-Y)===Math.abs(x-X)){
+    if (X<x&&Y<y)
+      this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.PI/4), Math.sin(Math.PI/4), 0));
+    else if (X<x&&Y>y)
+      this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.PI/4), -Math.sin(Math.PI/4), 0));
+    else if (X>x&&Y<y)
+      this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.PI/4), Math.sin(Math.PI/4), 0));
+    else if (X>x&&Y>y)
+      this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.PI/4), -Math.sin(Math.PI/4), 0));
+  }
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);
+  if( obstaculo.length>0 && obstaculo[0].object.parent.texturaP !== this.texturaP ){
+    if ( Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2))<=(obstaculo[0].distance+10*Math.sqrt(2)) ){
+      this.sensor.colision=false;
+      if (obstaculo[0].distance<=Math.sqrt(2))
+        if (this.texturaP === true){
+          obstaculo[0].object.translate(50+bi,-50+bj,0);
+          //bi++;
+          bj+=10;
+        }
+      else{
+          obstaculo[0].object.translate(-50+ni,-50+nj,0);
+          //ni-=10;
+          nj+=10;
+        }
+    }
+    else
+      this.sensor.colision=true;
+  }
+  else if ( obstaculo.length>0 && obstaculo[0].object.parent.texturaP === this.texturaP  ){
+    if( obstaculo[0].distance<Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2)) )
+      this.sensor.colision=true;  
+  }
+  else
+    this.sensor.colision=false;
+};
+
+Reina.prototype.plan=function(environment)
+{
+  this.actuator.commands=[]; 
+  if (this.sensor.colision === false){  
+    if(X!==x&&Y===y)
+      this.actuator.commands.push('goStraightX');
+    else if(Y!==y&&X===x) 
+      this.actuator.commands.push('goStraightY');
+    else if(Y!==y&&X!==x&&Math.abs(y-Y)===Math.abs(x-X))
+      this.actuator.commands.push('goDiagonal');
+    else if(X===x&&Y===y)
+    {
+      this.actuator.commands.push('stop');
+      seleccionF2=false;
+      seleccionF1=false;
+    }
+  }
+};
+
 function Torre(texturaP,x,y)
 {
   cargador=new THREE.TextureLoader();
@@ -650,6 +893,68 @@ function Torre(texturaP,x,y)
 }
 Torre.prototype=new Agent();
 
+Torre.prototype.sense=function(environment){
+  if(X!==x&&Y===y){
+    if (X<x)
+      this.sensor.set(this.position, new THREE.Vector3(1, 0, 0));
+    else
+      this.sensor.set(this.position, new THREE.Vector3(-1, 0, 0));
+  }
+  else if(Y!==y&&X===x){
+    if (Y<y)
+      this.sensor.set(this.position, new THREE.Vector3(0, 1, 0));
+    else
+      this.sensor.set(this.position, new THREE.Vector3(0, -1, 0));
+  }
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);
+  if( obstaculo.length>0 && obstaculo[0].distance<Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2)) ){
+    this.sensor.colision=true;
+    obstaculo[0].object.material.color.setHex(0xff00ff);}
+  else
+    this.sensor.colision=false;
+  if( obstaculo.length>0 && obstaculo[0].object.parent.texturaP !== this.texturaP ){
+    if ( Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2))<=(obstaculo[0].distance+10*Math.sqrt(2)) ){
+      this.sensor.colision=false;
+      if (obstaculo[0].distance<=Math.sqrt(2))
+        if (this.texturaP === true){
+          obstaculo[0].object.translate(50+bi,-50+bj,0);
+          //bi++;
+          bj+=10;
+        }
+      else{
+          obstaculo[0].object.translate(-50+ni,-50+nj,0);
+          //ni-=10;
+          nj+=10;
+        }
+    }
+    else
+      this.sensor.colision=true;
+  }
+  else if ( obstaculo.length>0 && obstaculo[0].object.parent.texturaP === this.texturaP  ){
+    if( obstaculo[0].distance<Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2)) )
+      this.sensor.colision=true;  
+  }
+  else
+    this.sensor.colision=false;
+};
+
+Torre.prototype.plan=function(environment)
+{
+  this.actuator.commands=[];
+  if (this.sensor.colision === false){
+    if(X!==x&&Y===y)
+      this.actuator.commands.push('goStraightX');
+     else if(Y!==y&&X===x) 
+      this.actuator.commands.push('goStraightY');
+     else if(X===x&&Y===y)
+    {
+      this.actuator.commands.push('stop');
+      seleccionF2=false;
+      seleccionF1=false;
+    }
+  }
+};
+
 function Caballo(texturaP,x,y)
 {
   cargador=new THREE.TextureLoader();
@@ -666,6 +971,78 @@ function Caballo(texturaP,x,y)
  this.actuator.castShadow=true;
 }
 Caballo.prototype=new Agent();
+
+Caballo.prototype.sense=function(environment){
+  if( x-X===-20 && y-Y===-10 )
+     this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.atan(1/2)), Math.sin(Math.atan(1/2)), 0));
+  else if( x-X===-20 && y-Y===10 )
+    this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.atan(1/2)), -Math.sin(Math.atan(1/2)), 0));
+  else if( x-X===20 && y-Y===-10 )
+    this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.atan(1/2)), Math.sin(Math.atan(1/2)), 0));
+  else if( x-X===20 && y-Y===10 )
+    this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.atan(1/2)), -Math.sin(Math.atan(1/2)), 0));
+  else if( x-X===-10 && y-Y===-20 )
+    this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.atan(2)), Math.sin(Math.atan(2)), 0));
+  else if( x-X===-10 && y-Y===20 )
+    this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.atan(2)), -Math.sin(Math.atan(2)), 0));
+  else if( x-X===10 && y-Y===-20 )
+    this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.atan(2)), Math.sin(Math.atan(2)), 0));
+  else if( x-X===10 && y-Y===20 )
+    this.sensor.set(this.position, new THREE.Vector3-(Math.cos(Math.atan(2)), -Math.sin(Math.atan(2)), 0));
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);    
+  if( obstaculo.length>0 && obstaculo[0].object.parent.texturaP !== this.texturaP ){
+    if ( obstaculo.distance===10*Math.sqrt(5) )
+      this.ind=1;
+  }
+  else if ( obstaculo.length>0 && obstaculo[0].object.parent.texturaP === this.texturaP  ){
+    if( obstaculo[0].distance===10*Math.sqrt(5) )
+      this.ind=2;  
+  }  
+  
+  switch (this.ind){
+    case 1:
+      this.sensor.colision=false;
+      if (obstaculo[0].distance<=Math.sqrt(2)){
+        if (this.texturaP === true){
+          obstaculo[0].object.translate(50+bi,-50+bj,0);
+          //bi++;
+          bj+=10;
+        }
+        else{
+          obstaculo[0].object.translate(-50+ni,-50+nj,0);
+          //ni-=10;
+          nj+=10;
+        }
+      }
+    break;
+    default:
+      this.sensor.colision=true;
+    break;
+         }
+};
+
+Caballo.prototype.plan=function(environment)
+{
+  this.actuator.commands=[];
+  if(this.sensor.colision === false){
+    if( ((Math.abs(x-X)<=20 && Math.abs(y-Y)<=10) || (Math.abs(x-X)<=10 && Math.abs(y-Y)<=20)) && Math.abs(x-X)!==Math.abs(y-Y) ){
+      if(X!==x&&Y!==y){
+        this.actuator.commands.push('goStraightX');
+        this.cnt = true;
+      }
+      else if (X===X&&Y!==y&&this.cnt===true)
+        this.actuator.commands.push('goStraightY');
+    }
+    else if(X===x&&Y===y&&this.cnt===true)
+      {
+        this.actuator.commands.push('stop');
+        this.cnt = false;
+        this.ind = 0;
+        seleccionF2=false;
+        seleccionF1=false;
+      }
+  }
+};
 
 function SeleccionD(event)
 {
