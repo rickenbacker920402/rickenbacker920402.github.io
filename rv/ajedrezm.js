@@ -32,7 +32,7 @@ this.merge(base3Malla.geometry,base3Malla.matrix);
 this.merge(base4Malla.geometry,base4Malla.matrix);
 this.merge(base5Malla.geometry,base5Malla.matrix);
 this.merge(base6Malla.geometry,base6Malla.matrix);
-this.scale(3,3,9);
+this.scale(4,8,4);
 }
 
 CaballoForma.prototype = new THREE.Geometry();
@@ -141,7 +141,7 @@ this.merge(base9Malla.geometry,base9Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix); 
 this.merge(cima1Malla.geometry,cima1Malla.matrix);
 this.merge(cima2Malla.geometry,cima2Malla.matrix); 
-this.scale(5,5,10);
+this.scale(4,8,4);
 }
 
 ReyForma.prototype = new THREE.Geometry();
@@ -198,7 +198,7 @@ this.merge(base8Malla.geometry,base8Malla.matrix);
 this.merge(base9Malla.geometry,base9Malla.matrix);
 this.merge(base10Malla.geometry,base10Malla.matrix);
 this.rotateX(Math.PI*3/2);
-this.scale(5,5,7);
+this.scale(4,8,4);
 
 }
 
@@ -255,7 +255,7 @@ this.merge(punta2Malla.geometry,punta2Malla.matrix);
 this.merge(punta3Malla.geometry,punta3Malla.matrix);
 this.merge(anilloMalla.geometry,anilloMalla.matrix);
 this.rotateX(Math.PI*3/2);
-this.scale(5,5,7);
+this.scale(4,8,4);
 }
 
 TorreForma.prototype = new THREE.Geometry();
@@ -283,7 +283,7 @@ this.merge(base2Malla.geometry,base2Malla.matrix);
 this.merge(base3Malla.geometry,base3Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix);
 this.rotateX(Math.PI*3/2);
-this.scale(5,5,7);
+this.scale(4,8,4);
 }
 
 PeonForma.prototype = new THREE.Geometry();
@@ -459,7 +459,7 @@ this.add( new EspacioBlanco(10,(i*10)-50,(j*10)-50));
 Environment.prototype.setMapPiezas=function(map){
 for (var i= 0; i< map.length ; i++){
 for (var j= 0; j < map.length; j++){
-/*if(map[i][j]==="c")
+if(map[i][j]==="c")
       {
         this.add(new Caballo(true,(j*10)-50,(i*10)-55));
       }
@@ -475,7 +475,7 @@ for (var j= 0; j < map.length; j++){
       {
         this.add(new Alfil(false,(j*10)-50,(i*10)-50));
       }
-     /* if(map[i][j]==="x")
+     if(map[i][j]==="x")
       {
         this.add(new Reina(true,(j*10)-50,(i*10)-50));
       }
@@ -507,7 +507,6 @@ for (var j= 0; j < map.length; j++){
       {
         this.add(new Peon(false,(j*10)-50,(i*10)-50));
       } 
-      */
 }
 }
 }
