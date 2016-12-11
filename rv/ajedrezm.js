@@ -480,12 +480,12 @@ if(map[i][j]==="c")
 }
 }
 
-function Caballo(sTP,x,y)
+function Alfil(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
   this.sTP = sTP;
-  if(this.sTP===1)
+  if(this.sTP===true)
     this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
   else
     this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
@@ -495,12 +495,140 @@ function Caballo(sTP,x,y)
   //this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
-Caballo.prototype=new Agent();
+Alfil.prototype=new Agent();
+Alfil.prototype.sense=function(environment){
+  if(Y!==y&&X!==x&&Math.abs(y-Y)===Math.abs(x-X)){
+    if (X<x&&Y<y)
+      this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.PI/4), Math.sin(Math.PI/4), 0));
+    else if (X<x&&Y>y)
+      this.sensor.set(this.position, new THREE.Vector3(Math.cos(Math.PI/4), -Math.sin(Math.PI/4), 0));
+    else if (X>x&&Y<y)
+      this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.PI/4), Math.sin(Math.PI/4), 0));
+    else if (X>x&&Y>y)
+      this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.PI/4), -Math.sin(Math.PI/4), 0));
+  }
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);    
+  if( obstaculo.length>0 && obstaculo[0].object.parent.sTP !== this.sTP ){
+    if ( Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2))<=(obstaculo[0].distance+10*Math.sqrt(2)) ){
+      this.sensor.colision=false;
+      if (obstaculo[0].distance<=Math.sqrt(2))
+        if (this.sTP === true){
+          obstaculo[0].object.translate(50+bi,-50+bj,0);
+          //bi++;
+          bj+=10;
+        }
+      else{
+          obstaculo[0].object.translate(-50+ni,-50+nj,0);
+          //ni-=10;
+          nj+=10;
+        }
+    }
+    else
+      this.sensor.colision=true;
+  }
+  else if ( obstaculo.length>0 && obstaculo[0].object.parent.sTP === this.sTP  ){
+    if( obstaculo[0].distance<Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2)) )
+      this.sensor.colision=true;  
+  }
+  else
+    this.sensor.colision=false;
+};
 
+Alfil.prototype.plan=function(environment)
+{
+  this.actuator.commands=[];
+  if (this.sensor.colision === false){
+    if(X!==x&&Y!==y&&Math.abs(y-Y)===Math.abs(x-X))
+      this.actuator.commands.push('goDiagonal');
+    else if(X===x&&Y===y)
+    {
+      this.actuator.commands.push('stop');
+      seleccionF2=false;
+      seleccionF1=false;
+    }
+  }
+};
+
+function SeleccionD(event)
+{
+  event.preventDefault();
+  var mouse3D=new THREE.Vector3((event.clientX/window.innerWidth)*2-1,-(event.clientY/window.innerHeight)*2+1,0);     
+  var raycaster=new THREE.Raycaster();                                        
+  raycaster.setFromCamera(mouse3D,camara);
+  seleccion=raycaster.intersectObjects(environment.children,true);
+  if(seleccion.length>0)
+  { 
+    console.log(turno);
+    
+    if(seleccionF1==false)
+      id=seleccion[0].object.id;
+    console.log(id);
+    
+    if(seleccionF1==true)
+    {
+      x=seleccion[0].point.x;
+      y=seleccion[0].point.y;
+      seleccionF2=true;
+    }
+    
+    if(X===x&&Y===y)
+    {
+      turno=!turno
+    }
+    
+    if((-50<x&&x<50&&40<y&&y<50)||(-50<x&&x<50&&-50<y&&y<-40)||(-50<y&&y<50&&-50<x&&x<-40)||(-50<y&&y<50&&40<x&&x<50))
+      seleccion[0].object.material.color.setHex(0xffffff);
+    else
+      seleccion[0].object.material.color.setHex(0x00ff00);
+    
+    if(-40<x&&x<-30)
+      x=-35;
+    else if(-30<x&&x<-20)
+      x=-25;
+    else if(-20<x&&x<-10)
+      x=-15;
+    else if(-10<x&&x<0)
+      x=-5;
+    else if(0<x&&x<10)
+      x=5;
+    else if(10<x&&x<20)
+      x=15;
+    else if(20<x&&x<30)
+      x=25;
+    else if(30<x&&x<40)
+      x=35;
+    if(-40<y&&y<-30)
+      y=-35;
+    else if(-30<y&&y<-20)
+      y=-25;
+    else if(-20<y&&y<-10)
+      y=-15;
+    else if(-10<y&&y<0)
+      y=-5;
+    else if(0<y&&y<10)
+      y=5;
+    else if(10<y&&y<20)
+      y=15;
+    else if(20<y&&y<30)
+      y=25;
+    else if(30<y&&y<40)
+      y=35;
+    console.log(x);
+    console.log(y);
+  }
+}
+
+function SeleccionU(event) 
+{
+  activar=true;
+  event.preventDefault();
+  seleccion[0].object.material.color.setHex(0xffffff);
+  seleccionF1=true;   
+}
 
 
 function setup(){
-
+document.documentElement.style.overflow = 'hidden';
 var mapa = new Array();
 mapa[0] = "xxxxxxxxxx";
 mapa[1] = "xyzyzyzyzx";
@@ -527,6 +655,10 @@ var Piezas=new Array();
 
 environment = new Environment();
 environment.setMap( mapa );
+environment.setMapPiezas(Piezas);
+ 
+document.addEventListener('mousedown',SeleccionD);
+document.addEventListener('mouseup',SeleccionU);
  
 var campoVision = 45; 
 var relacionAspecto = window.innerWidth / window.innerHeight;
