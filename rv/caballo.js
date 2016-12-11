@@ -6,7 +6,6 @@ var base4 = new THREE.CylinderGeometry(0.4, 0.4, 0.5, 50, 25, false,0,5);
 //
 
 base2.rotateX(Math.PI/2);
-base3.rotateZ(Math.PI/6);
 base4.rotateX(Math.PI/2);
 
 base.translate(0, -1, 0);
