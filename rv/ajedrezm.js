@@ -1,10 +1,10 @@
-Caballo = function(){
+CaballoForma = function(){
  THREE.Geometry.call(this);
 }
 
-Caballo.prototype = new THREE.Geometry();
+CaballoForma.prototype = new THREE.Geometry();
 
-Alfil =function(){
+AlfilForma =function(){
  THREE.Geometry.call(this);
  
 var base = new THREE.CylinderGeometry(0.9, 0.9, 0.2, 50, 25); 
@@ -46,9 +46,9 @@ this.rotateX(Math.PI*3/2);
 this.scale(5,5,7);
 }
 
-Alfil.prototype = new THREE.Geometry();
+AlfilForma.prototype = new THREE.Geometry();
 
-Rey = function(){
+ReyForma = function(){
  THREE.Geometry.call(this);
 var base = new THREE.CylinderGeometry(0.9, 0.9, 0.2, 50, 25); 
 var base1 = new THREE.CylinderGeometry(0.7, 0.9, 0.4, 50, 25);
@@ -113,9 +113,9 @@ this.merge(cima2Malla.geometry,cima2Malla.matrix);
 this.scale(5,5,7);
 }
 
-Rey.prototype = new THREE.Geometry();
+ReyForma.prototype = new THREE.Geometry();
 
-Reina = function(){
+ReinaForma = function(){
  THREE.Geometry.call(this);
  
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
@@ -171,9 +171,9 @@ this.scale(5,5,7);
 
 }
 
-Reina.prototype = new THREE.Geometry();
+ReinaForma.prototype = new THREE.Geometry();
 
-Torre = function(){
+TorreForma = function(){
  THREE.Geometry.call(this);
 
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
@@ -227,9 +227,9 @@ this.rotateX(Math.PI*3/2);
 this.scale(5,5,7);
 }
 
-Torre.prototype = new THREE.Geometry();
+TorreForma.prototype = new THREE.Geometry();
 
-Peon = function(){
+PeonForma = function(){
 THREE.Geometry.call(this);
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
@@ -255,7 +255,7 @@ this.rotateX(Math.PI*3/2);
 this.scale(5,5,7);
 }
 
-Peon.prototype = new THREE.Geometry();
+PeonForma.prototype = new THREE.Geometry();
 
 
 function Agent(x=0,  y=0){
@@ -340,6 +340,79 @@ this.add( new EspacioBlanco(10,(i*10)-50,(j*10)-50));
 }
 }
 
+Environment.prototype.setMapPiezas=function(map){
+for (var i= 0; i< map.length ; i++){
+for (var j= 0; j < map.length; j++){
+if(map[i][j]==="c")
+      {
+        this.add(new Caballo(1,(j*10)-50,(i*10)-55));
+      }
+      if(map[i][j]==="C")
+      {
+        this.add(new Caballo(2,(j*10)-50,(i*10)-50));
+      }
+      if(map[i][j]==="a")
+      {
+        this.add(new Alfil(1,(j*10)-50,(i*10)-50));
+      }
+      if(map[i][j]==="A")
+      {
+        this.add(new Alfil(2,(j*10)-50,(i*10)-50));
+      }
+      if(map[i][j]==="x")
+      {
+        this.add(new Reina(1,(j*10)-50,(i*10)-50));
+      }
+      if(map[i][j]==="X")
+      {
+        this.add(new Reina(2,(j*10)-50,(i*10)-50));
+      }
+      if(map[i][j]==="r")
+      {
+        this.add(new Rey(1,(j*10)-50,(i*10)-50));
+      }
+      if(map[i][j]==="R")
+      {
+        this.add(new Rey(2,(j*10)-50,(i*10)-50));
+      }
+      if(map[i][j]==="t")
+      {
+        this.add(new Torre(1,(j*10)-50,(i*10)-50));
+      }
+      if(map[i][j]==="T")
+      {
+        this.add(new Torre(2,(j*10)-50,(i*10)-50));
+      }
+      if(map[i][j]==="p")
+      {
+        this.add(new Peon(1,(j*10)-50,(i*10)-50));
+      }
+      if(map[i][j]==="P")
+      {
+        this.add(new Peon(2,(j*10)-50,(i*10)-50));
+      } 
+}
+}
+}
+
+function Alfil(sTP,x,y)
+{
+  cargador=new THREE.TextureLoader();
+  Agent.call(this,x,y);
+  this.sTP = sTP;
+  if(this.sTP===1)
+    this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
+  else
+    this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
+  this.position.set=(x,y,0);
+  this.sensor=new Sensor();
+  this.add(this.actuator);
+  //this.actuator.rotateX(Math.PI/2);
+  this.actuator.castShadow=true;
+}
+Alfil.prototype=new Agent();
+
+
 
 function setup(){
 
@@ -354,6 +427,18 @@ mapa[6] = "xzyzyzyzyx";
 mapa[7] = "xyzyzyzyzx";
 mapa[8] = "xzyzyzyzyx";
 mapa[9] = "xxxxxxxxxx";
+ 
+var Piezas=new Array();
+  Piezas[0]="          ";
+  Piezas[1]=" tcarxact ";
+  Piezas[2]=" pppppppp ";
+  Piezas[3]="          ";
+  Piezas[4]="          ";
+  Piezas[5]="          ";
+  Piezas[6]="          ";
+  Piezas[7]=" PPPPPPPP ";
+  Piezas[8]=" TCARXACT ";
+  Piezas[9]="          ";
 
 environment = new Environment();
 environment.setMap( mapa );
