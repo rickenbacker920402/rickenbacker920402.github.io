@@ -11,7 +11,7 @@ base3.rotateX(Math.PI/4);
 
 base.translate(0, -1, 0);
 base2.translate(0, -0.9, 0);
-base3.translate(1,-0.4,0);
+base3.translate(-0.5,-0.4,0);
 base4.translate(0,-0.1,0);
 
 
