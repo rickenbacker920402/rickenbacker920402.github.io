@@ -430,51 +430,51 @@ for (var i= 0; i< map.length ; i++){
 for (var j= 0; j < map.length; j++){
 if(map[i][j]==="c")
       {
-        this.add(new Caballo(1,(j*10)-50,(i*10)-55));
+        this.add(new Caballo(true,(j*10)-50,(i*10)-55));
       }
       if(map[i][j]==="C")
       {
-        this.add(new Caballo(2,(j*10)-50,(i*10)-50));
+        this.add(new Caballo(false,(j*10)-50,(i*10)-50));
       }
       if(map[i][j]==="a")
       {
-        this.add(new Alfil(1,(j*10)-50,(i*10)-50));
+        this.add(new Alfil(true,(j*10)-50,(i*10)-50));
       }
       if(map[i][j]==="A")
       {
-        this.add(new Alfil(2,(j*10)-50,(i*10)-50));
+        this.add(new Alfil(false,(j*10)-50,(i*10)-50));
       }
       if(map[i][j]==="x")
       {
-        this.add(new Reina(1,(j*10)-50,(i*10)-50));
+        this.add(new Reina(true,(j*10)-50,(i*10)-50));
       }
       if(map[i][j]==="X")
       {
-        this.add(new Reina(2,(j*10)-50,(i*10)-50));
+        this.add(new Reina(false,(j*10)-50,(i*10)-50));
       }
       if(map[i][j]==="r")
       {
-        this.add(new Rey(1,(j*10)-50,(i*10)-50));
+        this.add(new Rey(true,(j*10)-50,(i*10)-50));
       }
       if(map[i][j]==="R")
       {
-        this.add(new Rey(2,(j*10)-50,(i*10)-50));
+        this.add(new Rey(false,(j*10)-50,(i*10)-50));
       }
       if(map[i][j]==="t")
       {
-        this.add(new Torre(1,(j*10)-50,(i*10)-50));
+        this.add(new Torre(true,(j*10)-50,(i*10)-50));
       }
       if(map[i][j]==="T")
       {
-        this.add(new Torre(2,(j*10)-50,(i*10)-50));
+        this.add(new Torre(false,(j*10)-50,(i*10)-50));
       }
       if(map[i][j]==="p")
       {
-        this.add(new Peon(1,(j*10)-50,(i*10)-50));
+        this.add(new Peon(true,(j*10)-50,(i*10)-50));
       }
       if(map[i][j]==="P")
       {
-        this.add(new Peon(2,(j*10)-50,(i*10)-50));
+        this.add(new Peon(false,(j*10)-50,(i*10)-50));
       } 
 }
 }
@@ -485,7 +485,7 @@ function Alfil(sTP,x,y)
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
   this.sTP = sTP;
-  if(this.sTP===1)
+  if(this.sTP===true)
     this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
   else
     this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
