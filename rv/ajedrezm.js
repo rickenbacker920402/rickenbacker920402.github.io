@@ -76,6 +76,7 @@ this.merge(base5Malla.geometry,base5Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix); 
 this.merge(cima1Malla.geometry,cima1Malla.matrix); 
 //this.scale(3,9,3);
+ this.positon.set(0,0,1);
 }
 
 AlfilForma.prototype = new THREE.Geometry();
