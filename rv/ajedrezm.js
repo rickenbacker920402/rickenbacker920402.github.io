@@ -76,7 +76,6 @@ this.merge(base5Malla.geometry,base5Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix); 
 this.merge(cima1Malla.geometry,cima1Malla.matrix); 
 //this.scale(3,9,3);
- this.positon.set(0,0,1);
 }
 
 AlfilForma.prototype = new THREE.Geometry();
@@ -419,7 +418,7 @@ THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 0.7), new THREE.MeshLamb
 this.size = size;
 this.position.x = x;
 this.position.y = y;
-this.position.z = -12;
+this.position.z = -14;
 }
 Borde.prototype = new THREE.Mesh();
 
@@ -429,7 +428,7 @@ THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10), new THREE.MeshLambe
 this.size = size;
 this.position.x = x;
 this.position.y = y;
-this.position.z = -12;
+this.position.z = -14;
 }
 EspacioGris.prototype = new THREE.Mesh();
 
@@ -439,7 +438,7 @@ THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10), new THREE.MeshLambe
 this.size = size;
 this.position.x = x;
 this.position.y = y;
-this.position.z = -12;
+this.position.z = -14;
 }
 EspacioBlanco.prototype = new THREE.Mesh();
 
@@ -965,7 +964,7 @@ function Caballo(texturaP,x,y)
  this.actuator=new THREE.Mesh(new CaballoForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
   else
  this.actuator=new THREE.Mesh(new CaballoForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
- this.position.set=(x,y,4);
+ this.position.set=(x,y,6);
  this.sensor=new Sensor();  
  this.actuator.rotateX(Math.PI/2);
  this.add(this.actuator);
