@@ -964,7 +964,7 @@ function Caballo(texturaP,x,y)
  this.actuator=new THREE.Mesh(new CaballoForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolGris.jpg")}));
   else
  this.actuator=new THREE.Mesh(new CaballoForma(),new THREE.MeshLambertMaterial({map:textura.load("MarmolBlanco.jpg")}));
- this.position.set=(x,y,6);
+ this.position.set=(x,y,0);
  this.sensor=new Sensor();  
  this.actuator.rotateX(Math.PI/2);
  this.add(this.actuator);
@@ -1164,7 +1164,7 @@ camara = new THREE.PerspectiveCamera(campoVision,
                                           planoCercano,
                                           planoLejano);
 camara.position.z = 150;
-camara.position.y = -160;
+camara.position.x = -160;
 camara.lookAt(new THREE.Vector3(0,0,0));
 renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerWidth, window.innerHeight);
