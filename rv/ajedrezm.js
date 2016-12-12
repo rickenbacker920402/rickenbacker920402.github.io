@@ -283,7 +283,7 @@ this.merge(base2Malla.geometry,base2Malla.matrix);
 this.merge(base3Malla.geometry,base3Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix);
 this.rotateX(Math.PI*3/2);
-this.scale(4,4,8);
+this.scale(4,4,6);
 }
 
 PeonForma.prototype = new THREE.Geometry();
@@ -418,7 +418,7 @@ THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 0.7), new THREE.MeshLamb
 this.size = size;
 this.position.x = x;
 this.position.y = y;
-this.position.z = -10;
+this.position.z = -12;
 }
 Borde.prototype = new THREE.Mesh();
 
@@ -428,7 +428,7 @@ THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10), new THREE.MeshLambe
 this.size = size;
 this.position.x = x;
 this.position.y = y;
-this.position.z = -10;
+this.position.z = -12;
 }
 EspacioGris.prototype = new THREE.Mesh();
 
@@ -438,7 +438,7 @@ THREE.Mesh.call(this, new THREE.BoxGeometry(size, size, 10), new THREE.MeshLambe
 this.size = size;
 this.position.x = x;
 this.position.y = y;
-this.position.z = -10;
+this.position.z = -12;
 }
 EspacioBlanco.prototype = new THREE.Mesh();
 
