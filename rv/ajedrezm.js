@@ -1431,7 +1431,10 @@ environment.act();
 renderizador.render(environment,camara);
 }
 
-var environment, camara, renderizador, iluminacion,bi=0,bj=0,nj=0,ni=0,turno=false,sTC,id,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var environment, camara, renderizador, iluminacion, culo,bi=0,bj=0,nj=0,ni=0,turno=false,sTC,id,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+
+setup();
+loop();
 
 setup();
 loop();
