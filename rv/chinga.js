@@ -2,7 +2,7 @@
 CaballoGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseCaballo1=new THREE.CylinderGeometry( 0.7, 0.7, 0.2, 32 );
+  var BaseCaballo1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
   var CuerpoCaballo1=new THREE.BoxGeometry(0.5,1,0.5);
   var CabezaCaballo1=new THREE.BoxGeometry(0.3,0.3,0.5);
   BaseCaballo1.translate(0,0,0);
@@ -20,7 +20,7 @@ CaballoGeometry.prototype=new THREE.Geometry();
 AlfilGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseAlfil1=new THREE.CylinderGeometry( 0.7, 0.7, 0.2, 32 );
+  var BaseAlfil1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
   var CuerpoAlfil1=new THREE.ConeGeometry(0.45,1.2,4,1,false,Math.PI/4);
   BaseAlfil1.translate(0,0,0);
   CuerpoAlfil1.translate(0,0.7,0); 
@@ -35,9 +35,9 @@ AlfilGeometry.prototype=new THREE.Geometry();
 ReinaGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseReina1=new THREE.CylinderGeometry( 0.7, 0.7, 0.2, 32 );
+  var BaseReina1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
   var CuerpoReina1=new THREE.CylinderGeometry(0.3,0.3,1.3,32);
-  var CoronaReina1=new THREE.SphereGeometry(0.23,32,32);
+  var CoronaReina1=new THREE.ConeGeometry(0.23,0.46,4,1,false,Math.PI/4);
   BaseReina1.translate(0,0,0);
   CuerpoReina1.translate(0,0.5,0);
   CoronaReina1.translate(0,1.3,0);
@@ -53,7 +53,7 @@ ReinaGeometry.prototype=new THREE.Geometry();
 ReyGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseRey1=new THREE.CylinderGeometry( 0.7, 0.7, 0.2, 32 );
+  var BaseRey1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
   var CuerpoRey1=new THREE.BoxGeometry(0.5,1.3,0.5);
   var CoronaRey1=new THREE.BoxGeometry(0.3,0.3,0.3);
   BaseRey1.translate(0,0,0);
@@ -72,8 +72,8 @@ ReyGeometry.prototype=new THREE.Geometry();
 PeonGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BasePeon1=new THREE.CylinderGeometry( 0.7, 0.7, 0.2, 32 );
-  var CuerpoPeon1=new THREE.BoxGeometry(0.5,0.8,0.5);
+  var BasePeon1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
+  var CuerpoPeon1=new THREE.ConeGeometry(0.45,0.8,4,1,false,Math.PI/4);
   BasePeon1.translate(0,0,0);
   CuerpoPeon1.translate(0,0.4,0);
   var BasePeon=new THREE.Mesh(BasePeon1);
@@ -86,7 +86,7 @@ PeonGeometry.prototype=new THREE.Geometry();
 TorreGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseTorre1=new THREE.CylinderGeometry( 0.7, 0.7, 0.2, 32 );
+  var BaseTorre1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
   var CuerpoTorre1=new THREE.BoxGeometry(0.6,1.2,0.6);
   BaseTorre1.translate(0,0,0);
   CuerpoTorre1.translate(0,0.7,0);
