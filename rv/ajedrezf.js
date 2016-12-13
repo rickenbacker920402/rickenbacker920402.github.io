@@ -488,7 +488,7 @@ function Casillas(size,x,y)
   this.receiveShadow=true;
   this.position.x=x;
   this.position.y=y;
-  this.position.z=-15;
+  this.position.z=-20;
 }
 Casillas.prototype=new THREE.Mesh();
 ///////////////Armando el Tablero///////////////
@@ -603,10 +603,10 @@ function Caballo(sTP,x,y)
   this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(0.4,1.4,4);
   this.brazoizq.position.set(0.4,-1.4,4);
-  this.piernaizq.rotateX(Math.PI/2);
-  this.piernader.rotateX(Math.PI/2);
- this.brazoder.rotateX(Math.PI/2);
- this.brazoizq.rotateX(Math.PI/2);
+  //this.piernaizq.rotateX(Math.PI/2);
+  //this.piernader.rotateX(Math.PI/2);
+ //this.brazoder.rotateX(Math.PI/2);
+ //this.brazoizq.rotateX(Math.PI/2);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   //this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
