@@ -284,14 +284,16 @@ Environment.prototype.act=function()
 function Casillas(size,x,y)
 {
   cargador=new THREE.TextureLoader();
-  if(sTC===1)
+  if(sTC===1){
     textura=cargador.load('MarmolBlanco.jpg');
-  else if (sTC===2)
+    THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,10,10,10,10),new THREE.MeshLambertMaterial({map:textura}));}
+  else if (sTC===2){
     textura=cargador.load('MarmolGris.jpg');
+    THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,10,10,10,10),new THREE.MeshLambertMaterial({map:textura}));}
   else{
     textura=cargador.load('marmolcafe.jpg');
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.7,10,10,10),new THREE.MeshLambertMaterial({map:textura}));}
-  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,10,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
+  //THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,10,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
   this.receiveShadow=true;
   this.position.x=x;
