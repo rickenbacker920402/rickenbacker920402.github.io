@@ -72,17 +72,13 @@ PeonGeometry=function()
 {
   THREE.Geometry.call(this); 
  
- var BasePeon1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
-  var CuerpoPeon1=new THREE.CylinderGeometry( 0.35, 0.2, 0.7, 32 );
+ var BasePeon1=new THREE.CylinderGeometry( 0.02, 0.35, 0.8, 32 );
   var CabezaPeon1 = new THREE.SphereGeometry(0.1,20,20);
   BasePeon1.translate(0,0,0);
-  CuerpoPeon1.translate(0,0.4,0);
-  CabezaPeon1.translate(0,0.8,0);
+  CabezaPeon1.translate(0,0.9,0);
   var BasePeon=new THREE.Mesh(BasePeon1);
-  var CuerpoPeon=new THREE.Mesh(CuerpoPeon1);
   var CabezaPeon=new THREE.Mesh(CabezaPeon1);
   this.merge(BasePeon.geometry,BasePeon.matrix);
-  this.merge(CuerpoPeon.geometry,CuerpoPeon.matrix);
   this.merge(CabezaPeon.geometry,CabezaPeon.matrix);
 }
 PeonGeometry.prototype=new THREE.Geometry();
