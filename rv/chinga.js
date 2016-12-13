@@ -395,9 +395,9 @@ function Caballo(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('maderaN.jpg');
+    textura=cargador.load('MarmolGris.jpg');
   else
-    textura=cargador.load('maderaB.jpg');
+    textura=cargador.load('MarmolBlanco.jpg');
   this.position.set(x,y,0);
   this.cnt = 0;
   this.sensor=new Sensor();
@@ -444,9 +444,9 @@ function Alfil(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('maderaN.jpg');
+    textura=cargador.load('MarmolGris.jpg');
   else
-    textura=cargador.load('maderaB.jpg');
+    textura=cargador.load('MarmolBlanco.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
@@ -533,9 +533,9 @@ function Reina(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('maderaN.jpg');
+    textura=cargador.load('MarmolGris.jpg');
   else
-    textura=cargador.load('maderaB.jpg');
+    textura=cargador.load('MarmolBlanco.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new ReinaGeometry(),new THREE.MeshLambertMaterial({map:textura}));
@@ -636,9 +636,9 @@ function Rey(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('maderaN.jpg');
+    textura=cargador.load('MarmolGris.jpg');
   else
-    textura=cargador.load('maderaB.jpg'); 
+    textura=cargador.load('MarmolBlanco.jpg'); 
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new ReyGeometry(),new THREE.MeshLambertMaterial({map:textura}));
@@ -747,9 +747,9 @@ function Torre(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('maderaN.jpg');
+    textura=cargador.load('MarmolGris.jpg');
   else
-    textura=cargador.load('maderaB.jpg');
+    textura=cargador.load('MarmolBlanco.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
@@ -844,9 +844,9 @@ function Peon(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('maderaN.jpg');
+    textura=cargador.load('MarmolGris.jpg');
   else
-    textura=cargador.load('maderaB.jpg');
+    textura=cargador.load('MarmolBlanco.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
