@@ -2,12 +2,12 @@
 CaballoGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseCaballo1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
-  var CuerpoCaballo1=new THREE.CylinderGeometry(0.25,0.25,1,50);
-  var CabezaCaballo1=new THREE.CylinderGeometry(0.3,0.3,0.3);
-  BaseCaballo1.translate(0,0,0);
-  CuerpoCaballo1.translate(0,0.3,0);
-  CabezaCaballo1.translate(0,0.7,0);
+  var BaseCaballo1=new THREE.CylinderGeometry( 0.2, 0.35, 0.6, 32 );
+  var CuerpoCaballo1=new THREE.BoxGeometry(0.2,0.25,0.2);
+  var CabezaCaballo1=new THREE.BoxGeometry(0.2,0.2,0.4);
+  BaseCaballo1.translate(0,0.4,0);
+  CuerpoCaballo1.translate(0,0.7,0);
+  CabezaCaballo1.translate(0.2,0.9,0);
   var BaseCaballo=new THREE.Mesh(BaseCaballo1);
   var CuerpoCaballo=new THREE.Mesh(CuerpoCaballo1);
   var CabezaCaballo=new THREE.Mesh(CabezaCaballo1);
