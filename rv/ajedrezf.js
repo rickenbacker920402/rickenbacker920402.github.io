@@ -590,7 +590,7 @@ function Caballo(sTP,x,y)
   this.brazoder.position.set(0.4,1.4,4);
   this.brazoizq.position.set(0.4,-1.4,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  this.actuator.scale.set(4,4,9.5);
+  this.actuator.scale.set(4,9.5,4);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
