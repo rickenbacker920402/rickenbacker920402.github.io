@@ -20,10 +20,10 @@ CaballoGeometry.prototype=new THREE.Geometry();
 AlfilGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseAlfil1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
-  var CuerpoAlfil1=new THREE.ConeGeometry(0.45,1.2,4,1,false,Math.PI/4);
-  BaseAlfil1.translate(0,0,0);
-  CuerpoAlfil1.translate(0,0.7,0); 
+  var BaseAlfil1=new THREE.CylinderGeometry( 0.2, 0.35, 0.1, 32 );
+  var CuerpoAlfil1=new THREE.SphereGeometry(0.2,32,32);
+  BaseAlfil1.translate(0,0.5,0);
+  CuerpoAlfil1.translate(0,0.9,0); 
   var BaseAlfil=new THREE.Mesh(BaseAlfil1);
   var CuerpoAlfil=new THREE.Mesh(CuerpoAlfil1);
   var AlfilForma = new THREE.Geometry();
@@ -462,7 +462,7 @@ function Alfil(sTP,x,y)
   this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(2.5,0,4);
   this.brazoizq.position.set(-2.5,0,4);
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
+  this.add(/*this.brazoizq,this.brazoder,*/this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
