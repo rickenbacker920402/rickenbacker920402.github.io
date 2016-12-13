@@ -1113,6 +1113,7 @@ function SeleccionD(event)
   }
 }
 
+
 function SeleccionU(event) 
 {
   activar=true;
@@ -1153,7 +1154,7 @@ environment.setMap( mapa );
 environment.setMapPiezas(mapa2);
  
 document.addEventListener('mousedown',SeleccionD);
-document.addEventListener('mouseup',SeleccionU);
+  document.addEventListener('mouseup',SeleccionU);
  
 var campoVision = 45; 
 var relacionAspecto = window.innerWidth / window.innerHeight;
