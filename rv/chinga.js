@@ -74,7 +74,7 @@ PeonGeometry=function()
  
  var BasePeon1=new THREE.CylinderGeometry( 0.02, 0.35, 0.8, 32 );
   var CabezaPeon1 = new THREE.SphereGeometry(0.1,20,20);
-  BasePeon1.translate(0,0,0);
+  BasePeon1.translate(0,0.4,0);
   CabezaPeon1.translate(0,0.9,0);
   var BasePeon=new THREE.Mesh(BasePeon1);
   var CabezaPeon=new THREE.Mesh(CabezaPeon1);
@@ -862,7 +862,7 @@ function Peon(sTP,x,y)
   this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
+  this.add(/*this.brazoizq,this.brazoder,*/this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
