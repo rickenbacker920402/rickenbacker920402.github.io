@@ -86,10 +86,10 @@ PeonGeometry.prototype=new THREE.Geometry();
 TorreGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseTorre1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
-  var CuerpoTorre1=new THREE.CylinderGeometry( 0.3, 0.3, 1.2, 32 );
-  BaseTorre1.translate(0,0,0);
-  CuerpoTorre1.translate(0,0.7,0);
+  var BaseTorre1=new THREE.CylinderGeometry( 0.25, 0.35, 0.8, 32 );
+  var CuerpoTorre1=new THREE.CylinderGeometry( 0.3, 0.25, 4, 32 );
+  BaseTorre1.translate(0,0.4,0);
+  CuerpoTorre1.translate(0,1,0);
   var BaseTorre=new THREE.Mesh(BaseTorre1);
   var CuerpoTorre=new THREE.Mesh(CuerpoTorre1);
   this.merge(BaseTorre.geometry,BaseTorre.matrix);
@@ -765,7 +765,7 @@ function Torre(sTP,x,y)
   this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
+  this.add(/*this.brazoizq,this.brazoder,*/this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
