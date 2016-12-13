@@ -87,7 +87,7 @@ TorreGeometry=function()
 {
   THREE.Geometry.call(this);
   var BaseTorre1=new THREE.CylinderGeometry( 0.25, 0.35, 0.8, 32 );
-  var CuerpoTorre1=new THREE.CylinderGeometry( 0.3, 0.25, 0.4, 32 );
+  var CuerpoTorre1=new THREE.CylinderGeometry( 0.35, 0.25, 0.4, 32 );
   BaseTorre1.translate(0,0.4,0);
   CuerpoTorre1.translate(0,1,0);
   var BaseTorre=new THREE.Mesh(BaseTorre1);
