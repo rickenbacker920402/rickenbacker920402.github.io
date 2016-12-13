@@ -488,7 +488,7 @@ function Casillas(size,x,y)
   this.receiveShadow=true;
   this.position.x=x;
   this.position.y=y;
-  this.position.z=-6;
+  this.position.z=-10;
 }
 Casillas.prototype=new THREE.Mesh();
 ///////////////Armando el Tablero///////////////
