@@ -292,7 +292,7 @@ function Casillas(size,x,y)
     textura=cargador.load('MarmolGris.jpg');
     THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,10,10,10,10),new THREE.MeshLambertMaterial({map:textura}));}
   else{
-    textura=cargador.load('marmolcafe.jpg');
+    textura=cargador.load('aluminio.jpg');
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.7,10,10,10),new THREE.MeshLambertMaterial({map:textura}));}
   //THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,10,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
