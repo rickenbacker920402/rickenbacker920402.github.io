@@ -4,10 +4,10 @@ CaballoGeometry=function()
   THREE.Geometry.call(this);
   var BaseCaballo1=new THREE.CylinderGeometry( 0.2, 0.35, 0.6, 32 );
   var CuerpoCaballo1=new THREE.BoxGeometry(0.2,0.25,0.2);
-  var CabezaCaballo1=new THREE.BoxGeometry(0.2,0.2,0.4);
+  var CabezaCaballo1=new THREE.BoxGeometry(0.5,0.2,0.2);
   BaseCaballo1.translate(0,0.4,0);
-  CuerpoCaballo1.translate(0,0.7,0);
-  CabezaCaballo1.translate(0.2,0.9,0);
+  CuerpoCaballo1.translate(0,0.8,0);
+  CabezaCaballo1.translate(0.2,1,0);
   var BaseCaballo=new THREE.Mesh(BaseCaballo1);
   var CuerpoCaballo=new THREE.Mesh(CuerpoCaballo1);
   var CabezaCaballo=new THREE.Mesh(CabezaCaballo1);
