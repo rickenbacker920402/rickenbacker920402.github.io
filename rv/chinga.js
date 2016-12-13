@@ -39,7 +39,7 @@ ReinaGeometry=function()
   var CuerpoReina1=new THREE.CylinderGeometry(0.35,0.2,0.4,32);
   var CoronaReina1=new THREE.TorusGeometry(0.25,0.1,16,100);
   BaseReina1.translate(0,0.4,0);
-  CuerpoReina1.translate(0,0.5,0);
+  CuerpoReina1.translate(0,1.5,0);
   CoronaReina1.translate(0,1.3,0);
   var BaseReina=new THREE.Mesh(BaseReina1);
   var CuerpoReina=new THREE.Mesh(CuerpoReina1);
