@@ -53,12 +53,12 @@ ReinaGeometry.prototype=new THREE.Geometry();
 ReyGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseRey1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
-  var CuerpoRey1=new THREE.BoxGeometry(0.5,1.3,0.5);
-  var CoronaRey1=new THREE.SphereGeometry(0.23,32,32);
-  BaseRey1.translate(0,0,0);
-  CuerpoRey1.translate(0,0.5,0);
-  CoronaRey1.translate(0,1.3,0);
+  var BaseRey1=new THREE.CylinderGeometry( 0.2, 0.35, 0.9, 32 );
+  var CuerpoRey1=new THREE.BoxGeometry(0.3,0.3,0.5);
+  var CoronaRey1=new THREE.BoxGeometry(0.3,0.5,0.3);
+  BaseRey1.translate(0,0.4,0);
+  CuerpoRey1.translate(0,1.2,0);
+  CoronaRey1.translate(0,1.2,0);
   var BaseRey=new THREE.Mesh(BaseRey1);
   var CuerpoRey=new THREE.Mesh(CuerpoRey1);
   var CoronaRey=new THREE.Mesh(CoronaRey1);
