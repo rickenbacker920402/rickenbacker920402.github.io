@@ -73,8 +73,8 @@ PeonGeometry=function()
   THREE.Geometry.call(this); 
  
  var BasePeon1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
-  var CuerpoPeon1=new THREE.CylinderGeometry( 0.35, 0.2, 0.8, 32 );
-  var CabezaPeon1 = new THREE.SphereGeometry(0.25,20,20);
+  var CuerpoPeon1=new THREE.CylinderGeometry( 0.35, 0.2, 0.7, 32 );
+  var CabezaPeon1 = new THREE.SphereGeometry(0.1,20,20);
   BasePeon1.translate(0,0,0);
   CuerpoPeon1.translate(0,0.4,0);
   CabezaPeon1.translate(0,0.8,0);
