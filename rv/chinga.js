@@ -55,11 +55,11 @@ ReyGeometry=function()
   THREE.Geometry.call(this);
   var BaseRey1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
   var CuerpoRey1=new THREE.BoxGeometry(0.5,1.3,0.5);
-  var CoronaRey1=new THREE.BoxGeometry(0.3,0.3,0.3);
+  var CoronaRey1=new THREE.ConeGeometry(0.14,0.3,4,1,false,Math.PI/4);
   BaseRey1.translate(0,0,0);
   CuerpoRey1.translate(0,0.5,0);
   CoronaRey1.translate(0,1.3,0);
-  CoronaRey1.rotateY(Math.PI/4);
+  CoronaRey1.rotateY(Math.PI);
   var BaseRey=new THREE.Mesh(BaseRey1);
   var CuerpoRey=new THREE.Mesh(CuerpoRey1);
   var CoronaRey=new THREE.Mesh(CoronaRey1);
