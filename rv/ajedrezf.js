@@ -742,7 +742,7 @@ function Reina(sTP,x,y)
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   //this.actuator.scale.set(9.5,9.5,9.5);
-  this.actuator.rotateX(Math.PI/2);
+  this.actuator.rotateX(Math.PI);
 }
 Reina.prototype=new Agent();
 
@@ -956,7 +956,7 @@ function Torre(sTP,x,y)
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   //this.actuator.scale.set(9.5,9.5,9.5);
-  this.actuator.rotateX(Math.PI/2);
+  this.actuator.rotateX(Math.PI);
   this.actuator.castShadow=true;
 }
 Torre.prototype=new Agent();
@@ -1053,7 +1053,7 @@ function Peon(sTP,x,y)
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   //this.actuator.scale.set(9.5,9.5,9.5);
-  this.actuator.rotateX(Math.PI/2);
+  this.actuator.rotateX(Math.PI);
   this.actuator.castShadow=true;
 }
 Peon.prototype=new Agent();
