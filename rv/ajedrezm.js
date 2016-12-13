@@ -1436,6 +1436,4 @@ var environment, camara, renderizador, iluminacion, culo,bi=0,bj=0,nj=0,ni=0,tur
 setup();
 loop();
 
-setup();
-loop();
 
