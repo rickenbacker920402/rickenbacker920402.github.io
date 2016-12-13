@@ -395,18 +395,22 @@ function Caballo(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+    textura=cargador.load('maderaN.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('maderaB.jpg');
   this.position.set(x,y,0);
   this.cnt = 0;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new CaballoGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(1,6,1),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(1,6,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,-3.1);
   this.piernader.position.set(1.8,0,-3.1);
-  this.add(this.piernaizq,this.piernader,this.actuator);
+  this.brazoder.position.set(0.4,1.4,4);
+  this.brazoizq.position.set(0.4,-1.4,4);
+  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
@@ -440,17 +444,21 @@ function Alfil(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+    textura=cargador.load('maderaN.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('maderaB.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,-3.1);
   this.piernader.position.set(1.8,0,-3.1);
-  this.add(this.piernaizq,this.piernader,this.actuator);
+  this.brazoder.position.set(2.5,0,4);
+  this.brazoizq.position.set(-2.5,0,4);
+  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
@@ -476,6 +484,8 @@ Alfil.prototype.sense=function(environment){
       if (obstaculo[0].distance<=Math.sqrt(2))
         if (this.sTP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //bi++;
@@ -483,6 +493,8 @@ Alfil.prototype.sense=function(environment){
         }
       else{
           obstaculo[0].object.translate(-50+ni,-50+nj,0);
+          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //ni-=10;
@@ -521,17 +533,21 @@ function Reina(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+    textura=cargador.load('maderaN.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('maderaB.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new ReinaGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,-3.1);
   this.piernader.position.set(1.8,0,-3.1);
-  this.add(this.piernaizq,this.piernader,this.actuator);
+  this.brazoder.position.set(1.8,0,4);
+  this.brazoizq.position.set(-1.8,0,4);
+  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
 }
@@ -567,6 +583,8 @@ Reina.prototype.sense=function(environment){
       if (obstaculo[0].distance<=Math.sqrt(2))
         if (this.sTP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //bi++;
@@ -574,6 +592,8 @@ Reina.prototype.sense=function(environment){
         }
       else{
           obstaculo[0].object.translate(-50+ni,-50+nj,0);          
+          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //ni-=10;
@@ -616,17 +636,21 @@ function Rey(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+    textura=cargador.load('maderaN.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg'); 
+    textura=cargador.load('maderaB.jpg'); 
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new ReyGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,-3.1);
   this.piernader.position.set(1.8,0,-3.1);
-  this.add(this.piernaizq,this.piernader,this.actuator);
+  this.brazoder.position.set(1.8,0,4);
+  this.brazoizq.position.set(-1.8,0,4);
+  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
@@ -668,6 +692,8 @@ Rey.prototype.sense=function(environment){
       if (obstaculo[0].distance<=Math.sqrt(2))
         if (this.sTP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //bi++;
@@ -675,6 +701,8 @@ Rey.prototype.sense=function(environment){
         }
       else{
           obstaculo[0].object.translate(-50+ni,-50+nj,0);
+          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //ni-=10;
@@ -719,17 +747,21 @@ function Torre(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+    textura=cargador.load('maderaN.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('maderaB.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,-3.1);
   this.piernader.position.set(1.8,0,-3.1);
-  this.add(this.piernaizq,this.piernader,this.actuator);
+  this.brazoder.position.set(1.8,0,4);
+  this.brazoizq.position.set(-1.8,0,4);
+  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
@@ -761,6 +793,8 @@ Torre.prototype.sense=function(environment){
       if (obstaculo[0].distance<=Math.sqrt(2))
         if (this.sTP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //bi++;
@@ -768,6 +802,8 @@ Torre.prototype.sense=function(environment){
         }
       else{
           obstaculo[0].object.translate(-50+ni,-50+nj,0);
+          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //ni-=10;
@@ -808,17 +844,21 @@ function Peon(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+    textura=cargador.load('maderaN.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('maderaB.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,-3.1);
   this.piernader.position.set(1.8,0,-3.1);
-  this.add(this.piernaizq,this.piernader,this.actuator);
+  this.brazoder.position.set(1.8,0,4);
+  this.brazoizq.position.set(-1.8,0,4);
+  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
@@ -870,6 +910,8 @@ Peon.prototype.sense=function(environment){
       if (obstaculo[0].distance<Math.sqrt(2)){
         if (this.sTP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //bi++;
@@ -877,6 +919,8 @@ Peon.prototype.sense=function(environment){
         }
         else{
           obstaculo[0].object.translate(-50+ni,-50+nj,0);
+          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //ni-=10;
