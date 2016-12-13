@@ -54,8 +54,8 @@ ReyGeometry=function()
 {
   THREE.Geometry.call(this);
   var BaseRey1=new THREE.CylinderGeometry( 0.2, 0.35, 0.9, 32 );
-  var CuerpoRey1=new THREE.BoxGeometry(0.3,0.3,0.5);
-  var CoronaRey1=new THREE.BoxGeometry(0.3,0.5,0.3);
+  var CuerpoRey1=new THREE.BoxGeometry(0.5,0.2,0.2);
+  var CoronaRey1=new THREE.BoxGeometry(0.2,0.5,0.2);
   BaseRey1.translate(0,0.4,0);
   CuerpoRey1.translate(0,1.2,0);
   CoronaRey1.translate(0,1.2,0);
