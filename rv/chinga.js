@@ -288,14 +288,15 @@ function Casillas(size,x,y)
     textura=cargador.load('MarmolBlanco.jpg');
   else if (sTC===2)
     textura=cargador.load('MarmolGris.jpg');
-  else
+  else{
     textura=cargador.load('marmolcafe.jpg');
-  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.4,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
+  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.7,10,10,10),new THREE.MeshLambertMaterial({map:textura}));}
+  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,10,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
   this.receiveShadow=true;
   this.position.x=x;
   this.position.y=y;
-  this.position.z=-6;
+  this.position.z=-10;
 }
 Casillas.prototype=new THREE.Mesh();
 ///////////////Armando el Tablero///////////////
