@@ -7,7 +7,7 @@ CaballoGeometry=function()
   var CabezaCaballo1=new THREE.BoxGeometry(0.5,0.2,0.2);
   BaseCaballo1.translate(0,0.4,0);
   CuerpoCaballo1.translate(0,0.8,0);
-  CabezaCaballo1.translate(0.2,1,0);
+  CabezaCaballo1.translate(0.1,1,0);
   var BaseCaballo=new THREE.Mesh(BaseCaballo1);
   var CuerpoCaballo=new THREE.Mesh(CuerpoCaballo1);
   var CabezaCaballo=new THREE.Mesh(CabezaCaballo1);
@@ -414,7 +414,7 @@ function Caballo(sTP,x,y)
   this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(0.4,1.4,4);
   this.brazoizq.position.set(0.4,-1.4,4);
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
+  this.add(/*this.brazoizq,this.brazoder,*/this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
@@ -654,7 +654,7 @@ function Rey(sTP,x,y)
   this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
+  this.add(/*this.brazoizq,this.brazoder,*/this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
