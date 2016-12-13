@@ -70,39 +70,20 @@ ReyGeometry.prototype=new THREE.Geometry();
 ///////////////CONSTRUCTOR PEON///////////////
 PeonGeometry=function()
 {
-  THREE.Geometry.call(this);
-var base = new THREE.CylinderGeometry(0.35, 0.35, 0.2, 32);
-var base2 = new THREE.TorusGeometry( 0.35, 0.1, 16, 100 );
-var base3 = new  THREE.CylinderGeometry(0.25, 0.55, 0.7, 50, 25);
-var cima = new THREE.SphereGeometry( 0.4, 32, 32 );
-
-base2.rotateX(Math.PI/2);
-base.translate(0, -1, 0);
-base2.translate(0, -0.9, 0);
-base3.translate(0, -0.2, 0);
-cima.translate(0, 0.5, 0);
-
-var baseMalla = new THREE.Mesh(base);
-var base2Malla = new THREE.Mesh(base2);
-var base3Malla = new THREE.Mesh(base3);
-var cimaMalla = new THREE.Mesh(cima);
-
-this.merge(baseMalla.geometry,baseMalla.matrix);
-this.merge(base2Malla.geometry,base2Malla.matrix);
-this.merge(base3Malla.geometry,base3Malla.matrix);
-this.merge(cimaMalla.geometry,cimaMalla.matrix);
-  
-  
-  
-  
- /* var BasePeon1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
-  var CuerpoPeon1=new THREE.ConeGeometry(0.45,0.8,4,1,false,Math.PI/4);
+  THREE.Geometry.call(this); 
+ 
+ var BasePeon1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
+  var CuerpoPeon1=new THREE.CylinderGeometry( 0.35, 0.2, 0.8, 32 );
+  var CabezaPeon1 = new THREE.SphereGeometry(0.25,20,20);
   BasePeon1.translate(0,0,0);
   CuerpoPeon1.translate(0,0.4,0);
+  CabezaPeon1.translate(0,0.8,0);
   var BasePeon=new THREE.Mesh(BasePeon1);
   var CuerpoPeon=new THREE.Mesh(CuerpoPeon1);
+  var CabezaPeon=new THREE.Mesh(CabezaPeon1);
   this.merge(BasePeon.geometry,BasePeon.matrix);
-  this.merge(CuerpoPeon.geometry,CuerpoPeon.matrix);*/
+  this.merge(CuerpoPeon.geometry,CuerpoPeon.matrix);
+  this.merge(CabezaPeon.geometry,CabezaPeon.matrix);
 }
 PeonGeometry.prototype=new THREE.Geometry();
 ///////////////CONSTRUCTOR TORRE///////////////
