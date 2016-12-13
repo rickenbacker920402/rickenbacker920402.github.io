@@ -476,8 +476,6 @@ Alfil.prototype.sense=function(environment){
       if (obstaculo[0].distance<=Math.sqrt(2))
         if (this.sTP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //bi++;
@@ -485,8 +483,6 @@ Alfil.prototype.sense=function(environment){
         }
       else{
           obstaculo[0].object.translate(-50+ni,-50+nj,0);
-          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //ni-=10;
@@ -571,8 +567,6 @@ Reina.prototype.sense=function(environment){
       if (obstaculo[0].distance<=Math.sqrt(2))
         if (this.sTP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //bi++;
@@ -580,8 +574,6 @@ Reina.prototype.sense=function(environment){
         }
       else{
           obstaculo[0].object.translate(-50+ni,-50+nj,0);          
-          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //ni-=10;
@@ -676,8 +668,6 @@ Rey.prototype.sense=function(environment){
       if (obstaculo[0].distance<=Math.sqrt(2))
         if (this.sTP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //bi++;
@@ -685,8 +675,6 @@ Rey.prototype.sense=function(environment){
         }
       else{
           obstaculo[0].object.translate(-50+ni,-50+nj,0);
-          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //ni-=10;
@@ -773,8 +761,6 @@ Torre.prototype.sense=function(environment){
       if (obstaculo[0].distance<=Math.sqrt(2))
         if (this.sTP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //bi++;
@@ -782,8 +768,6 @@ Torre.prototype.sense=function(environment){
         }
       else{
           obstaculo[0].object.translate(-50+ni,-50+nj,0);
-          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //ni-=10;
@@ -886,8 +870,6 @@ Peon.prototype.sense=function(environment){
       if (obstaculo[0].distance<Math.sqrt(2)){
         if (this.sTP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //bi++;
@@ -895,8 +877,6 @@ Peon.prototype.sense=function(environment){
         }
         else{
           obstaculo[0].object.translate(-50+ni,-50+nj,0);
-          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
-          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernader.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.piernaizq.translate(50+bi,-50+bj,0);
           //ni-=10;
