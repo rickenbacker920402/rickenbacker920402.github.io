@@ -590,7 +590,7 @@ function Caballo(sTP,x,y)
   this.brazoder.position.set(0.4,1.4,4);
   this.brazoizq.position.set(0.4,-1.4,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(4,4,6);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
@@ -638,7 +638,7 @@ function Alfil(sTP,x,y)
   this.brazoder.position.set(2.5,0,4);
   this.brazoizq.position.set(-2.5,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(4,4,6);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
@@ -727,7 +727,7 @@ function Reina(sTP,x,y)
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(4,4,6);
   this.actuator.rotateX(Math.PI/2);
 }
 Reina.prototype=new Agent();
@@ -830,7 +830,7 @@ function Rey(sTP,x,y)
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(4,4,6);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
@@ -941,7 +941,7 @@ function Torre(sTP,x,y)
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(4,4,6);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
@@ -1038,7 +1038,7 @@ function Peon(sTP,x,y)
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(4,4,6);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
