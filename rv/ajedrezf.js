@@ -1,7 +1,8 @@
-CaballoForma = function(){
- THREE.Geometry.call(this);
- 
-var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
+///////////////CONSTRUCTOR CABALLO///////////////
+CaballoGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
 var base3 = new THREE.BoxGeometry(0.7,1.5,0.5);
 var base4 = new THREE.CylinderGeometry(0.5, 0.5, 0.5, 50, 25, false,5.5,5);
@@ -32,15 +33,13 @@ this.merge(base3Malla.geometry,base3Malla.matrix);
 this.merge(base4Malla.geometry,base4Malla.matrix);
 this.merge(base5Malla.geometry,base5Malla.matrix);
 this.merge(base6Malla.geometry,base6Malla.matrix);
-this.scale(5,10,5);
 }
-
-CaballoForma.prototype = new THREE.Geometry();
-
-AlfilForma =function(){
- THREE.Geometry.call(this);
- 
-var base = new THREE.CylinderGeometry(0.9, 0.9, 0.2, 50, 25); 
+CaballoGeometry.prototype=new THREE.Geometry();
+///////////////CONSTRUCTOR ALFIL///////////////
+AlfilGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var base = new THREE.CylinderGeometry(0.9, 0.9, 0.2, 50, 25); 
 var base1 = new THREE.CylinderGeometry(0.7, 0.8, 0.2, 50, 25);
 var base2 = new THREE.CylinderGeometry(0.8, 0.8, 0.2, 50, 25); 
 var base3 = new THREE.CylinderGeometry(0.5, 0.7, 1.5, 50, 25); 
@@ -75,14 +74,67 @@ this.merge(base4Malla.geometry,base4Malla.matrix);
 this.merge(base5Malla.geometry,base5Malla.matrix); 
 this.merge(cimaMalla.geometry,cimaMalla.matrix); 
 this.merge(cima1Malla.geometry,cima1Malla.matrix); 
-this.scale(4,9,4);
 }
+AlfilGeometry.prototype=new THREE.Geometry();
+///////////////CONSTRUCTOR REINA///////////////
+ReinaGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
+var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
+var base3 = new THREE.CylinderGeometry(0.5, 0.6,0.4,50,25);
+var base4 = new THREE.TorusGeometry( 0.45, 0.1, 16, 100 );
+var base5 = new THREE.CylinderGeometry(0.3, 0.45,1,50,25);
+var base6 = new THREE.TorusGeometry( 0.3, 0.15, 16, 100 );
+var base7 = new THREE.CylinderGeometry(0.5, 0.35,0.4,50,25);
+var base8 = new THREE.TorusGeometry( 0.4, 0.1, 16, 100 );
+var base9 = new THREE.SphereGeometry( 0.4, 32,32 );
+var base10 = new THREE.SphereGeometry( 0.1, 32,32 );
 
-AlfilForma.prototype = new THREE.Geometry();
+base2.rotateX(Math.PI/2);
+base4.rotateX(Math.PI/2);
+base6.rotateX(Math.PI/2);
+base8.rotateX(Math.PI/2);
 
-ReyForma = function(){
- THREE.Geometry.call(this);
-var base = new THREE.CylinderGeometry(0.9, 0.9, 0.2, 50, 25); 
+base.translate(0, -1, 0);
+base2.translate(0, -0.9, 0);
+base3.translate(0, -0.6, 0);
+base4.translate(0, -0.4, 0);
+base5.translate(0, 0.2, 0);
+base6.translate(0, 0.8, 0);
+base7.translate(0, 1.1, 0);
+base8.translate(0, 1.3, 0);
+base9.translate(0, 1.2, 0);
+base10.translate(0, 1.6, 0);
+
+var baseMalla = new THREE.Mesh(base);
+var base2Malla = new THREE.Mesh(base2);
+var base3Malla = new THREE.Mesh(base3);
+var base4Malla = new THREE.Mesh(base4);
+var base5Malla = new THREE.Mesh(base5);
+var base6Malla = new THREE.Mesh(base6);
+var base7Malla = new THREE.Mesh(base7);
+var base8Malla = new THREE.Mesh(base8);
+var base9Malla = new THREE.Mesh(base9);
+var base10Malla = new THREE.Mesh(base10);
+
+this.merge(baseMalla.geometry,baseMalla.matrix);
+this.merge(base2Malla.geometry,base2Malla.matrix);
+this.merge(base3Malla.geometry,base3Malla.matrix);
+this.merge(base4Malla.geometry,base4Malla.matrix);
+this.merge(base5Malla.geometry,base5Malla.matrix);
+this.merge(base6Malla.geometry,base6Malla.matrix);
+this.merge(base7Malla.geometry,base7Malla.matrix);
+this.merge(base8Malla.geometry,base8Malla.matrix);
+this.merge(base9Malla.geometry,base9Malla.matrix);
+this.merge(base10Malla.geometry,base10Malla.matrix);
+}
+ReinaGeometry.prototype=new THREE.Geometry();
+///////////////CONSTRUCTOR REINA///////////////
+ReyGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var base = new THREE.CylinderGeometry(0.9, 0.9, 0.2, 50, 25); 
 var base1 = new THREE.CylinderGeometry(0.7, 0.9, 0.4, 50, 25);
 var base2 = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25); 
 var base3 = new THREE.CylinderGeometry(0.4, 0.7, 2, 50, 25); 
@@ -141,73 +193,39 @@ this.merge(base9Malla.geometry,base9Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix); 
 this.merge(cima1Malla.geometry,cima1Malla.matrix);
 this.merge(cima2Malla.geometry,cima2Malla.matrix); 
-this.scale(4,6,4);
 }
-
-ReyForma.prototype = new THREE.Geometry();
-
-ReinaForma = function(){
- THREE.Geometry.call(this);
- 
-var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
+ReyGeometry.prototype=new THREE.Geometry();
+///////////////CONSTRUCTOR PEON///////////////
+PeonGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
-var base3 = new THREE.CylinderGeometry(0.5, 0.6,0.4,50,25);
-var base4 = new THREE.TorusGeometry( 0.45, 0.1, 16, 100 );
-var base5 = new THREE.CylinderGeometry(0.3, 0.45,1,50,25);
-var base6 = new THREE.TorusGeometry( 0.3, 0.15, 16, 100 );
-var base7 = new THREE.CylinderGeometry(0.5, 0.35,0.4,50,25);
-var base8 = new THREE.TorusGeometry( 0.4, 0.1, 16, 100 );
-var base9 = new THREE.SphereGeometry( 0.4, 32,32 );
-var base10 = new THREE.SphereGeometry( 0.1, 32,32 );
+var base3 = new  THREE.CylinderGeometry(0.25, 0.55, 1, 50, 25);
+var cima = new THREE.SphereGeometry( 0.4, 32, 32 );
 
 base2.rotateX(Math.PI/2);
-base4.rotateX(Math.PI/2);
-base6.rotateX(Math.PI/2);
-base8.rotateX(Math.PI/2);
-
 base.translate(0, -1, 0);
 base2.translate(0, -0.9, 0);
-base3.translate(0, -0.6, 0);
-base4.translate(0, -0.4, 0);
-base5.translate(0, 0.2, 0);
-base6.translate(0, 0.8, 0);
-base7.translate(0, 1.1, 0);
-base8.translate(0, 1.3, 0);
-base9.translate(0, 1.2, 0);
-base10.translate(0, 1.6, 0);
+base3.translate(0, -0.2, 0);
+cima.translate(0, 0.5, 0);
 
 var baseMalla = new THREE.Mesh(base);
 var base2Malla = new THREE.Mesh(base2);
 var base3Malla = new THREE.Mesh(base3);
-var base4Malla = new THREE.Mesh(base4);
-var base5Malla = new THREE.Mesh(base5);
-var base6Malla = new THREE.Mesh(base6);
-var base7Malla = new THREE.Mesh(base7);
-var base8Malla = new THREE.Mesh(base8);
-var base9Malla = new THREE.Mesh(base9);
-var base10Malla = new THREE.Mesh(base10);
+var cimaMalla = new THREE.Mesh(cima);
 
 this.merge(baseMalla.geometry,baseMalla.matrix);
 this.merge(base2Malla.geometry,base2Malla.matrix);
 this.merge(base3Malla.geometry,base3Malla.matrix);
-this.merge(base4Malla.geometry,base4Malla.matrix);
-this.merge(base5Malla.geometry,base5Malla.matrix);
-this.merge(base6Malla.geometry,base6Malla.matrix);
-this.merge(base7Malla.geometry,base7Malla.matrix);
-this.merge(base8Malla.geometry,base8Malla.matrix);
-this.merge(base9Malla.geometry,base9Malla.matrix);
-this.merge(base10Malla.geometry,base10Malla.matrix);
-this.rotateX(Math.PI*3/2);
-this.scale(4,4,10);
-
+this.merge(cimaMalla.geometry,cimaMalla.matrix);
 }
-
-ReinaForma.prototype = new THREE.Geometry();
-
-TorreForma = function(){
- THREE.Geometry.call(this);
-
-var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
+PeonGeometry.prototype=new THREE.Geometry();
+///////////////CONSTRUCTOR TORRE///////////////
+TorreGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
 var base3 = new  THREE.CylinderGeometry(0.35, 0.55, 1.5, 50, 25);
 var cima = new THREE.TorusGeometry( 0.35, 0.1, 16, 100 );
@@ -254,40 +272,8 @@ this.merge(punta1Malla.geometry,punta1Malla.matrix);
 this.merge(punta2Malla.geometry,punta2Malla.matrix);
 this.merge(punta3Malla.geometry,punta3Malla.matrix);
 this.merge(anilloMalla.geometry,anilloMalla.matrix);
-this.rotateX(Math.PI*3/2);
-this.scale(4,4,10);
 }
-
-TorreForma.prototype = new THREE.Geometry();
-
-PeonForma = function(){
-THREE.Geometry.call(this);
-var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
-var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
-var base3 = new  THREE.CylinderGeometry(0.25, 0.55, 1, 50, 25);
-var cima = new THREE.SphereGeometry( 0.4, 32, 32 );
-
-base2.rotateX(Math.PI/2);
-base.translate(0, -1, 0);
-base2.translate(0, -0.9, 0);
-base3.translate(0, -0.2, 0);
-cima.translate(0, 0.5, 0);
-
-var baseMalla = new THREE.Mesh(base);
-var base2Malla = new THREE.Mesh(base2);
-var base3Malla = new THREE.Mesh(base3);
-var cimaMalla = new THREE.Mesh(cima);
-
-this.merge(baseMalla.geometry,baseMalla.matrix);
-this.merge(base2Malla.geometry,base2Malla.matrix);
-this.merge(base3Malla.geometry,base3Malla.matrix);
-this.merge(cimaMalla.geometry,cimaMalla.matrix);
-this.rotateX(Math.PI*3/2);
-this.scale(4,4,6);
-}
-
-PeonForma.prototype = new THREE.Geometry();
-
+TorreGeometry.prototype=new THREE.Geometry();
 //////////////SENSOR////////////////
 function Sensor(position,direction)
 {
@@ -478,17 +464,17 @@ function Casillas(size,x,y)
 {
   cargador=new THREE.TextureLoader();
   if(sTC===1)
-    textura=cargador.load("MarmolBlanco.jpg");
+    textura=cargador.load('marmolB.jpg');
   else if (sTC===2)
-    textura=cargador.load("MarmolGris.jpg");
+    textura=cargador.load('marmolN.jpg');
   else
-    textura=cargador.load("marmolcafe.jpg");
-  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,10,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
+    textura=cargador.load('marmolA.jpg');
+  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.4,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
   this.receiveShadow=true;
   this.position.x=x;
   this.position.y=y;
-  this.position.z=-20;
+  this.position.z=-6;
 }
 Casillas.prototype=new THREE.Mesh();
 ///////////////Armando el Tablero///////////////
@@ -588,13 +574,13 @@ function Caballo(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load("MarmolGris.jpg");
+    textura=cargador.load('maderaN.jpg');
   else
-    textura=cargador.load("MarmolBlanco.jpg");
+    textura=cargador.load('maderaB.jpg');
   this.position.set(x,y,0);
   this.cnt = 0;
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new CaballoForma(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new CaballoGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(1,6,1),new THREE.MeshLambertMaterial({map:textura}));
@@ -603,12 +589,8 @@ function Caballo(sTP,x,y)
   this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(0.4,1.4,4);
   this.brazoizq.position.set(0.4,-1.4,4);
-  //this.piernaizq.rotateX(Math.PI/2);
-  //this.piernader.rotateX(Math.PI/2);
- //this.brazoder.rotateX(Math.PI/2);
- //this.brazoizq.rotateX(Math.PI/2);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  //this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
@@ -641,12 +623,12 @@ function Alfil(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+    textura=cargador.load('maderaN.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('maderaB.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new AlfilForma(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1),new THREE.MeshLambertMaterial({map:textura}));
@@ -656,7 +638,7 @@ function Alfil(sTP,x,y)
   this.brazoder.position.set(2.5,0,4);
   this.brazoizq.position.set(-2.5,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  //this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
@@ -730,12 +712,12 @@ function Reina(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+    textura=cargador.load('maderaN.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('maderaB.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new ReinaForma(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new ReinaGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
@@ -745,8 +727,8 @@ function Reina(sTP,x,y)
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  //this.actuator.scale.set(9.5,9.5,9.5);
-  this.actuator.rotateX(Math.PI);
+  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.rotateX(Math.PI/2);
 }
 Reina.prototype=new Agent();
 
@@ -833,12 +815,12 @@ function Rey(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+    textura=cargador.load('maderaN.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg'); 
+    textura=cargador.load('maderaB.jpg'); 
   this.position.set(x,y,0);
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new ReyForma(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new ReyGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
@@ -848,7 +830,7 @@ function Rey(sTP,x,y)
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  //this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
@@ -944,12 +926,12 @@ function Torre(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+    textura=cargador.load('maderaN.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('maderaB.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new TorreForma(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
@@ -959,8 +941,8 @@ function Torre(sTP,x,y)
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  //this.actuator.scale.set(9.5,9.5,9.5);
-  this.actuator.rotateX(Math.PI);
+  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
 Torre.prototype=new Agent();
@@ -1041,12 +1023,12 @@ function Peon(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+    textura=cargador.load('maderaN.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('maderaB.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new PeonForma(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
@@ -1056,8 +1038,8 @@ function Peon(sTP,x,y)
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  //this.actuator.scale.set(9.5,9.5,9.5);
-  this.actuator.rotateX(Math.PI);
+  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
 Peon.prototype=new Agent();
