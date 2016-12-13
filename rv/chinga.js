@@ -35,10 +35,10 @@ AlfilGeometry.prototype=new THREE.Geometry();
 ReinaGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseReina1=new THREE.CylinderGeometry( 0.35, 0.35, 0.2, 32 );
-  var CuerpoReina1=new THREE.CylinderGeometry(0.3,0.3,1.3,32);
-  var CoronaReina1=new THREE.ConeGeometry(0.23,0.46,4,1,false,Math.PI/4);
-  BaseReina1.translate(0,0,0);
+  var BaseReina1=new THREE.CylinderGeometry( 0.15, 0.3, 0.9, 32 );
+  var CuerpoReina1=new THREE.CylinderGeometry(0.35,0.2,0.4,32);
+  var CoronaReina1=new THREE.TorusGeometry(0.25,0.1,16,100);
+  BaseReina1.translate(0,0.4,0);
   CuerpoReina1.translate(0,0.5,0);
   CoronaReina1.translate(0,1.3,0);
   var BaseReina=new THREE.Mesh(BaseReina1);
@@ -551,7 +551,7 @@ function Reina(sTP,x,y)
   this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
+  this.add(/*this.brazoizq,this.brazoder,*/this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
 }
