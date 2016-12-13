@@ -20,7 +20,7 @@ CaballoGeometry.prototype=new THREE.Geometry();
 AlfilGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseAlfil1=new THREE.CylinderGeometry( 0.2, 0.35, 0.1, 32 );
+  var BaseAlfil1=new THREE.CylinderGeometry( 0.2, 0.35, 1, 32 );
   var CuerpoAlfil1=new THREE.SphereGeometry(0.2,32,32);
   BaseAlfil1.translate(0,0.5,0);
   CuerpoAlfil1.translate(0,0.9,0); 
